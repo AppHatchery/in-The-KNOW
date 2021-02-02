@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startDestination">
+
+    <fragment
+        android:id="@+id/myLogger"
+        android:name="com.example.intheknow.MyLogger"
+        android:label="fragment_my_logger"
+        tools:layout="@layout/fragment_my_logger" />
+    <fragment
+        android:id="@+id/startDestination"
+        android:name="com.example.intheknow.StartDestination"
+        android:label="fragment_start_destination"
+        tools:layout="@layout/fragment_start_destination" >
+        <action
+            android:id="@+id/action_startDestination_to_myLogger"
+            app:destination="@id/myLogger" />
+    </fragment>
+</navigation>
