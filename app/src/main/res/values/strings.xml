@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">InTheKnow</string>
+    <string name="my_logger">My Logger</string>
 </resources>
