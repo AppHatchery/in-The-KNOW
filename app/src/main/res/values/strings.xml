@@ -3,4 +3,11 @@
     <string name="my_logger">My Logger</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="logger_q1">Did you get some?</string>
+    <string name="with_condom">with condom</string>
+    <string name="no_condom">no condom</string>
+    <string name="oral">Oral</string>
+    <string name="self">By Myself</string>
+    <string name="nah">Nah</string>
+    <string name="anal">Anal</string>
 </resources>

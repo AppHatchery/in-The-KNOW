@@ -8,4 +8,25 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MyLogger">
+
+    <TextView
+        android:id="@+id/logger_q1_occurence"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:padding="@dimen/small_text_padding"
+        android:text="@string/logger_q1"
+        android:textSize="@dimen/question_text_size" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E8E8E8"
+        android:buttonTint="#FFFFFF"
+        android:text="@string/no_condom"
+        android:textOff="@string/no_condom"
+        android:textOn="@string/no_condom"
+        android:textSize="@dimen/button_text_size" />
+
 </LinearLayout>
