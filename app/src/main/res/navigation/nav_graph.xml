@@ -8,12 +8,12 @@
     <fragment
         android:id="@+id/myLogger"
         android:name="com.example.intheknow.MyLogger"
-        android:label="fragment_my_logger"
+        android:label="MyLogger"
         tools:layout="@layout/fragment_my_logger" />
     <fragment
         android:id="@+id/startDestination"
         android:name="com.example.intheknow.StartDestination"
-        android:label="fragment_start_destination"
+        android:label="Home"
         tools:layout="@layout/fragment_start_destination" >
         <action
             android:id="@+id/action_startDestination_to_myLogger"
