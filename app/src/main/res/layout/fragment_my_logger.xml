@@ -19,7 +19,7 @@
         android:textSize="@dimen/question_text_size" />
 
     <ToggleButton
-        android:id="@+id/toggleButton"
+        android:id="@+id/no_condom_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#E8E8E8"

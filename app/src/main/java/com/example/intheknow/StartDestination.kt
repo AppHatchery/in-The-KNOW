@@ -25,8 +25,12 @@ class StartDestination : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val logger_btn : Button = view.findViewById(R.id.my_logger_btn)
+        val tests_btn : Button = view.findViewById(R.id.my_tests_btn)
         logger_btn.setOnClickListener {
             findNavController().navigate(R.id.action_startDestination_to_myLogger)
+        }
+        tests_btn.setOnClickListener {
+            findNavController().navigate(R.id.action_startDestination_to_myTests)
         }
     }
 }

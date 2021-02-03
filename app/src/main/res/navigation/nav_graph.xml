@@ -18,5 +18,13 @@
         <action
             android:id="@+id/action_startDestination_to_myLogger"
             app:destination="@id/myLogger" />
+        <action
+            android:id="@+id/action_startDestination_to_myTests"
+            app:destination="@id/myTests" />
     </fragment>
+    <fragment
+        android:id="@+id/myTests"
+        android:name="com.example.intheknow.MyTests"
+        android:label="MyTests"
+        tools:layout="@layout/fragment_my_tests" />
 </navigation>
