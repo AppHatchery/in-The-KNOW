@@ -21,10 +21,18 @@
         <action
             android:id="@+id/action_startDestination_to_myTests"
             app:destination="@id/myTests" />
+        <action
+            android:id="@+id/action_startDestination_to_myResources"
+            app:destination="@id/myResources" />
     </fragment>
     <fragment
         android:id="@+id/myTests"
         android:name="com.example.intheknow.MyTests"
         android:label="MyTests"
         tools:layout="@layout/fragment_my_tests" />
+    <fragment
+        android:id="@+id/myResources"
+        android:name="com.example.intheknow.MyResources"
+        android:label="fragment_my_resources"
+        tools:layout="@layout/fragment_my_resources" />
 </navigation>
