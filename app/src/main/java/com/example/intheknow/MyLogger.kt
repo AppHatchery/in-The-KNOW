@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ToggleButton
+import androidx.navigation.fragment.findNavController
 
 /**
  * A simple [Fragment] subclass.
@@ -23,11 +24,15 @@ class MyLogger : Fragment() {
         return inflater.inflate(R.layout.fragment_my_logger, container, false)
     }
 
-    //override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-    //    val tgl_btn : ToggleButton = view.findViewById(R.id.toggleButton)
-    //    if (tgl_btn.isChecked() && tgl_btn.background) {
-    //        tgl_btn.setBackgroundResource(R.drawable.);
-    //    }
-    //}
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val history_btn : Button = view.findViewById(R.id.skip_to_log_btn)
+        val submit_btn : Button = view.findViewById(R.id.new_log_submit_btn)
+        history_btn.setOnClickListener {
+            findNavController().navigate(R.id.action_myLogger_to_myLogEntries)
+        }
+        submit_btn.setOnClickListener {
+            findNavController().navigate(R.id.action_myLogger_to_myLogEntries)
+        }
+    }
 
 }

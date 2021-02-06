@@ -32,4 +32,6 @@
     <string name="sore_throat">sore throat</string>
     <string name="anything_else">Anything else?</string>
     <string name="i_felt">I felt...</string>
+    <string name="submit">Submit</string>
+    <string name="see_history">See history</string>
 </resources>

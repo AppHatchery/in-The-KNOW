@@ -9,7 +9,11 @@
         android:id="@+id/myLogger"
         android:name="com.example.intheknow.MyLogger"
         android:label="MyLogger"
-        tools:layout="@layout/fragment_my_logger" />
+        tools:layout="@layout/fragment_my_logger" >
+        <action
+            android:id="@+id/action_myLogger_to_myLogEntries"
+            app:destination="@id/myLogEntries" />
+    </fragment>
     <fragment
         android:id="@+id/startDestination"
         android:name="com.example.intheknow.StartDestination"
@@ -35,4 +39,9 @@
         android:name="com.example.intheknow.MyResources"
         android:label="fragment_my_resources"
         tools:layout="@layout/fragment_my_resources" />
+    <fragment
+        android:id="@+id/myLogEntries"
+        android:name="com.example.intheknow.MyLogEntries"
+        android:label="fragment_my_log_entries"
+        tools:layout="@layout/fragment_my_log_entries" />
 </navigation>
