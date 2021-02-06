@@ -42,6 +42,10 @@
     <fragment
         android:id="@+id/myLogEntries"
         android:name="com.example.intheknow.MyLogEntries"
-        android:label="fragment_my_log_entries"
-        tools:layout="@layout/fragment_my_log_entries" />
+        android:label="MyLogger Entries"
+        tools:layout="@layout/fragment_my_log_entries" >
+        <action
+            android:id="@+id/action_myLogEntries_to_myLogger"
+            app:destination="@id/myLogger" />
+    </fragment>
 </navigation>

@@ -34,4 +34,5 @@
     <string name="i_felt">I felt...</string>
     <string name="submit">Submit</string>
     <string name="see_history">See history</string>
+    <string name="add_new_event">Add new event</string>
 </resources>

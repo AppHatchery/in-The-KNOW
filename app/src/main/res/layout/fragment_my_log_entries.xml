@@ -1,9 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MyLogEntries">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:orientation="vertical">
 
-</LinearLayout>
+
+        <ImageButton
+            android:id="@+id/add_event_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:contentDescription="@string/add_new_event"
+            android:src="@android:drawable/ic_input_add" />
+
+        <Button
+            android:id="@+id/event1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/itk_blue"
+            android:text="November 28, 2019"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/event2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/itk_blue"
+            android:text="November 20, 2019"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/event3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/itk_blue"
+            android:text="September 15, 2019"
+            android:textAllCaps="false" />
+
+
+    </LinearLayout>
+
+</ScrollView>
