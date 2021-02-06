@@ -6,10 +6,123 @@
     android:orientation="vertical"
     tools:context=".MyResources">
 
+    <TextView
+        android:id="@+id/logger_q1_occurence2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:padding="@dimen/small_text_padding"
+        android:text="Multimedia Resources"
+        android:textColor="@color/black"
+        android:textSize="@dimen/question_text_size" />
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ToggleButton
+            android:id="@+id/no_condom_btn"
+            android:layout_width="@dimen/my_logger_circle_diameter"
+            android:layout_height="68dp"
+            android:layout_marginStart="@dimen/q1_maragin"
+            android:layout_marginEnd="@dimen/q1_maragin"
+            android:background="@drawable/toggle_day_bg_selector"
+            android:text="@string/no_condom"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textOff="Videos"
+            android:textOn="Videos"
+            android:textSize="@dimen/btn_text_size" />
+
+        <ToggleButton
+            android:id="@+id/condom_btn"
+            android:layout_width="@dimen/my_logger_circle_diameter"
+            android:layout_height="@dimen/my_logger_circle_diameter"
+            android:layout_marginStart="@dimen/q1_maragin"
+            android:layout_marginEnd="@dimen/q1_maragin"
+            android:background="@drawable/toggle_day_bg_selector"
+            android:buttonTint="@color/itk_blue"
+            android:text="@string/with_condom"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textOff="Current Events"
+            android:textOn="Current Events"
+            android:textSize="@dimen/btn_text_size" />
+
+        <ToggleButton
+            android:id="@+id/oral_btn"
+            android:layout_width="@dimen/my_logger_circle_diameter"
+            android:layout_height="@dimen/my_logger_circle_diameter"
+            android:layout_marginStart="@dimen/q1_maragin"
+            android:layout_marginEnd="@dimen/q1_maragin"
+            android:background="@drawable/toggle_day_bg_selector"
+            android:text="@string/oral"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textOff="News Feeds"
+            android:textOn="News Feeds"
+            android:textSize="@dimen/btn_text_size" />
+
+        <ToggleButton
+            android:id="@+id/by_myself_btn"
+            android:layout_width="@dimen/my_logger_circle_diameter"
+            android:layout_height="@dimen/my_logger_circle_diameter"
+            android:layout_marginStart="@dimen/q1_maragin"
+            android:layout_marginEnd="@dimen/q1_maragin"
+            android:background="@drawable/toggle_day_bg_selector"
+            android:text="@string/self"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textOff="Support Groups"
+            android:textOn="Support Groups"
+            android:textSize="@dimen/btn_text_size" />
+
+        <ToggleButton
+            android:id="@+id/no_btn"
+            android:layout_width="@dimen/my_logger_circle_diameter"
+            android:layout_height="@dimen/my_logger_circle_diameter"
+            android:layout_marginStart="@dimen/q1_maragin"
+            android:layout_marginEnd="@dimen/q1_maragin"
+            android:background="@drawable/toggle_day_bg_selector"
+            android:text="@string/nah"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textOff="Podcasts"
+            android:textOn="Podcasts"
+            android:textSize="@dimen/btn_text_size" />
+
+    </TableRow>
+
+    <TextView
+        android:id="@+id/logger_q1_occurence5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:padding="@dimen/small_text_padding"
+        android:text="Resource Spotlight"
+        android:textColor="@color/black"
+        android:textSize="@dimen/question_text_size" />
+
     <Button
         android:id="@+id/button"
-        android:layout_width="295dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Button" />
+        android:text="Recommendations" />
+
+    <TextView
+        android:id="@+id/logger_q1_occurence6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:padding="@dimen/small_text_padding"
+        android:text="MY RECENT ADD"
+        android:textColor="@color/black"
+        android:textSize="@dimen/question_text_size" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sexual women policies" />
+
 </LinearLayout>
