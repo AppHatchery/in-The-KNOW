@@ -20,32 +20,35 @@
         android:id="@+id/Videos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/teal_200"
-        android:backgroundTint="@color/teal_200"
+        android:backgroundTint="@color/itk_blue"
         android:text="Videos" />
 
     <Button
         android:id="@+id/CurrentEvents"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/itk_blue"
         android:text="Current Events" />
 
     <Button
         android:id="@+id/Newsfeeds"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/itk_blue"
         android:text="Newsfeeds" />
 
     <Button
         android:id="@+id/Podcasts"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/itk_blue"
         android:text="Podcasts" />
 
     <Button
         android:id="@+id/SupportGroups"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/itk_blue"
         android:text="Support Groups" />
 
     <TextView
@@ -62,6 +65,7 @@
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/itk_blue"
         android:text="Recommendations" />
 
     <TextView
@@ -78,6 +82,7 @@
         android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/itk_blue"
         android:text="Sexual women policies" />
 
 </LinearLayout>
