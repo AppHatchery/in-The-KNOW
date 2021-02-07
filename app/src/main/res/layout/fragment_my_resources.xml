@@ -62,7 +62,7 @@
         android:textSize="@dimen/question_text_size" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/new_question_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/itk_blue"

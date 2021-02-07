@@ -10,4 +10,7 @@
     <color name="itk_blue">#2196F3</color>
     <color name="itk_blue_light">#A2D6FF</color>
     <color name="off_grey">#F2F2F2</color>
+    <color name="itk_dark_bg">#2196F3</color>
+    <!--<color name="itk_dark_bg">#18A5B8</color>
+    -->
 </resources>

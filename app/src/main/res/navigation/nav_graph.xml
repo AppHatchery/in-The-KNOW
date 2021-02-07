@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/myLogger"
         android:name="com.example.intheknow.MyLogger"
-        android:label="MyLogger"
+        android:label="My Logger"
         tools:layout="@layout/fragment_my_logger" >
         <action
             android:id="@+id/action_myLogger_to_myLogEntries"
@@ -28,24 +28,53 @@
         <action
             android:id="@+id/action_startDestination_to_myResources"
             app:destination="@id/myResources" />
+        <action
+            android:id="@+id/action_startDestination_to_myCircle"
+            app:destination="@id/myCircle" />
     </fragment>
     <fragment
         android:id="@+id/myTests"
         android:name="com.example.intheknow.MyTests"
-        android:label="MyTests"
+        android:label="My Tests"
         tools:layout="@layout/fragment_my_tests" />
     <fragment
         android:id="@+id/myResources"
         android:name="com.example.intheknow.MyResources"
-        android:label="fragment_my_resources"
+        android:label="My Resources"
         tools:layout="@layout/fragment_my_resources" />
     <fragment
         android:id="@+id/myLogEntries"
         android:name="com.example.intheknow.MyLogEntries"
-        android:label="MyLogger Entries"
+        android:label="My Logger Entries"
         tools:layout="@layout/fragment_my_log_entries" >
         <action
             android:id="@+id/action_myLogEntries_to_myLogger"
             app:destination="@id/myLogger" />
     </fragment>
+    <fragment
+        android:id="@+id/myCircle"
+        android:name="com.example.intheknow.MyCircle"
+        android:label="My Circle"
+        tools:layout="@layout/fragment_my_circle" >
+        <action
+            android:id="@+id/action_myCircle_to_createNewChat"
+            app:destination="@id/createNewChat" />
+        <action
+            android:id="@+id/action_myCircle_to_communicationScreen"
+            app:destination="@id/communicationScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/createNewChat"
+        android:name="com.example.intheknow.CreateNewChat"
+        android:label="Create New Chat"
+        tools:layout="@layout/fragment_create_new_chat" >
+        <action
+            android:id="@+id/action_createNewChat_to_communicationScreen"
+            app:destination="@id/communicationScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/communicationScreen"
+        android:name="com.example.intheknow.CommunicationScreen"
+        android:label="Communications"
+        tools:layout="@layout/fragment_communication_screen" />
 </navigation>

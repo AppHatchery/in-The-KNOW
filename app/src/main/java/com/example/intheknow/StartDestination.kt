@@ -27,6 +27,7 @@ class StartDestination : Fragment() {
         val logger_btn : Button = view.findViewById(R.id.my_logger_btn)
         val tests_btn : Button = view.findViewById(R.id.my_tests_btn)
         val resources_btn : Button = view.findViewById(R.id.my_resources_btn)
+        val circle_btn : Button = view.findViewById(R.id.my_circle_btn)
         logger_btn.setOnClickListener {
             findNavController().navigate(R.id.action_startDestination_to_myLogger)
         }
@@ -36,5 +37,9 @@ class StartDestination : Fragment() {
         resources_btn.setOnClickListener {
             findNavController().navigate(R.id.action_startDestination_to_myResources)
         }
+        circle_btn.setOnClickListener {
+            findNavController().navigate(R.id.action_startDestination_to_myCircle)
+        }
+
     }
 }

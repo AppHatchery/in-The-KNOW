@@ -9,35 +9,50 @@
 
     <Button
         android:id="@+id/my_logger_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/home_btn_width"
         android:layout_height="wrap_content"
         android:layout_marginStart="144dp"
         android:layout_marginTop="164dp"
         android:backgroundTint="@color/itk_blue"
         android:gravity="center_vertical"
         android:text="@string/my_logger"
+        android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/my_tests_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/home_btn_width"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="240dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="250dp"
         android:backgroundTint="@color/itk_blue"
         android:text="@string/my_tests"
+        android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/my_resources_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/home_btn_width"
         android:layout_height="wrap_content"
-        android:layout_marginStart="228dp"
-        android:layout_marginTop="240dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginEnd="50dp"
         android:backgroundTint="@color/itk_blue"
         android:text="@string/my_resources"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/my_circle_btn"
+        android:layout_width="@dimen/home_btn_width"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="340dp"
+        android:backgroundTint="@color/itk_blue"
+        android:text="My Circle"
+        android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

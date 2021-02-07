@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.RecyclerView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -32,5 +35,15 @@ class MyCircle : Fragment() {
         return inflater.inflate(R.layout.fragment_my_circle, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val newQuestion : Button = view.findViewById(R.id.new_question_btn)
+        newQuestion.setOnClickListener {
+            findNavController().navigate(R.id.action_myCircle_to_createNewChat)
+        }
+        val chatSelection : RecyclerView =  view.findViewById(R.id.chatroomRV)
+        chatSelection.setOnClickListener {
+            findNavController().navigate(R.id.action_myCircle_to_communicationScreen)
+        }
+    }
 
 }

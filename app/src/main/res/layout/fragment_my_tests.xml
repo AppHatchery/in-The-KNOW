@@ -5,7 +5,6 @@
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#18A5B8"
     tools:context=".MyTests">
 
 
@@ -14,9 +13,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:fontFamily="@font/roboto_thin"
-        android:text="@string/textview"
-        android:textColor="@color/white"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/title_myTest"
+        android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -28,15 +27,16 @@
         android:id="@+id/logger_q1_occurence3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:fontFamily="@font/roboto_thin"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-medium"
         android:padding="@dimen/small_text_padding"
         android:text="@string/get_tested"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="@dimen/question_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/getTestedName" />
 
     <Button
         android:id="@+id/testkit"
@@ -65,12 +65,12 @@
         android:id="@+id/logger_q1_occurence4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="59dp"
-        android:fontFamily="@font/roboto_thin"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="sans-serif-medium"
         android:padding="@dimen/small_text_padding"
         android:text="@string/information"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="@dimen/question_text_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

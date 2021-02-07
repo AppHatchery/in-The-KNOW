@@ -14,7 +14,7 @@
             android:id="@+id/chatRoomsTitleText2"
             android:layout_width="match_parent"
             android:layout_height="162dp"
-            android:background="#18A5B8"
+            android:background="@color/itk_dark_bg"
             android:backgroundTint="@color/white"
             android:backgroundTintMode="multiply"
             android:text="\n\nChat Rooms"
@@ -27,7 +27,7 @@
             android:id="@+id/ChatRoomsTitleText"
             android:layout_width="match_parent"
             android:layout_height="94dp"
-            android:background="#18A5B8"
+            android:background="@color/itk_dark_bg"
             android:text="Discussion Title"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
@@ -38,7 +38,7 @@
             android:id="@+id/chatRoomsTitleText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#18A5B8"
+            android:background="@color/itk_dark_bg"
             android:text="* Chat room messages must follow our Community Guidelines and Terms of Use!"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
@@ -58,17 +58,17 @@
             android:text="Enter a message" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/new_question_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#18A5B8"
+            android:background="@color/itk_dark_bg"
             android:text="Send" />
 
         <TextView
             android:id="@+id/blankblue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#18A5B8"
+            android:background="@color/itk_dark_bg"
             android:text=" "
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
