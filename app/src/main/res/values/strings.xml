@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
     <string name="app_name">InTheKnow</string>
     <string name="my_logger">My Logger</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -35,4 +35,17 @@
     <string name="submit">Submit</string>
     <string name="see_history">See history</string>
     <string name="add_new_event">Add new event</string>
+    <string name="get_tested"><br> </br> <br>Getting tested for HIV and other sexually
+        transmitted diseases is quick and easy!</br> <br> </br> <br> </br>
+        You should get tested if:
+        <ul> <li> You've recently had unprotected sex </li>
+            <li> You've shared a needle with someone(for drugs, insulin, etc.) </li>
+            <li> You think you might be at risk </li>
+        </ul> </string>
+    <string name="title_myTest">Get Tested</string>
+    <string name="send_a_free_self_testing_kit">Send a free self-testing kit!</string>
+    <string name="locations_near_me">Locations near me</string>
+    <string name="textview">TextView</string>
+    <string name="information">Learn More about how HIV testing works,
+        why it is important, and what to do after getting your results. </string>
 </resources>
