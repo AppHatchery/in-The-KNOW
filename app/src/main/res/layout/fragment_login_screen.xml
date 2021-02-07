@@ -76,9 +76,26 @@
             android:text="Sign in" />
 
         <TextView
-            android:id="@+id/loginTitle"
+            android:id="@+id/blankblue2"
             android:layout_width="match_parent"
-            android:layout_height="284dp"
+            android:layout_height="20dp"
+            android:background="#18A5B8"
+            android:text=" "
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#FFFFFF" />
+        <Button
+            android:id="@+id/createAccountButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/itk_blue"
+            android:backgroundTint="@color/itk_blue"
+            android:text="Create an Account" />
+
+        <TextView
+            android:id="@+id/blankblue"
+            android:layout_width="match_parent"
+            android:layout_height="218dp"
             android:background="#18A5B8"
             android:text=" "
             android:textAlignment="center"
