@@ -62,27 +62,17 @@
         android:textSize="@dimen/question_text_size" />
 
     <Button
-        android:id="@+id/new_question_btn"
+        android:id="@+id/recommendations_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/itk_blue"
         android:text="Recommendations" />
 
-    <TextView
-        android:id="@+id/logger_q1_occurence6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-medium"
-        android:padding="@dimen/small_text_padding"
-        android:text="MY RECENT ADD"
-        android:textColor="@color/black"
-        android:textSize="@dimen/question_text_size" />
-
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/policies_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/itk_blue"
-        android:text="Sexual women policies" />
+        android:text="Policies" />
 
 </LinearLayout>

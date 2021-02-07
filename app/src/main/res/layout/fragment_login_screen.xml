@@ -14,7 +14,6 @@
             android:id="@+id/LoginTitle1"
             android:layout_width="match_parent"
             android:layout_height="173dp"
-            android:background="#18A5B8"
             android:text="\n\nWelcome to in-the-KNOW!"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
@@ -24,21 +23,19 @@
             android:id="@+id/LoginTitle2"
             android:layout_width="match_parent"
             android:layout_height="135dp"
-            android:background="#18A5B8"
             android:text="Sign in"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textColor="#FFFFFF" />
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/LoginTitle3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#18A5B8"
             android:text="Username:"
             android:textAlignment="textStart"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/black"
             android:textSize="24sp" />
 
         <EditText
@@ -53,10 +50,9 @@
             android:id="@+id/LoginTitle4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#18A5B8"
             android:text="Password:"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/black"
             android:textSize="24sp" />
 
         <EditText
@@ -79,11 +75,10 @@
             android:id="@+id/blankblue2"
             android:layout_width="match_parent"
             android:layout_height="20dp"
-            android:background="#18A5B8"
             android:text=" "
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textColor="#FFFFFF" />
+            android:textColor="@color/black" />
         <Button
             android:id="@+id/createAccountButton"
             android:layout_width="match_parent"
@@ -96,11 +91,10 @@
             android:id="@+id/blankblue"
             android:layout_width="match_parent"
             android:layout_height="218dp"
-            android:background="#18A5B8"
             android:text=" "
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textColor="#FFFFFF" />
+            android:textColor="@color/black" />
 
     </LinearLayout>
 </FrameLayout>

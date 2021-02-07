@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/startDestination">
+    app:startDestination="@id/loginScreen">
 
     <fragment
         android:id="@+id/myLogger"
@@ -41,7 +41,29 @@
         android:id="@+id/myResources"
         android:name="com.example.intheknow.MyResources"
         android:label="My Resources"
-        tools:layout="@layout/fragment_my_resources" />
+        tools:layout="@layout/fragment_my_resources" >
+        <action
+            android:id="@+id/action_myResources_to_videos2"
+            app:destination="@id/videos2" />
+        <action
+            android:id="@+id/action_myResources_to_currentEvents"
+            app:destination="@id/currentEvents" />
+        <action
+            android:id="@+id/action_myResources_to_newsfeed"
+            app:destination="@id/newsfeed" />
+        <action
+            android:id="@+id/action_myResources_to_podcasts"
+            app:destination="@id/podcasts" />
+        <action
+            android:id="@+id/action_myResources_to_supportGroups"
+            app:destination="@id/supportGroups" />
+        <action
+            android:id="@+id/action_myResources_to_recommendations"
+            app:destination="@id/recommendations" />
+        <action
+            android:id="@+id/action_myResources_to_policies2"
+            app:destination="@id/policies2" />
+    </fragment>
     <fragment
         android:id="@+id/myLogEntries"
         android:name="com.example.intheknow.MyLogEntries"
@@ -77,4 +99,48 @@
         android:name="com.example.intheknow.CommunicationScreen"
         android:label="Communications"
         tools:layout="@layout/fragment_communication_screen" />
+    <fragment
+        android:id="@+id/videos2"
+        android:name="com.example.intheknow.videos"
+        android:label="Videos"
+        tools:layout="@layout/fragment_videos" />
+    <fragment
+        android:id="@+id/currentEvents"
+        android:name="com.example.intheknow.CurrentEvents"
+        android:label="Current Events"
+        tools:layout="@layout/fragment_current_events" />
+    <fragment
+        android:id="@+id/newsfeed"
+        android:name="com.example.intheknow.Newsfeed"
+        android:label="Newsfeed"
+        tools:layout="@layout/fragment_newsfeed" />
+    <fragment
+        android:id="@+id/podcasts"
+        android:name="com.example.intheknow.podcasts"
+        android:label="Podcasts"
+        tools:layout="@layout/fragment_podcasts" />
+    <fragment
+        android:id="@+id/recommendations"
+        android:name="com.example.intheknow.Recommendations"
+        android:label="Recommendations"
+        tools:layout="@layout/fragment_recommendations" />
+    <fragment
+        android:id="@+id/supportGroups"
+        android:name="com.example.intheknow.SupportGroups"
+        android:label="Support Groups"
+        tools:layout="@layout/fragment_support_groups" />
+    <fragment
+        android:id="@+id/policies2"
+        android:name="com.example.intheknow.Policies"
+        android:label="Policies"
+        tools:layout="@layout/fragment_policies" />
+    <fragment
+        android:id="@+id/loginScreen"
+        android:name="com.example.intheknow.LoginScreen"
+        android:label="Welcome to In-the-KNOW!"
+        tools:layout="@layout/fragment_login_screen" >
+        <action
+            android:id="@+id/action_loginScreen_to_startDestination"
+            app:destination="@id/startDestination" />
+    </fragment>
 </navigation>
