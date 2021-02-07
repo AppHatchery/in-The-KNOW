@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="@color/white"
+    tools:context=".MyCircle">
+
+    <LinearLayout
+        android:id="@+id/ChatRoomsLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/chatRoomsTitleText2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#18A5B8"
+            android:backgroundTint="@color/white"
+            android:backgroundTintMode="multiply"
+            android:text="\n\nChat Rooms"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#FFFFFF"
+            android:textSize="36sp" />
+
+        <TextView
+            android:id="@+id/ChatRoomsTitleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#18A5B8"
+            android:text="Join a chat!"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/chatRoomsTitleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#18A5B8"
+            android:text="* Chat room messages must follow our Community Guidelines and Terms of Use!"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="#000000" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/chatroomRV"
+            android:layout_width="match_parent"
+            android:layout_height="351dp"
+            tools:listitem="@layout/recycler_view_item" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/itk_blue"
+            android:backgroundTint="@color/itk_blue"
+            android:text="Add a new question!" />
+
+        <TextView
+            android:id="@+id/blankblue"
+            android:layout_width="match_parent"
+            android:layout_height="118dp"
+            android:background="#18A5B8"
+            android:text=" "
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+</FrameLayout>

@@ -11,4 +11,16 @@
     <string name="nah">Nah</string>
     <string name="anal">Anal</string>
     <string name="my_tests">My Tests</string>
+    <string-array name="sample_questions_arr">
+        <string>How to practice safe sex?</string>
+        <string>How is HIV transmitted?</string>
+        <string>How do I know if it's too early to have sex?</string>
+        <string>How can I spruce up my sex life?</string>
+    </string-array>
+    <string-array name="num_people_arr">
+        <string>There are currently 12 people participating!</string>
+        <string>There are currently 6 people participating!</string>
+        <string>There are currently 19 people participating!</string>
+        <string>There are currently 30 people participating!</string>
+    </string-array>
 </resources>
