@@ -16,82 +16,37 @@
         android:textColor="@color/black"
         android:textSize="@dimen/question_text_size" />
 
-    <TableRow
+    <Button
+        android:id="@+id/Videos"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/teal_200"
+        android:backgroundTint="@color/teal_200"
+        android:text="Videos" />
 
-        <ToggleButton
-            android:id="@+id/no_condom_btn"
-            android:layout_width="@dimen/my_logger_circle_diameter"
-            android:layout_height="68dp"
-            android:layout_marginStart="@dimen/q1_maragin"
-            android:layout_marginEnd="@dimen/q1_maragin"
-            android:background="@drawable/toggle_day_bg_selector"
-            android:text="@string/no_condom"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:textOff="Videos"
-            android:textOn="Videos"
-            android:textSize="@dimen/btn_text_size" />
+    <Button
+        android:id="@+id/CurrentEvents"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Current Events" />
 
-        <ToggleButton
-            android:id="@+id/condom_btn"
-            android:layout_width="@dimen/my_logger_circle_diameter"
-            android:layout_height="@dimen/my_logger_circle_diameter"
-            android:layout_marginStart="@dimen/q1_maragin"
-            android:layout_marginEnd="@dimen/q1_maragin"
-            android:background="@drawable/toggle_day_bg_selector"
-            android:buttonTint="@color/itk_blue"
-            android:text="@string/with_condom"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:textOff="Current Events"
-            android:textOn="Current Events"
-            android:textSize="@dimen/btn_text_size" />
+    <Button
+        android:id="@+id/Newsfeeds"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Newsfeeds" />
 
-        <ToggleButton
-            android:id="@+id/oral_btn"
-            android:layout_width="@dimen/my_logger_circle_diameter"
-            android:layout_height="@dimen/my_logger_circle_diameter"
-            android:layout_marginStart="@dimen/q1_maragin"
-            android:layout_marginEnd="@dimen/q1_maragin"
-            android:background="@drawable/toggle_day_bg_selector"
-            android:text="@string/oral"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:textOff="News Feeds"
-            android:textOn="News Feeds"
-            android:textSize="@dimen/btn_text_size" />
+    <Button
+        android:id="@+id/Podcasts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Podcasts" />
 
-        <ToggleButton
-            android:id="@+id/by_myself_btn"
-            android:layout_width="@dimen/my_logger_circle_diameter"
-            android:layout_height="@dimen/my_logger_circle_diameter"
-            android:layout_marginStart="@dimen/q1_maragin"
-            android:layout_marginEnd="@dimen/q1_maragin"
-            android:background="@drawable/toggle_day_bg_selector"
-            android:text="@string/self"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:textOff="Support Groups"
-            android:textOn="Support Groups"
-            android:textSize="@dimen/btn_text_size" />
-
-        <ToggleButton
-            android:id="@+id/no_btn"
-            android:layout_width="@dimen/my_logger_circle_diameter"
-            android:layout_height="@dimen/my_logger_circle_diameter"
-            android:layout_marginStart="@dimen/q1_maragin"
-            android:layout_marginEnd="@dimen/q1_maragin"
-            android:background="@drawable/toggle_day_bg_selector"
-            android:text="@string/nah"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:textOff="Podcasts"
-            android:textOn="Podcasts"
-            android:textSize="@dimen/btn_text_size" />
-
-    </TableRow>
+    <Button
+        android:id="@+id/SupportGroups"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Support Groups" />
 
     <TextView
         android:id="@+id/logger_q1_occurence5"
