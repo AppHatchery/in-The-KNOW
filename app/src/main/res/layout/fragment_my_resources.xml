@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MyResources">
+
+    <TextView
+        android:id="@+id/logger_q1_occurence2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:padding="@dimen/small_text_padding"
+        android:text="Multimedia Resources"
+        android:textColor="@color/black"
+        android:textSize="@dimen/question_text_size" />
+
+    <Button
+        android:id="@+id/Videos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/itk_blue"
+        android:text="Videos" />
+
+    <Button
+        android:id="@+id/CurrentEvents"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/itk_blue"
+        android:text="Current Events" />
+
+    <Button
+        android:id="@+id/Newsfeeds"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/itk_blue"
+        android:text="Newsfeeds" />
+
+    <Button
+        android:id="@+id/Podcasts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/itk_blue"
+        android:text="Podcasts" />
+
+    <Button
+        android:id="@+id/SupportGroups"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/itk_blue"
+        android:text="Support Groups" />
+
+    <TextView
+        android:id="@+id/logger_q1_occurence5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:padding="@dimen/small_text_padding"
+        android:text="Resource Spotlight"
+        android:textColor="@color/black"
+        android:textSize="@dimen/question_text_size" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/itk_blue"
+        android:text="Recommendations" />
+
+    <TextView
+        android:id="@+id/logger_q1_occurence6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:padding="@dimen/small_text_padding"
+        android:text="MY RECENT ADD"
+        android:textColor="@color/black"
+        android:textSize="@dimen/question_text_size" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/itk_blue"
+        android:text="Sexual women policies" />
+
+</LinearLayout>

@@ -1,26 +1,51 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
     <string name="app_name">InTheKnow</string>
     <string name="my_logger">My Logger</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="logger_q1">Did you get some?</string>
-    <string name="with_condom">with condom</string>
+    <string name="with_condom">condom</string>
     <string name="no_condom">no condom</string>
-    <string name="oral">Oral</string>
-    <string name="self">By Myself</string>
-    <string name="nah">Nah</string>
-    <string name="anal">Anal</string>
+    <string name="oral">oral</string>
+    <string name="self">by myself</string>
+    <string name="nah">nah</string>
+    <string name="anal">anal</string>
     <string name="my_tests">My Tests</string>
-    <string-array name="sample_questions_arr">
-        <string>How to practice safe sex?</string>
-        <string>How is HIV transmitted?</string>
-        <string>How do I know if it's too early to have sex?</string>
-        <string>How can I spruce up my sex life?</string>
-    </string-array>
-    <string-array name="num_people_arr">
-        <string>There are currently 12 people participating!</string>
-        <string>There are currently 6 people participating!</string>
-        <string>There are currently 19 people participating!</string>
-        <string>There are currently 30 people participating!</string>
-    </string-array>
+    <string name="my_resources">My Resources</string>
+    <string name="how_do_you_feel">How do you feel?</string>
+    <string name="great">great</string>
+    <string name="depressed">depressed</string>
+    <string name="nervous">nervous</string>
+    <string name="anxious">anxious</string>
+    <string name="tired">tired</string>
+    <string name="motivated">motivated</string>
+    <string name="angry">angry</string>
+    <string name="eh">eh</string>
+    <string name="any_of_these_symptoms">Any of these symptoms?</string>
+    <string name="nausea">nausea</string>
+    <string name="night_sweats">night sweats</string>
+    <string name="mouth_sores">mouth sores</string>
+    <string name="vomiting">vomiting</string>
+    <string name="muscle_aches">muscle aches</string>
+    <string name="joint_pain">joint pain</string>
+    <string name="infection">infection</string>
+    <string name="sore_throat">sore throat</string>
+    <string name="anything_else">Anything else?</string>
+    <string name="i_felt">I felt...</string>
+    <string name="submit">Submit</string>
+    <string name="see_history">See history</string>
+    <string name="add_new_event">Add new event</string>
+    <string name="get_tested"><br> </br> <br>Getting tested for HIV and other sexually
+        transmitted diseases is quick and easy!</br> <br> </br> <br> </br>
+        You should get tested if:
+        <ul> <li> You've recently had unprotected sex </li>
+            <li> You've shared a needle with someone(for drugs, insulin, etc.) </li>
+            <li> You think you might be at risk </li>
+        </ul> </string>
+    <string name="title_myTest">Get Tested</string>
+    <string name="send_a_free_self_testing_kit">Send a free self-testing kit!</string>
+    <string name="locations_near_me">Locations near me</string>
+    <string name="textview">TextView</string>
+    <string name="information">Learn More about how HIV testing works,
+        why it is important, and what to do after getting your results. </string>
 </resources>
