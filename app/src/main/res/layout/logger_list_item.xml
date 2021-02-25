@@ -20,19 +20,20 @@
         android:padding="5dp">
 
         <TextView
-            android:id="@+id/timestamp"
+            android:id="@+id/event_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
-            android:text="Event Timestamp"
-            android:textSize="16dp" />
+            android:text="Event Date"
+            android:textSize="16dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/event_summary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
-            android:layout_below="@id/timestamp"
+            android:layout_below="@id/event_date"
             android:text="Event"
             android:textSize="16dp" />
 

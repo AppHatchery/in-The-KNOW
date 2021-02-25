@@ -1,3 +1,5 @@
 package com.example.intheknow
 
-data class Event (val sexCategories: Set<Int>, val feelings: Set<Int>, val symptoms: Set<Int>, val log: String)
+import java.util.*
+
+data class Event (val date : GregorianCalendar, val sexCategories: Set<Int>, val feelings: Set<Int>, val symptoms: Set<Int>, val log: String)

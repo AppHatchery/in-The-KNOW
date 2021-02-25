@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_item_list"
+        android:id="@+id/recycle_view_events"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/logger_list_item"/>
