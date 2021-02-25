@@ -1,12 +1,14 @@
 package com.example.intheknow
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ToggleButton
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 
 /**
@@ -15,12 +17,14 @@ import androidx.navigation.fragment.findNavController
  * create an instance of this fragment.
  */
 class MyLogger : Fragment() {
-
+    private lateinit var viewModel: MyLoggerViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        Log.i("MyLoggerFragment", "Called ViewModelProvider.get")
+        viewModel = ViewModelProvider(this).get(MyLoggerViewModel::class.java)
         return inflater.inflate(R.layout.fragment_my_logger, container, false)
     }
 
@@ -33,6 +37,9 @@ class MyLogger : Fragment() {
         submit_btn.setOnClickListener {
             findNavController().navigate(R.id.action_myLogger_to_myLogEntries)
         }
+
+        //val oral_btn : ToggleButton = view.findViewById(R.id.oral_btn)
+        //oral_btn.setChecked(true)
     }
 
 }

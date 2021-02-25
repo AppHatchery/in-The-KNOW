@@ -89,6 +89,7 @@
             android:layout_marginStart="@dimen/q1_maragin"
             android:layout_marginEnd="@dimen/q1_maragin"
             android:background="@drawable/toggle_day_bg_selector"
+            android:checked="false"
             android:text="@string/self"
             android:textAlignment="center"
             android:textAllCaps="false"
