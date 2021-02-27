@@ -20,7 +20,7 @@ class ChatEntryAdapter(private val chatList : List<ChatEntry>) : RecyclerView.Ad
     override fun onBindViewHolder(holder: ChatEntryViewHolder, position: Int) {
         val currentItem = chatList[position]
         val question = currentItem.question
-        val ppl = currentItem.activePeople.toString()
+        val ppl = "Active People: " + currentItem.activePeople.toString()
         holder.questionsTV.text = question
         holder.numPplTV.text = ppl
 
