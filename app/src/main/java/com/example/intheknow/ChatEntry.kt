@@ -1,3 +1,21 @@
 package com.example.intheknow
 
-data class ChatEntry (val question: String, val activePeople: Int)
+public class ChatEntry (val question: String, val activePeople: Int) {
+
+
+    public fun getTheQuestion(): String{
+        return question
+    }
+
+    public fun getTheActive(): Int{
+        return activePeople
+    }
+
+
+
+
+
+
+
+
+}
