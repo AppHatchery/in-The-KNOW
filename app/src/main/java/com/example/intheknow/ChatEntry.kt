@@ -19,6 +19,8 @@ class myCircleIO {
         private const val myCirclePath = "Documents/myCircle.txt"
         private val myCircleFile: File = File(Environment.getExternalStorageDirectory(), myCirclePath)
         var chatData: MutableList<ChatEntry> = mutableListOf<ChatEntry>()
+        val adapter = ChatEntryAdapter(chatData, MyCircle())
+        var chatEntrySelector : Int = 0
 
         fun putDefaultValues() {
             val sampleQuestionList = mutableListOf<ChatEntry>()
@@ -63,7 +65,7 @@ class myCircleIO {
             val bufferedReader: BufferedReader = BufferedReader(inputStreamReader)
             val stringBuilder: StringBuilder = StringBuilder()
             var text: String? = null
-            chatData = mutableListOf<ChatEntry>()
+            //chatData = mutableListOf<ChatEntry>()
             while ({ text = bufferedReader.readLine(); text }() != null) {
                 stringBuilder.append(text)
             }
