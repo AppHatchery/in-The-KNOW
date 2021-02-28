@@ -33,7 +33,7 @@ class MyCircle : Fragment(), ChatEntryAdapter.OnChatEntryClickListener {
         super.onActivityCreated(savedInstanceState)
 
         if (load) {
-            myCircleIO.putDefaultValues()
+            //myCircleIO.putDefaultValues()
             myCircleIO.updateLocalData()
 
             myCircleIO.adapter.notifyItemRangeInserted(0, 4)

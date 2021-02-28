@@ -18,8 +18,7 @@ import kotlinx.android.synthetic.main.fragment_my_log_entries.*
  * create an instance of this fragment.
  */
 class CommunicationScreen : Fragment() {
-    private var messages : MutableList<Message> = mutableListOf<Message>()
-    private val adapter : MessageAdapter = MessageAdapter(messages)
+    private val adapter : MessageAdapter = MessageAdapter(myCircleIO.chatData[myCircleIO.chatEntrySelector].chat)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,17 +42,14 @@ class CommunicationScreen : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val message_list : MutableList<Message> = myCircleIO.chatData[myCircleIO.chatEntrySelector].chat
-        for (m in message_list) {
-            messages.add(m)
-            adapter.notifyItemInserted(messages.size - 1)
-        }
+        adapter.notifyItemRangeInserted(0, myCircleIO.chatData[myCircleIO.chatEntrySelector].chat.size)
 
         val send_messg_btn : Button = view.findViewById(R.id.send_msg_btn)
         send_messg_btn.setOnClickListener {
             val m = view.findViewById<EditText>(R.id.editText_MSG).text.toString()
-            messages.add(Message("UserX", m))
-            adapter.notifyItemInserted(messages.size - 1)
+            myCircleIO.chatData[myCircleIO.chatEntrySelector].chat.add(Message("UserX", m))
+            adapter.notifyItemInserted(myCircleIO.chatData[myCircleIO.chatEntrySelector].chat.size - 1)
+            myCircleIO.updateFile()
         }
 
     }
