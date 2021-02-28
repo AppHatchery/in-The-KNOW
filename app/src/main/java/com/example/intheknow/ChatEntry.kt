@@ -2,14 +2,12 @@ package com.example.intheknow
 import android.os.Environment
 import java.io.*
 
-public class ChatEntry (val question: String, var activePeople: Int, val chat: MutableList<Message>) {
-
-
-    public fun getTheQuestion(): String{
+data class ChatEntry (val question: String, var activePeople: Int, val chat: MutableList<Message>) {
+    public fun getTheQuestion(): String {
         return question
     }
 
-    public fun getTheActive(): Int{
+    public fun getTheActive(): Int {
         return activePeople
     }
 }
@@ -18,9 +16,26 @@ data class Message (val name: String, val message: String)
 
 class myCircleIO {
     companion object {
-        private const val myCirclePath = "myCircle.txt"
+        private const val myCirclePath = "Documents/myCircle.txt"
         private val myCircleFile: File = File(Environment.getExternalStorageDirectory(), myCirclePath)
         var chatData: MutableList<ChatEntry> = mutableListOf<ChatEntry>()
+
+        fun putDefaultValues() {
+            val sampleQuestionList = mutableListOf<ChatEntry>()
+            sampleQuestionList.addAll(listOf(
+                    ChatEntry("How to practice safe sex?", 12, mutableListOf<Message>()),
+                    ChatEntry("How is HIV transmitted?", 6, mutableListOf<Message>()),
+                    ChatEntry("How do I know if it's too early to have sex?", 19, mutableListOf<Message>()),
+                    ChatEntry("How can I spruce up my sex life?", 30, mutableListOf<Message>())
+            ))
+            try {
+                val fileOutPutStream = FileOutputStream(myCircleFile)
+                fileOutPutStream.write(sampleQuestionList.toString().toByteArray())
+                fileOutPutStream.close()
+            } catch(e : IOException) {
+                e.printStackTrace()
+            }
+        }
 
         fun updateFile() {
             try {
@@ -33,6 +48,16 @@ class myCircleIO {
         }
 
         fun updateLocalData() {
+            if (!myCircleFile.exists()) {
+                try {
+                    val fileOutPutStream = FileOutputStream(myCircleFile)
+                    fileOutPutStream.write("[]".toString().toByteArray())
+                    fileOutPutStream.close()
+                } catch(e : IOException) {
+                    e.printStackTrace()
+                }
+                return;
+            }
             var fileInputStream = FileInputStream(myCircleFile)
             var inputStreamReader: InputStreamReader = InputStreamReader(fileInputStream)
             val bufferedReader: BufferedReader = BufferedReader(inputStreamReader)

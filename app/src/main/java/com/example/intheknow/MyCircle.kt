@@ -35,16 +35,11 @@ class MyCircle : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        val sampleQuestionList = arrayListOf<ChatEntry>()
-        sampleQuestionList.addAll(listOf(
-                ChatEntry("How to practice safe sex?", 12),
-                ChatEntry("How is HIV transmitted?", 6),
-                ChatEntry("How do I know if it's too early to have sex?", 19),
-                ChatEntry("How can I spruce up my sex life?", 30)
-        ))
+
+        myCircleIO.updateLocalData()
 
         my_circle_roomsView.layoutManager = LinearLayoutManager(context)
-        my_circle_roomsView.adapter = ChatEntryAdapter(sampleQuestionList)
+        my_circle_roomsView.adapter = ChatEntryAdapter(myCircleIO.chatData)
         my_circle_roomsView.setHasFixedSize(true)
 
 
