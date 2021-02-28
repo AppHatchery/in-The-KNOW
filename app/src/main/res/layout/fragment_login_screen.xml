@@ -43,8 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Username" />
+            android:inputType="textPersonName" />
 
         <TextView
             android:id="@+id/LoginTitle4"
@@ -60,8 +59,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Password" />
+            android:inputType="textPersonName|textWebPassword" />
 
         <Button
             android:id="@+id/signinbutton"
