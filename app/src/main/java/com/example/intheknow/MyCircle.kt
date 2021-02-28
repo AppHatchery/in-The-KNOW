@@ -2,18 +2,15 @@ package com.example.intheknow
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_my_circle.*
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 
 /**
@@ -21,8 +18,8 @@ private const val ARG_PARAM2 = "param2"
  * Use the [myCircle.newInstance] factory method to
  * create an instance of this fragment.
  */
-class MyCircle : Fragment() {
-
+class MyCircle : Fragment(), ChatEntryAdapter.OnChatEntryClickListener {
+    var load : Boolean = true
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,17 +32,36 @@ class MyCircle : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+        if (load) {
+            myCircleIO.putDefaultValues()
+            myCircleIO.updateLocalData()
 
-        myCircleIO.updateLocalData()
+            myCircleIO.adapter.notifyItemRangeInserted(0, 4)
+        }
+
 
         my_circle_roomsView.layoutManager = LinearLayoutManager(context)
-        my_circle_roomsView.adapter = ChatEntryAdapter(myCircleIO.chatData)
+        my_circle_roomsView.adapter = myCircleIO.adapter
         my_circle_roomsView.setHasFixedSize(true)
 
+        if (load) {
+            populateRandomChatData()
+            Log.d("size of chat data", " " + myCircleIO.chatData.size)
+            myCircleIO.adapter.notifyDataSetChanged()
+        }
 
+        load = false
     }
 
+    private fun populateRandomChatData() {
+        var exampleMessages : MutableList<Message> = mutableListOf<Message>()
+        exampleMessages.add(Message("User 1", "Hi there, I am interested in safe sex practices. Any tips?"))
+        exampleMessages.add(Message("User 2", "Same! What is your phone number?"))
+        myCircleIO.chatData.add(ChatEntry("How to practice safe sex?", 12, exampleMessages)
+        )
+        myCircleIO.adapter.notifyItemInserted(4)
 
+    }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -69,7 +85,14 @@ class MyCircle : Fragment() {
        // }
     }
 
-   /** private class MyCustomAdapter(c: MyCircle, lis: ArrayList<ChatEntry>): ArrayAdapter<ChatEntry>() {
+    override fun onChatEntryClick(position: Int, itemView: View) {
+        myCircleIO.chatEntrySelector = position
+        itemView.findNavController().navigate(R.id.action_myCircle_to_communicationScreen)
+    }
+
+
+
+    /** private class MyCustomAdapter(c: MyCircle, lis: ArrayList<ChatEntry>): ArrayAdapter<ChatEntry>() {
         val cont: MyCircle = c
         val liss: ArrayList<ChatEntry> = lis
 
