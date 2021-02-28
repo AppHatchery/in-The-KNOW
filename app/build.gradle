@@ -84,4 +84,5 @@ dependencies {
 
     // Annotation processor
     implementation "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+    implementation "android.arch.lifecycle:extensions:1.1.1"
 }

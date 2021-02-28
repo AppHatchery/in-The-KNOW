@@ -9,10 +9,11 @@
         android:id="@+id/recycle_view_events"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/logger_list_item"/>
+        tools:listitem="@layout/logger_list_item"
+        android:layout_above="@id/fab_add_event"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/fab_add_event"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"

@@ -30,9 +30,9 @@ class EventAdapter(private val eventList : List<Event>) : RecyclerView.Adapter<E
         var eventsStr = ""
         for (event in eventsSet) {
             var eStr = when (event) {
-                2131362142 -> "condom"
-                2131361956 -> "no condom"
-                2131362150 -> "oral"
+                R.id.condom_btn -> "condom"
+                R.id.no_condom_btn -> "no condom"
+                R.id.oral_btn -> "oral"
                 else -> "by myself"
             }
             eventsStr += eStr + ", "

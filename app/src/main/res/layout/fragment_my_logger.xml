@@ -396,7 +396,7 @@
         android:textSize="@dimen/question_text_size"/>
 
     <EditText
-        android:id="@+id/editTextTextMultiLine"
+        android:id="@+id/new_log_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
