@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollViewEdit"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context=".MyLoggerEdit">
+
+
+        <Button
+            android:id="@+id/skip_to_log_btn_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_padding"
+            android:backgroundTint="@color/itk_blue"
+            android:text="@string/see_history" />
+
+        <TextView
+            android:id="@+id/logger_q1_occurence_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:padding="@dimen/small_text_padding"
+            android:text="@string/logger_q1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/question_text_size" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="84dp"
+            android:gravity="center_vertical">
+
+            <ToggleButton
+                android:id="@+id/no_condom_btn_edit"
+                android:layout_width="@dimen/my_logger_circle_diameter"
+                android:layout_height="@dimen/my_logger_circle_diameter"
+                android:layout_marginStart="@dimen/q1_maragin"
+                android:layout_marginEnd="@dimen/q1_maragin"
+                android:background="@drawable/toggle_day_bg_selector"
+                android:text="@string/no_condom"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textOff="@string/no_condom"
+                android:textOn="@string/no_condom"
+                android:textSize="@dimen/btn_text_size" />
+
+            <ToggleButton
+                android:id="@+id/condom_btn_edit"
+                android:layout_width="@dimen/my_logger_circle_diameter"
+                android:layout_height="@dimen/my_logger_circle_diameter"
+                android:layout_marginStart="@dimen/q1_maragin"
+                android:layout_marginEnd="@dimen/q1_maragin"
+                android:background="@drawable/toggle_day_bg_selector"
+                android:buttonTint="@color/itk_blue"
+                android:text="@string/with_condom"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textOff="@string/with_condom"
+                android:textOn="@string/with_condom"
+                android:textSize="@dimen/btn_text_size" />
+
+            <ToggleButton
+                android:id="@+id/oral_btn_edit"
+                android:layout_width="@dimen/my_logger_circle_diameter"
+                android:layout_height="@dimen/my_logger_circle_diameter"
+                android:layout_marginStart="@dimen/q1_maragin"
+                android:layout_marginEnd="@dimen/q1_maragin"
+                android:background="@drawable/toggle_day_bg_selector"
+                android:text="@string/oral"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textOff="@string/oral"
+                android:textOn="@string/oral"
+                android:textSize="@dimen/btn_text_size" />
+
+            <ToggleButton
+                android:id="@+id/by_myself_btn_edit"
+                android:layout_width="@dimen/my_logger_circle_diameter"
+                android:layout_height="@dimen/my_logger_circle_diameter"
+                android:layout_marginStart="@dimen/q1_maragin"
+                android:layout_marginEnd="@dimen/q1_maragin"
+                android:background="@drawable/toggle_day_bg_selector"
+                android:checked="false"
+                android:text="@string/self"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textOff="@string/self"
+                android:textOn="@string/self"
+                android:textSize="@dimen/btn_text_size" />
+            <!--
+            <ToggleButton
+                android:id="@+id/no_btn"
+                android:layout_width="@dimen/my_logger_circle_diameter"
+                android:layout_height="@dimen/my_logger_circle_diameter"
+                android:layout_marginStart="@dimen/q1_maragin"
+                android:layout_marginEnd="@dimen/q1_maragin"
+                android:background="@drawable/toggle_day_bg_selector"
+                android:text="@string/nah"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textOff="@string/nah"
+                android:textOn="@string/nah"
+                android:textSize="@dimen/btn_text_size" />
+            -->
+        </TableRow>
+
+        <TextView
+            android:id="@+id/logger_q2_feeling_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:padding="@dimen/small_text_padding"
+            android:text="@string/how_do_you_feel"
+            android:textColor="@color/black"
+            android:textSize="@dimen/question_text_size" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="88dp"
+            android:gravity="center_vertical">
+
+            <ToggleButton
+                android:id="@+id/great_btn_edit"
+                android:layout_width="@dimen/my_logger_circle_diameter"
+                android:layout_height="@dimen/my_logger_circle_diameter"
+                android:layout_marginStart="@dimen/q2_margin_1"
+                android:layout_marginEnd="@dimen/q2_margin_1"
+                android:background="@drawable/toggle_day_bg_selector"
+                android:text="@string/great"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textOff="@string/great"
+                android:textOn="@string/great"
+                android:textSize="@dimen/btn_text_size" />
+
+            <ToggleButton
+                android:id="@+id/depressed_btn_edit"
+                android:layout_width="@dimen/my_logger_circle_diameter"
+                android:layout_height="@dimen/my_logger_circle_diameter"
+                android:layout_marginStart="@dimen/q2_margin_1"
+                android:layout_marginEnd="@dimen/q2_margin_1"
+                android:background="@drawable/toggle_day_bg_selector"
+                android:text="@string/depressed"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textOff="@string/depressed"
+                android:textOn="@string/depressed"
+                android:textSize="@dimen/btn_text_size" />
+
+            <ToggleButton
+                android:id="@+id/nervous_btn_edit"
+                android:layout_width="@dimen/my_logger_circle_diameter"
+                android:layout_height="@dimen/my_logger_circle_diameter"
+                android:layout_marginStart="@dimen/q2_margin_1"
+                android:layout_marginEnd="@dimen/q2_margin_1"
+                android:background="@drawable/toggle_day_bg_selector"
+                android:text="@string/nervous"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textOff="@string/nervous"
+                android:textOn="@string/nervous"
+                android:textSize="@dimen/btn_text_size" />
+
+            <ToggleButton
+                android:id="@+id/anxious_btn_edit"
+                android:layout_width="@dimen/my_logger_circle_diameter"
+                android:layout_height="@dimen/my_logger_circle_diameter"
+                android:layout_marginStart="@dimen/q2_margin_1"
+                android:layout_marginEnd="@dimen/q2_margin_1"
+                android:background="@drawable/toggle_day_bg_selector"
+                android:text="@string/anxious"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textOff="@string/anxious"
+                android:textOn="@string/anxious"
+                android:textSize="@dimen/btn_text_size" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="84dp"
+            android:gravity="center_vertical">
+
+            <ToggleButton
+                android:id="@+id/tired_btn_edit"
+                android:layout_width="@dimen/my_logger_circle_diameter"
+                android:layout_height="@dimen/my_logger_circle_diameter"
+                android:layout_marginStart="@dimen/q2_margin_1"
+                android:layout_marginEnd="@dimen/q2_margin_1"
+                android:background="@drawable/toggle_day_bg_selector"
+                android:text="@string/tired"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textOff="@string/tired"
+                android:textOn="@string/tired"
+                android:textSize="@dimen/btn_text_size" />
+
+            <ToggleButton
+                android:id="@+id/motivated_btn_edit"
+                android:layout_width="@dimen/my_logger_circle_diameter"
+                android:layout_height="@dimen/my_logger_circle_diameter"
+                android:layout_marginStart="@dimen/q2_margin_1"
+                android:layout_marginEnd="@dimen/q2_margin_1"
+                android:background="@drawable/toggle_day_bg_selector"
+                android:text="@string/motivated"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textOff="@string/motivated"
+                android:textOn="@string/motivated"
+                android:textSize="@dimen/btn_text_size" />
+
+            <ToggleButton
+                android:id="@+id/angry_btn_edit"
+                android:layout_width="@dimen/my_logger_circle_diameter"
+                android:layout_height="@dimen/my_logger_circle_diameter"
+                android:layout_marginStart="@dimen/q2_margin_1"
+                android:layout_marginEnd="@dimen/q2_margin_1"
+                android:background="@drawable/toggle_day_bg_selector"
+                android:text="@string/angry"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textOff="@string/angry"
+                android:textOn="@string/angry"
+                android:textSize="@dimen/btn_text_size" />
+
+            <ToggleButton
+                android:id="@+id/eh_btn_edit"
+                android:layout_width="@dimen/my_logger_circle_diameter"
+                android:layout_height="@dimen/my_logger_circle_diameter"
+                android:layout_marginStart="@dimen/q2_margin_1"
+                android:layout_marginEnd="@dimen/q2_margin_1"
+                android:background="@drawable/toggle_day_bg_selector"
+                android:text="@string/eh"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textOff="@string/eh"
+                android:textOn="@string/eh"
+                android:textSize="@dimen/btn_text_size" />
+
+        </TableRow>
+
+        <TextView
+            android:id="@+id/logger_q3_symptoms_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:padding="@dimen/small_text_padding"
+            android:text="@string/any_of_these_symptoms"
+            android:textColor="@color/black"
+            android:textSize="@dimen/question_text_size"/>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="94dp"
+            android:gravity="fill_vertical">
+
+            <ToggleButton
+                android:id="@+id/nausea_btn_edit"
+                android:layout_width="@dimen/my_logger_circle_diameter"
+                android:layout_height="@dimen/my_logger_circle_diameter"
+                android:layout_marginStart="@dimen/q2_margin_1"
+                android:layout_marginEnd="@dimen/q2_margin_1"
+                android:background="@drawable/toggle_day_bg_selector"
+                android:text="@string/nausea"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textOff="@string/nausea"
+                android:textOn="@string/nausea"
+                android:textSize="@dimen/btn_text_size" />
+
+            <ToggleButton
+                android:id="@+id/nightsweats_btn_edit"
+                android:layout_width="@dimen/my_logger_circle_diameter"
+                android:layout_height="@dimen/my_logger_circle_diameter"
+                android:layout_gravity="top"
+                android:layout_marginStart="@dimen/q2_margin_1"
+                android:layout_marginEnd="@dimen/q2_margin_1"
+                android:background="@drawable/toggle_day_bg_selector"
+                android:text="@string/night_sweats"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textOff="@string/night_sweats"
+                android:textOn="@string/night_sweats"
+                android:textSize="@dimen/btn_text_size" />
+
+            <ToggleButton
+                android:id="@+id/mouthsores_btn_edit"
+                android:layout_width="@dimen/my_logger_circle_diameter"
+                android:layout_height="@dimen/my_logger_circle_diameter"
+                android:layout_marginStart="@dimen/q2_margin_1"
+                android:layout_marginEnd="@dimen/q2_margin_1"
+                android:background="@drawable/toggle_day_bg_selector"
+                android:text="@string/mouth_sores"
+                android:textAllCaps="false"
+                android:textOff="@string/mouth_sores"
+                android:textOn="@string/mouth_sores"
+                android:textSize="@dimen/btn_text_size" />
+
+            <ToggleButton
+                android:id="@+id/vomiting_btn_edit"
+                android:layout_width="@dimen/my_logger_circle_diameter"
+                android:layout_height="@dimen/my_logger_circle_diameter"
+                android:layout_marginStart="@dimen/q2_margin_1"
+                android:layout_marginEnd="@dimen/q2_margin_1"
+                android:background="@drawable/toggle_day_bg_selector"
+                android:text="@string/vomiting"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textOff="@string/vomiting"
+                android:textOn="@string/vomiting"
+                android:textSize="@dimen/btn_text_size" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="94dp"
+            android:gravity="fill_vertical">
+
+            <ToggleButton
+                android:id="@+id/muscle_aches_btn_edit"
+                android:layout_width="@dimen/my_logger_circle_diameter"
+                android:layout_height="@dimen/my_logger_circle_diameter"
+                android:layout_marginStart="@dimen/q2_margin_1"
+                android:layout_marginEnd="@dimen/q2_margin_1"
+                android:background="@drawable/toggle_day_bg_selector"
+                android:text="@string/muscle_aches"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textOff="@string/muscle_aches"
+                android:textOn="@string/muscle_aches"
+                android:textSize="@dimen/btn_text_size" />
+
+            <ToggleButton
+                android:id="@+id/joint_pain_btn_edit"
+                android:layout_width="@dimen/my_logger_circle_diameter"
+                android:layout_height="@dimen/my_logger_circle_diameter"
+                android:layout_gravity="top"
+                android:layout_marginStart="@dimen/q2_margin_1"
+                android:layout_marginEnd="@dimen/q2_margin_1"
+                android:background="@drawable/toggle_day_bg_selector"
+                android:text="@string/joint_pain"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textOff="@string/joint_pain"
+                android:textOn="@string/joint_pain"
+                android:textSize="@dimen/btn_text_size" />
+
+            <ToggleButton
+                android:id="@+id/infection_btn_edit"
+                android:layout_width="@dimen/my_logger_circle_diameter"
+                android:layout_height="@dimen/my_logger_circle_diameter"
+                android:layout_marginStart="@dimen/q2_margin_1"
+                android:layout_marginEnd="@dimen/q2_margin_1"
+                android:background="@drawable/toggle_day_bg_selector"
+                android:text="@string/infection"
+                android:textAllCaps="false"
+                android:textOff="@string/infection"
+                android:textOn="@string/infection"
+                android:textSize="@dimen/btn_text_size" />
+
+            <ToggleButton
+                android:id="@+id/sore_throat_edit"
+                android:layout_width="@dimen/my_logger_circle_diameter"
+                android:layout_height="@dimen/my_logger_circle_diameter"
+                android:layout_marginStart="@dimen/q2_margin_1"
+                android:layout_marginEnd="@dimen/q2_margin_1"
+                android:background="@drawable/toggle_day_bg_selector"
+                android:text="@string/sore_throat"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textOff="@string/sore_throat"
+                android:textOn="@string/sore_throat"
+                android:textSize="@dimen/btn_text_size" />
+
+        </TableRow>
+
+        <TextView
+            android:id="@+id/logger_q4_text_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:padding="@dimen/small_text_padding"
+            android:text="@string/anything_else"
+            android:textColor="@color/black"
+            android:textSize="@dimen/question_text_size"/>
+
+        <EditText
+            android:id="@+id/new_log_edit_text_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="@string/i_felt"
+            android:importantForAutofill="no"
+            android:inputType="textMultiLine" />
+
+        <Button
+            android:id="@+id/edit_submit_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/itk_blue"
+            android:text="@string/submit"
+            android:textAlignment="center" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
+
+    </LinearLayout>
+
+</ScrollView>

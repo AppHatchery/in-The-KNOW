@@ -19,7 +19,7 @@ import kotlin.collections.ArrayList
 import kotlin.collections.HashSet
 
 
-class MyLogEntries : Fragment(), EventAdapter.OnItemDeleteListener {
+class MyLogEntries : Fragment(), EventAdapter.OnItemDeleteListener, EventAdapter.OnItemEditListener {
     private lateinit var viewModel: MyLoggerViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -148,5 +148,10 @@ class MyLogEntries : Fragment(), EventAdapter.OnItemDeleteListener {
 
     override fun onItemDelete(position: Int) {
         EventListModifier.deleteEvent(position)
+    }
+
+    override fun onItemEdit(position: Int, itemView: View) {
+        EventListModifier.itemSelector = position
+        itemView.findNavController().navigate(R.id.action_myLogEntries_to_myLoggerEdit)
     }
 }

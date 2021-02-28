@@ -9,7 +9,8 @@ data class Event (val date : GregorianCalendar, val sexCategories: Set<Int>, val
 class EventListModifier {
     companion object {
         var eventList : ArrayList<Event> = ArrayList<Event>()
-        val adapter = EventAdapter(eventList, MyLogEntries())
+        val adapter = EventAdapter(eventList, MyLogEntries(), MyLogEntries())
+        var itemSelector : Int = 0
 
         fun addEvent(e : Event) {
             Log.d("Starting add", "ADD")
@@ -24,6 +25,16 @@ class EventListModifier {
             eventList.removeAt(position)
             adapter.notifyItemRemoved(position)
             Log.d("After Delete Size", "" + eventList.size)
+        }
+
+        fun editEvent(e : Event) {
+            Log.d("Starting edit", "EDIT")
+            Log.d("Edit index: ", " " + itemSelector)
+            if (itemSelector >= 0 && itemSelector < eventList.size){
+                eventList[itemSelector] = e
+                adapter.notifyItemChanged(itemSelector)
+            }
+            Log.d("After Edit", "EDIT COMPLETED")
         }
     }
 }

@@ -72,6 +72,9 @@
         <action
             android:id="@+id/action_myLogEntries_to_myLogger"
             app:destination="@id/myLogger" />
+        <action
+            android:id="@+id/action_myLogEntries_to_myLoggerEdit"
+            app:destination="@id/myLoggerEdit" />
     </fragment>
     <fragment
         android:id="@+id/myCircle"
@@ -142,5 +145,14 @@
         <action
             android:id="@+id/action_loginScreen_to_startDestination"
             app:destination="@id/startDestination" />
+    </fragment>
+    <fragment
+        android:id="@+id/myLoggerEdit"
+        android:name="com.example.intheknow.MyLoggerEdit"
+        android:label="Edit Log"
+        tools:layout="@layout/fragment_my_logger_edit" >
+        <action
+            android:id="@+id/action_myLoggerEdit_to_myLogEntries"
+            app:destination="@id/myLogEntries" />
     </fragment>
 </navigation>

@@ -4,6 +4,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.navigation.fragment.NavHostFragment.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.logger_list_item.view.*
 import java.time.Month
@@ -12,7 +14,8 @@ import kotlin.collections.HashMap
 
 class EventAdapter(
     private val eventList : List<Event>,
-    private val listener : OnItemDeleteListener
+    private val deleteListener : OnItemDeleteListener,
+    private val editListener : OnItemEditListener
 ) : RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventViewHolder {
@@ -55,12 +58,20 @@ class EventAdapter(
 
         init {
             itemView.btnDelete.setOnClickListener(this)
+            itemView.btnEdit.setOnClickListener(this)
         }
 
         override fun onClick(v: View?) {
             val position : Int = adapterPosition
             if (position != RecyclerView.NO_POSITION) {
-                listener.onItemDelete(position)
+                if (v != null) {
+                    if (v.id == R.id.btnDelete) {
+                        deleteListener.onItemDelete(position)
+                    }
+                    else {
+                        editListener.onItemEdit(position, itemView)
+                    }
+                }
             }
         }
 
@@ -69,5 +80,7 @@ class EventAdapter(
     interface OnItemDeleteListener {
         fun onItemDelete(position: Int)
     }
-
+    interface OnItemEditListener {
+        fun onItemEdit(position: Int, itemView : View)
+    }
 }
