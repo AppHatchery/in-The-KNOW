@@ -9,7 +9,7 @@ data class Event (val date : GregorianCalendar, val sexCategories: Set<Int>, val
 class EventListModifier {
     companion object {
         var eventList : ArrayList<Event> = ArrayList<Event>()
-        val adapter = EventAdapter(eventList)
+        val adapter = EventAdapter(eventList, MyLogEntries())
 
         fun addEvent(e : Event) {
             Log.d("Starting add", "ADD")
@@ -17,6 +17,13 @@ class EventListModifier {
             eventList.add(e)
             adapter.notifyItemInserted(pos)
             Log.d("After Add Size", "" + eventList.size)
+        }
+
+        fun deleteEvent(position: Int) {
+            Log.d("Starting delete", "DELETE")
+            eventList.removeAt(position)
+            adapter.notifyItemRemoved(position)
+            Log.d("After Delete Size", "" + eventList.size)
         }
     }
 }

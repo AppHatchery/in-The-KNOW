@@ -5,11 +5,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.logger_list_item.view.*
 import java.time.Month
 import java.util.*
 import kotlin.collections.HashMap
 
-class EventAdapter(private val eventList : List<Event>) : RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
+class EventAdapter(
+    private val eventList : List<Event>,
+    private val listener : OnItemDeleteListener
+) : RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.logger_list_item,
@@ -44,10 +48,26 @@ class EventAdapter(private val eventList : List<Event>) : RecyclerView.Adapter<E
 
     override fun getItemCount() = eventList.size
 
-    class EventViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
+    inner class EventViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView),
+    View.OnClickListener {
         val dateLine : TextView = itemView.findViewById(R.id.event_date)
         val summaryLine : TextView = itemView.findViewById(R.id.event_summary)
 
+        init {
+            itemView.btnDelete.setOnClickListener(this)
+        }
+
+        override fun onClick(v: View?) {
+            val position : Int = adapterPosition
+            if (position != RecyclerView.NO_POSITION) {
+                listener.onItemDelete(position)
+            }
+        }
+
+    }
+
+    interface OnItemDeleteListener {
+        fun onItemDelete(position: Int)
     }
 
 }

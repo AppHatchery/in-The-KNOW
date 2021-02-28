@@ -19,7 +19,7 @@ import kotlin.collections.ArrayList
 import kotlin.collections.HashSet
 
 
-class MyLogEntries : Fragment() {
+class MyLogEntries : Fragment(), EventAdapter.OnItemDeleteListener {
     private lateinit var viewModel: MyLoggerViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -144,5 +144,9 @@ class MyLogEntries : Fragment() {
             list += logEntry
         }
         return list
+    }
+
+    override fun onItemDelete(position: Int) {
+        EventListModifier.deleteEvent(position)
     }
 }
