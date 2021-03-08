@@ -1,4 +1,4 @@
-package com.example.intheknow
+package com.example.intheknow.ui.chat
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,8 +8,10 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.intheknow.R
+import com.example.intheknow.data.Message
+import com.example.intheknow.data.myCircleIO
 import kotlinx.android.synthetic.main.fragment_communication_screen.*
-import kotlinx.android.synthetic.main.fragment_my_log_entries.*
 
 
 /**

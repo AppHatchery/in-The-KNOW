@@ -1,10 +1,13 @@
-package com.example.intheknow
+package com.example.intheknow.ui.chat
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.fragment.findNavController
+import com.example.intheknow.R
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -13,10 +16,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [Newsfeed.newInstance] factory method to
+ * Use the [CreateNewChat.newInstance] factory method to
  * create an instance of this fragment.
  */
-class Newsfeed : Fragment() {
+class CreateNewChat : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -34,7 +37,14 @@ class Newsfeed : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_newsfeed, container, false)
+        return inflater.inflate(R.layout.fragment_create_new_chat, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        var submit_chat : Button = view.findViewById(R.id.submit_chat_btn)
+        submit_chat.setOnClickListener {
+            findNavController().navigate(R.id.action_createNewChat_to_communicationScreen)
+        }
     }
 
     companion object {
@@ -44,12 +54,12 @@ class Newsfeed : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment Newsfeed.
+         * @return A new instance of fragment CreateNewChat.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            Newsfeed().apply {
+            CreateNewChat().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

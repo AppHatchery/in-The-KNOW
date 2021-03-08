@@ -1,7 +1,6 @@
-package com.example.intheknow
+package com.example.intheknow.ui.logger
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +9,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ToggleButton
 import androidx.navigation.fragment.findNavController
+import com.example.intheknow.R
+import com.example.intheknow.data.Event
+import com.example.intheknow.data.EventListModifier
 import java.util.*
 import kotlin.collections.HashSet
 
@@ -66,13 +68,13 @@ class MyLoggerEdit : Fragment() {
         val feelings_button_arr : Array<ToggleButton> = arrayOf(great_btn, depressed_btn,
             nervous_btn, anxious_btn, tired_btn, motivated_btn, angry_btn, eh_btn)
         val feelings_ids : Array<Int> = arrayOf(R.id.great_btn, R.id.depressed_btn, R.id.nervous_btn,
-            R.id.anxious_btn, R.id.tired_btn, R.id.motivated_btn, R.id.angry_btn, R.id.eh_btn)
+                R.id.anxious_btn, R.id.tired_btn, R.id.motivated_btn, R.id.angry_btn, R.id.eh_btn)
 
         val symptoms_button_arr : Array<ToggleButton> = arrayOf(nausea_btn, night_sweats_btn, mouth_sores_btn,
             vomiting_btn, muscle_aches_btn, joint_pain_btn, infection_btn, sore_throat_btn)
 
         val symptoms_ids : Array<Int> = arrayOf(R.id.nausea_btn, R.id.nightsweats_btn, R.id.mouthsores_btn,
-            R.id.vomiting_btn, R.id.muscle_aches_btn, R.id.joint_pain_btn, R.id.infection_btn, R.id.sore_throat)
+                R.id.vomiting_btn, R.id.muscle_aches_btn, R.id.joint_pain_btn, R.id.infection_btn, R.id.sore_throat)
 
         //fill in current
         val currentEvent : Event = EventListModifier.eventList[EventListModifier.itemSelector]

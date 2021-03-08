@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CurrentEvents">
+    tools:context=".ui.resources.CurrentEvents">
 
     <TextView
         android:id="@+id/CurrentEventsTitle"
@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
         android:padding="@dimen/small_text_padding"
-        android:text="CurrentEvents"
+        android:text="@string/currentevents"
         android:textColor="@color/black"
         android:textSize="@dimen/question_text_size" />
 

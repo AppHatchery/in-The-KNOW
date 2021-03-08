@@ -43,4 +43,5 @@
     <string name="textview">TextView</string>
     <string name="information">Learn More about how HIV testing works,
         why it is important, and what to do after getting your results. </string>
+    <string name="currentevents">CurrentEvents</string>
 </resources>

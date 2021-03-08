@@ -1,21 +1,19 @@
-package com.example.intheknow
+package com.example.intheknow.ui.logger
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.navigation.fragment.NavHostFragment.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.intheknow.R
+import com.example.intheknow.data.Event
 import kotlinx.android.synthetic.main.logger_list_item.view.*
-import java.time.Month
 import java.util.*
-import kotlin.collections.HashMap
 
 class EventAdapter(
-    private val eventList : List<Event>,
-    private val deleteListener : OnItemDeleteListener,
-    private val editListener : OnItemEditListener
+        private val eventList : List<Event>,
+        private val deleteListener : OnItemDeleteListener,
+        private val editListener : OnItemEditListener
 ) : RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventViewHolder {

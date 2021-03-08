@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/myLogger"
-        android:name="com.example.intheknow.MyLogger"
+        android:name="com.example.intheknow.ui.logger.MyLogger"
         android:label="My Logger"
         tools:layout="@layout/fragment_my_logger" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/startDestination"
-        android:name="com.example.intheknow.StartDestination"
+        android:name="com.example.intheknow.ui.StartDestination"
         android:label="Home"
         tools:layout="@layout/fragment_start_destination" >
         <action
@@ -34,12 +34,12 @@
     </fragment>
     <fragment
         android:id="@+id/myTests"
-        android:name="com.example.intheknow.MyTests"
+        android:name="com.example.intheknow.ui.tests.MyTests"
         android:label="My Tests"
         tools:layout="@layout/fragment_my_tests" />
     <fragment
         android:id="@+id/myResources"
-        android:name="com.example.intheknow.MyResources"
+        android:name="com.example.intheknow.ui.resources.MyResources"
         android:label="My Resources"
         tools:layout="@layout/fragment_my_resources" >
         <action
@@ -66,7 +66,7 @@
     </fragment>
     <fragment
         android:id="@+id/myLogEntries"
-        android:name="com.example.intheknow.MyLogEntries"
+        android:name="com.example.intheknow.ui.logger.MyLogEntries"
         android:label="My Logger Entries"
         tools:layout="@layout/fragment_my_log_entries" >
         <action
@@ -78,7 +78,7 @@
     </fragment>
     <fragment
         android:id="@+id/myCircle"
-        android:name="com.example.intheknow.MyCircle"
+        android:name="com.example.intheknow.ui.chat.MyCircle"
         android:label="My Circle"
         tools:layout="@layout/fragment_my_circle" >
         <action
@@ -90,7 +90,7 @@
     </fragment>
     <fragment
         android:id="@+id/createNewChat"
-        android:name="com.example.intheknow.CreateNewChat"
+        android:name="com.example.intheknow.ui.chat.CreateNewChat"
         android:label="Create New Chat"
         tools:layout="@layout/fragment_create_new_chat" >
         <action
@@ -99,47 +99,47 @@
     </fragment>
     <fragment
         android:id="@+id/communicationScreen"
-        android:name="com.example.intheknow.CommunicationScreen"
+        android:name="com.example.intheknow.ui.chat.CommunicationScreen"
         android:label="Communications"
         tools:layout="@layout/fragment_communication_screen" />
     <fragment
         android:id="@+id/videos2"
-        android:name="com.example.intheknow.videos"
+        android:name="com.example.intheknow.ui.resources.videos"
         android:label="Videos"
         tools:layout="@layout/fragment_videos" />
     <fragment
         android:id="@+id/currentEvents"
-        android:name="com.example.intheknow.CurrentEvents"
+        android:name="com.example.intheknow.ui.resources.CurrentEvents"
         android:label="Current Events"
         tools:layout="@layout/fragment_current_events" />
     <fragment
         android:id="@+id/newsfeed"
-        android:name="com.example.intheknow.Newsfeed"
+        android:name="com.example.intheknow.ui.resources.Newsfeed"
         android:label="Newsfeed"
         tools:layout="@layout/fragment_newsfeed" />
     <fragment
         android:id="@+id/podcasts"
-        android:name="com.example.intheknow.podcasts"
+        android:name="com.example.intheknow.ui.resources.podcasts"
         android:label="Podcasts"
         tools:layout="@layout/fragment_podcasts" />
     <fragment
         android:id="@+id/recommendations"
-        android:name="com.example.intheknow.Recommendations"
+        android:name="com.example.intheknow.ui.resources.Recommendations"
         android:label="Recommendations"
         tools:layout="@layout/fragment_recommendations" />
     <fragment
         android:id="@+id/supportGroups"
-        android:name="com.example.intheknow.SupportGroups"
+        android:name="com.example.intheknow.ui.resources.SupportGroups"
         android:label="Support Groups"
         tools:layout="@layout/fragment_support_groups" />
     <fragment
         android:id="@+id/policies2"
-        android:name="com.example.intheknow.Policies"
+        android:name="com.example.intheknow.ui.resources.Policies"
         android:label="Policies"
         tools:layout="@layout/fragment_policies" />
     <fragment
         android:id="@+id/loginScreen"
-        android:name="com.example.intheknow.LoginScreen"
+        android:name="com.example.intheknow.ui.LoginScreen"
         android:label="Welcome to In-the-KNOW!"
         tools:layout="@layout/fragment_login_screen" >
         <action
@@ -148,7 +148,7 @@
     </fragment>
     <fragment
         android:id="@+id/myLoggerEdit"
-        android:name="com.example.intheknow.MyLoggerEdit"
+        android:name="com.example.intheknow.ui.logger.MyLoggerEdit"
         android:label="Edit Log"
         tools:layout="@layout/fragment_my_logger_edit" >
         <action

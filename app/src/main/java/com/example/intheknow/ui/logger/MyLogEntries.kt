@@ -1,4 +1,4 @@
-package com.example.intheknow
+package com.example.intheknow.ui.logger
 
 import android.os.Bundle
 import android.util.Log
@@ -6,12 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.observe
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.example.intheknow.R
+import com.example.intheknow.data.Event
+import com.example.intheknow.data.EventListModifier
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.fragment_my_log_entries.*
 import java.util.*
@@ -90,10 +90,10 @@ class MyLogEntries : Fragment(), EventAdapter.OnItemDeleteListener, EventAdapter
             Log.d("value", eventArray[i].toString())
         }
         val feelingArray: IntArray = intArrayOf(R.id.great_btn, R.id.depressed_btn, R.id.nervous_btn,
-            R.id.anxious_btn, R.id.tired_btn, R.id.motivated_btn, R.id.angry_btn, R.id.eh_btn)
+                R.id.anxious_btn, R.id.tired_btn, R.id.motivated_btn, R.id.angry_btn, R.id.eh_btn)
 
         val symptomsArray: IntArray = intArrayOf(R.id.nausea_btn, R.id.nightsweats_btn, R.id.mouthsores_btn,
-            R.id.vomiting_btn, R.id.muscle_aches_btn, R.id.joint_pain_btn, R.id.infection_btn, R.id.sore_throat)
+                R.id.vomiting_btn, R.id.muscle_aches_btn, R.id.joint_pain_btn, R.id.infection_btn, R.id.sore_throat)
 
         val commentsList : ArrayList<String> = arrayListOf<String>("Sticking to my goals", "Feeling all right",
                 "Haven't been sticking to goals", "Feel healthy", "Went to sleep just fine", "Had trouble falling asleep")

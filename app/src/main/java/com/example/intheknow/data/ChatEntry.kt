@@ -1,5 +1,7 @@
-package com.example.intheknow
+package com.example.intheknow.data
 import android.os.Environment
+import com.example.intheknow.ui.chat.ChatEntryAdapter
+import com.example.intheknow.ui.chat.MyCircle
 import java.io.*
 
 data class ChatEntry (val question: String, var activePeople: Int, val chat: MutableList<Message>) {

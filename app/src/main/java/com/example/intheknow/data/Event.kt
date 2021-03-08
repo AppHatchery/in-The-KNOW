@@ -1,6 +1,8 @@
-package com.example.intheknow
+package com.example.intheknow.data
 
 import android.util.Log
+import com.example.intheknow.ui.logger.EventAdapter
+import com.example.intheknow.ui.logger.MyLogEntries
 import java.util.*
 
 data class Event (val date : GregorianCalendar, val sexCategories: Set<Int>, val feelings: Set<Int>, val symptoms: Set<Int>, val log: String)

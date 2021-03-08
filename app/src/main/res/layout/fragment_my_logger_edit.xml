@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
-        tools:context=".MyLoggerEdit">
+        tools:context=".ui.logger.MyLoggerEdit">
 
 
         <Button
@@ -282,7 +282,7 @@
                 android:id="@+id/nightsweats_btn_edit"
                 android:layout_width="@dimen/my_logger_circle_diameter"
                 android:layout_height="@dimen/my_logger_circle_diameter"
-                android:layout_gravity="top"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginStart="@dimen/q2_margin_1"
                 android:layout_marginEnd="@dimen/q2_margin_1"
                 android:background="@drawable/toggle_day_bg_selector"
@@ -345,7 +345,7 @@
                 android:id="@+id/joint_pain_btn_edit"
                 android:layout_width="@dimen/my_logger_circle_diameter"
                 android:layout_height="@dimen/my_logger_circle_diameter"
-                android:layout_gravity="top"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginStart="@dimen/q2_margin_1"
                 android:layout_marginEnd="@dimen/q2_margin_1"
                 android:background="@drawable/toggle_day_bg_selector"

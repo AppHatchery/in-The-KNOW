@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MyResources">
+    tools:context=".ui.resources.MyResources">
 
     <TextView
         android:id="@+id/logger_q1_occurence2"

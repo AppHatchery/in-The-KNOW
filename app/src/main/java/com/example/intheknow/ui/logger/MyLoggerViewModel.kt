@@ -1,4 +1,4 @@
-package com.example.intheknow
+package com.example.intheknow.ui.logger
 
 import android.util.Log
 import androidx.lifecycle.LiveData
