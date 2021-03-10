@@ -10,16 +10,13 @@ import com.example.intheknow.ui.logger.EventAdapter
 import com.example.intheknow.ui.logger.MyLogEntries
 import java.util.*
 
-@Entity(tableName = "event_table")
-@Parcelize
 data class Event (
         val date : GregorianCalendar,
         val sexCategories: Set<Int>,
         val feelings: Set<Int>,
         val symptoms: Set<Int>,
-        val log: String,
-        @PrimaryKey(autoGenerate = true) val id: Int = 0
-) : Parcelable
+        val log: String
+)
 
 
 class EventListModifier {

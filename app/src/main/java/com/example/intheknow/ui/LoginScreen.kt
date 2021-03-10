@@ -43,6 +43,10 @@ class LoginScreen : Fragment() {
         loginButton.setOnClickListener {
             findNavController().navigate(R.id.action_loginScreen_to_startDestination)
         }
+        var createAccountButton : Button = view.findViewById(R.id.createAccountButton)
+        createAccountButton.setOnClickListener {
+            findNavController().navigate(R.id.action_loginScreen_to_createAccount)
+        }
     }
 
     companion object {

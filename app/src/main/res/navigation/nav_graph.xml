@@ -145,6 +145,9 @@
         <action
             android:id="@+id/action_loginScreen_to_startDestination"
             app:destination="@id/startDestination" />
+        <action
+            android:id="@+id/action_loginScreen_to_createAccount"
+            app:destination="@id/createAccount" />
     </fragment>
     <fragment
         android:id="@+id/myLoggerEdit"

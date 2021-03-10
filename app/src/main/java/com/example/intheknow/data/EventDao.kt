@@ -3,6 +3,7 @@ package com.example.intheknow.data
 import androidx.room.*
 import kotlinx.coroutines.flow.Flow
 
+/*
 @Dao
 interface EventDao {
     @Query("SELECT * FROM event_table")
@@ -17,3 +18,4 @@ interface EventDao {
     @Delete
     suspend fun delete(event: Event)
 }
+*/
