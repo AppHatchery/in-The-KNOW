@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.intheknow.R
+import com.example.intheknow.data.Converter
 import com.example.intheknow.data.Event
 import kotlinx.android.synthetic.main.logger_list_item.view.*
 import java.util.*
@@ -25,24 +26,10 @@ class EventAdapter(
     override fun onBindViewHolder(holder: EventViewHolder, position: Int) {
         val currentItem = eventList[position]
         val calendar : GregorianCalendar = currentItem.date
-        val year = calendar.get(GregorianCalendar.YEAR)
-        val month = calendar.get(GregorianCalendar.MONTH) + 1
-        val day = calendar.get(GregorianCalendar.DAY_OF_MONTH)
-        var calendarFormatter = "%d/%d/%d"
-        holder.dateLine.text = calendarFormatter.format(month, day, year)
+        holder.dateLine.text = Converter.gregorianCalendarToDateStr(calendar)
 
-        val eventsSet = currentItem.sexCategories
-        var eventsStr = ""
-        for (event in eventsSet) {
-            var eStr = when (event) {
-                R.id.condom_btn -> "condom"
-                R.id.no_condom_btn -> "no condom"
-                R.id.oral_btn -> "oral"
-                else -> "by myself"
-            }
-            eventsStr += eStr + ", "
-        }
-        eventsStr = eventsStr.substringBeforeLast(",")
+        val eventsList = currentItem.sexCategories
+        val eventsStr = eventsList.joinToString(", ")
         holder.summaryLine.text = eventsStr
 
     }

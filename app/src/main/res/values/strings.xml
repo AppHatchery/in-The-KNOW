@@ -1,15 +1,10 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
     <string name="app_name">InTheKnow</string>
     <string name="my_logger">My Logger</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="logger_q1">Did you get some?</string>
-    <string name="with_condom">condom</string>
-    <string name="no_condom">no condom</string>
     <string name="oral">oral</string>
     <string name="self">by myself</string>
     <string name="nah">nah</string>
-    <string name="anal">anal</string>
     <string name="my_tests">My Tests</string>
     <string name="my_resources">My Resources</string>
     <string name="how_do_you_feel">How do you feel?</string>
@@ -48,4 +43,16 @@
     <string name="sign_in">Sign in</string>
     <string name="create_an_account">Create an Account</string>
     <string name="username">Username</string>
+    <string name="vaginal">vaginal</string>
+    <string name="anal">anal</string>
+    <string name="non_penetrative">no penetration</string>
+    <string name="logger_protection_qn">Did you use protection?</string>
+    <string name="withdrawal">withdrawal</string>
+    <string name="condom">condom</string>
+    <string name="fertility_awareness">fertility awareness</string>
+    <string name="iud">IUD</string>
+    <string name="ring">ring</string>
+    <string name="patch">patch</string>
+    <string name="combo_pills">combo pill</string>
+    <string name="mini_pills">mini pill</string>
 </resources>

@@ -60,15 +60,16 @@ class MyLogEntries : Fragment(), EventAdapter.OnItemDeleteListener, EventAdapter
         var month = 0
         var day = 7
 
-        val eventArray: IntArray = intArrayOf(R.id.no_condom_btn, R.id.condom_btn, R.id.oral_btn, R.id.by_myself_btn)
-        for (i in 0..3) {
-            Log.d("value", eventArray[i].toString())
-        }
-        val feelingArray: IntArray = intArrayOf(R.id.great_btn, R.id.depressed_btn, R.id.nervous_btn,
-                R.id.anxious_btn, R.id.tired_btn, R.id.motivated_btn, R.id.angry_btn, R.id.eh_btn)
+        val eventArray: Array<String> = arrayOf(Event.VAGINAL, Event.ANAL, Event.ORAL, Event.NON_PENETRATIVE)
 
-        val symptomsArray: IntArray = intArrayOf(R.id.nausea_btn, R.id.nightsweats_btn, R.id.mouthsores_btn,
-                R.id.vomiting_btn, R.id.muscle_aches_btn, R.id.joint_pain_btn, R.id.infection_btn, R.id.sore_throat)
+        val protectionArray : Array<String> = arrayOf(Event.WITHDRAWAL, Event.CONDOM, Event.FERTILITY_AWARENESS,
+            Event.MINI_PILL, Event.COMBO_PILL, Event.IUD, Event.RING, Event.PATCH)
+
+        val feelingArray: Array<String> = arrayOf(Event.WITHDRAWAL, Event.CONDOM, Event.FERTILITY_AWARENESS,
+            Event.MINI_PILL, Event.COMBO_PILL, Event.IUD, Event.RING, Event.PATCH)
+
+        val symptomsArray: Array<String> = arrayOf(Event.NAUSEA, Event.NIGHT_SWEATS, Event.MOUTH_SORES,
+            Event.VOMITING, Event.MUSCLE_ACHES, Event.JOINT_PAIN, Event.INFECTION, Event.SORE_THROAT)
 
         val commentsList : ArrayList<String> = arrayListOf<String>("Sticking to my goals", "Feeling all right",
                 "Haven't been sticking to goals", "Feel healthy", "Went to sleep just fine", "Had trouble falling asleep")
@@ -84,7 +85,7 @@ class MyLogEntries : Fragment(), EventAdapter.OnItemDeleteListener, EventAdapter
             day = (0..28).random()
 
             //populate random event
-            val sexCategories = HashSet<Int>()
+            val sexCategories = ArrayList<String>()
             val occurrence = (0..1).random()
             if (occurrence == 1) {
                 for (j in 0..2) {
@@ -96,8 +97,18 @@ class MyLogEntries : Fragment(), EventAdapter.OnItemDeleteListener, EventAdapter
             } else {
                 sexCategories.add(eventArray[3])
             }
+
+            //populate random protection
+            val protection = ArrayList<String>()
+            for (j in 0..7) {
+                val protectionFlag = (0..1).random()
+                if (protectionFlag == 1) {
+                    protection.add(protectionArray[j])
+                }
+            }
+
             //populate random feeling
-            val feelings = HashSet<Int>()
+            val feelings = ArrayList<String>()
             for (j in 0..7) {
                 val feelingFlag = (0..1).random()
                 if (feelingFlag == 1) {
@@ -105,17 +116,17 @@ class MyLogEntries : Fragment(), EventAdapter.OnItemDeleteListener, EventAdapter
                 }
             }
             //populate random symptom
-            val symptoms = HashSet<Int>()
+            val symptoms = ArrayList<String>()
             for (j in 0..7) {
                 val symptomFlag = (0..1).random()
                 if (symptomFlag == 1) {
-                    feelings.add(symptomsArray[j])
+                    symptoms.add(symptomsArray[j])
                 }
             }
             //populate random text
             val randomText = commentsList.get((0..5).random())
 
-            val logEntry = Event(date, sexCategories, feelings, symptoms, randomText)
+            val logEntry = Event(date, sexCategories, protection, feelings, symptoms, randomText)
             list += logEntry
         }
         return list

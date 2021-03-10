@@ -2,18 +2,19 @@ package com.example.intheknow.ui.logger
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ToggleButton
-import androidx.lifecycle.ViewModelProvider
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.intheknow.R
 import com.example.intheknow.data.Event
 import com.example.intheknow.data.EventListModifier
+import com.example.intheknow.databinding.FragmentMyLoggerBinding
 import java.util.*
 import kotlin.collections.HashSet
 
@@ -23,88 +24,80 @@ import kotlin.collections.HashSet
  * create an instance of this fragment.
  */
 class MyLogger : Fragment() {
-
+    lateinit var binding: FragmentMyLoggerBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        Log.i("MyLoggerFragment", "Called ViewModelProvider.get")
-
-        return inflater.inflate(R.layout.fragment_my_logger, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_my_logger, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val history_btn : Button = view.findViewById(R.id.skip_to_log_btn)
-        val submit_btn : Button = view.findViewById(R.id.new_log_submit_btn)
-
-        //toggle buttons from logger
-        val no_condom_btn : ToggleButton = view.findViewById<ToggleButton>(R.id.no_condom_btn)
-        val condom_btn : ToggleButton = view.findViewById<ToggleButton>(R.id.condom_btn)
-        val oral_btn : ToggleButton = view.findViewById<ToggleButton>(R.id.oral_btn)
-        val by_myself_btn : ToggleButton = view.findViewById<ToggleButton>(R.id.by_myself_btn)
-        val great_btn : ToggleButton = view.findViewById<ToggleButton>(R.id.great_btn)
-        val depressed_btn : ToggleButton = view.findViewById<ToggleButton>(R.id.depressed_btn)
-        val nervous_btn : ToggleButton = view.findViewById<ToggleButton>(R.id.nervous_btn)
-        val anxious_btn : ToggleButton = view.findViewById<ToggleButton>(R.id.anxious_btn)
-        val tired_btn : ToggleButton = view.findViewById<ToggleButton>(R.id.tired_btn)
-        val motivated_btn : ToggleButton = view.findViewById<ToggleButton>(R.id.motivated_btn)
-        val angry_btn : ToggleButton = view.findViewById<ToggleButton>(R.id.angry_btn)
-        val eh_btn : ToggleButton = view.findViewById<ToggleButton>(R.id.eh_btn)
-        val nausea_btn : ToggleButton = view.findViewById<ToggleButton>(R.id.nausea_btn)
-        val night_sweats_btn : ToggleButton = view.findViewById<ToggleButton>(R.id.nightsweats_btn)
-        val mouth_sores_btn : ToggleButton = view.findViewById<ToggleButton>(R.id.mouthsores_btn)
-        val vomiting_btn : ToggleButton = view.findViewById<ToggleButton>(R.id.vomiting_btn)
-        val muscle_aches_btn : ToggleButton = view.findViewById<ToggleButton>(R.id.muscle_aches_btn)
-        val joint_pain_btn : ToggleButton = view.findViewById<ToggleButton>(R.id.joint_pain_btn)
-        val infection_btn : ToggleButton = view.findViewById<ToggleButton>(R.id.infection_btn)
-        val sore_throat_btn : ToggleButton = view.findViewById<ToggleButton>(R.id.sore_throat)
+        val history_btn : Button = binding.skipToLogBtn
+        val submit_btn : Button = binding.newLogSubmitBtn
 
         //parallel arrays
-        val feelings_button_arr : Array<ToggleButton> = arrayOf(great_btn, depressed_btn,
-            nervous_btn, anxious_btn, tired_btn, motivated_btn, angry_btn, eh_btn)
-        val feelings_ids : Array<Int> = arrayOf(R.id.great_btn, R.id.depressed_btn, R.id.nervous_btn,
-                R.id.anxious_btn, R.id.tired_btn, R.id.motivated_btn, R.id.angry_btn, R.id.eh_btn)
+        val sex_button_arr : Array<ToggleButton> = arrayOf(binding.vaginalBtn,
+            binding.analBtn, binding.oralBtn, binding.nonPenetrativeBtn)
+        val sex_labels : Array<String> = arrayOf(Event.VAGINAL, Event.ANAL, Event.ORAL, Event.NON_PENETRATIVE)
 
-        val symptoms_button_arr : Array<ToggleButton> = arrayOf(nausea_btn, night_sweats_btn, mouth_sores_btn,
-            vomiting_btn, muscle_aches_btn, joint_pain_btn, infection_btn, sore_throat_btn)
+        val protection_button_arr : Array<ToggleButton> = arrayOf(binding.withdrawalBtn,
+            binding.condomBtn, binding.fertilityAwarenessBtn, binding.progestinOnlyBtn,
+            binding.cocContraceptiveBtn, binding.IUDBtn, binding.vaginalRingBtn, binding.patchBtn)
+        val protection_labels : Array<String> = arrayOf(Event.WITHDRAWAL, Event.CONDOM, Event.FERTILITY_AWARENESS,
+            Event.MINI_PILL, Event.COMBO_PILL, Event.IUD, Event.RING, Event.PATCH)
 
-        val symptoms_ids : Array<Int> = arrayOf(R.id.nausea_btn, R.id.nightsweats_btn, R.id.mouthsores_btn,
-                R.id.vomiting_btn, R.id.muscle_aches_btn, R.id.joint_pain_btn, R.id.infection_btn, R.id.sore_throat)
+        val feelings_button_arr : Array<ToggleButton> = arrayOf(binding.greatBtn, binding.depressedBtn,
+            binding.nervousBtn, binding.anxiousBtn, binding.tiredBtn, binding.motivatedBtn, binding.angryBtn, binding.ehBtn)
+        val feeling_labels : Array<String> = arrayOf(Event.GREAT, Event.DEPRESSED, Event.NERVOUS, Event.ANXIOUS,
+            Event.TIRED, Event.MOTIVATED, Event.ANGRY, Event.EH)
+
+        val symptoms_button_arr : Array<ToggleButton> = arrayOf(binding.nauseaBtn, binding.nightsweatsBtn,
+            binding.mouthsoresBtn, binding.vomitingBtn, binding.muscleAchesBtn, binding.jointPainBtn,
+            binding.infectionBtn, binding.soreThroat)
+        val symptom_labels : Array<String> = arrayOf(Event.NAUSEA, Event.NIGHT_SWEATS, Event.MOUTH_SORES,
+            Event.VOMITING, Event.MUSCLE_ACHES, Event.JOINT_PAIN, Event.INFECTION, Event.SORE_THROAT)
 
         history_btn.setOnClickListener {
             findNavController().navigate(R.id.action_myLogger_to_myLogEntries)
         }
         submit_btn.setOnClickListener {
-            //set data in view model
-            val submit_sex : HashSet<Int> = HashSet<Int>()
-            if (no_condom_btn.isChecked) submit_sex.add(R.id.no_condom_btn)
-            if (condom_btn.isChecked) submit_sex.add(R.id.condom_btn)
-            if (oral_btn.isChecked) submit_sex.add(R.id.oral_btn)
-            if (by_myself_btn.isChecked) submit_sex.add(R.id.by_myself_btn)
+            val submit_sex : ArrayList<String> = ArrayList<String>()
+            for ((index, button) in sex_button_arr.withIndex()) {
+                if (button.isChecked) submit_sex.add(sex_labels[index])
+            }
 
-            val submit_feelings : HashSet<Int> = HashSet<Int>()
+            val submit_protection : ArrayList<String> = ArrayList<String>()
+            for ((index, button) in protection_button_arr.withIndex()) {
+                if (button.isChecked) submit_protection.add(protection_labels[index])
+            }
+
+            val submit_feelings : ArrayList<String> = ArrayList<String>()
             for ((index, button) in feelings_button_arr.withIndex()) {
-                if (button.isChecked) submit_feelings.add(feelings_ids[index])
+                if (button.isChecked) submit_feelings.add(feeling_labels[index])
             }
-            val submit_symptoms : HashSet<Int> = HashSet<Int>()
+
+            val submit_symptoms : ArrayList<String> = ArrayList<String>()
             for ((index, button) in symptoms_button_arr.withIndex()) {
-                if (button.isChecked) submit_symptoms.add(symptoms_ids[index])
+                if (button.isChecked) submit_symptoms.add(symptom_labels[index])
             }
+
             val submit_date : GregorianCalendar = GregorianCalendar()
-            val submit_log : EditText = view.findViewById(R.id.new_log_edit_text)
+            val submit_log : EditText = binding.newLogEditText
             val submit_log_text : String = submit_log.text.toString()
 
             Log.d("SIZE", " " + EventListModifier.eventList.size)
-            EventListModifier.addEvent(Event(submit_date, submit_sex, submit_feelings, submit_symptoms, submit_log_text))
+            val newEvent = Event(submit_date, submit_sex, submit_protection,
+                submit_feelings, submit_symptoms, submit_log_text)
+            EventListModifier.addEvent(newEvent)
             Log.d("SIZE", " " + EventListModifier.eventList.size)
             Log.d("TEST", "" + EventListModifier.eventList[0].log)
             Log.d("TEST2", "" + EventListModifier.eventList[0].sexCategories.sorted()[0])
             findNavController().navigate(R.id.action_myLogger_to_myLogEntries)
         }
 
-        //val oral_btn : ToggleButton = view.findViewById(R.id.oral_btn)
-        //oral_btn.setChecked(true)
     }
 
 }
