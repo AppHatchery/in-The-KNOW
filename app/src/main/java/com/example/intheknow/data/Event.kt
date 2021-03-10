@@ -1,10 +1,6 @@
 package com.example.intheknow.data
 
 import android.util.Log
-import androidx.room.Entity
-import androidx.room.PrimaryKey
-import kotlinx.android.parcel.Parcelize
-import android.os.Parcelable
 
 import com.example.intheknow.ui.logger.EventAdapter
 import com.example.intheknow.ui.logger.MyLogEntries

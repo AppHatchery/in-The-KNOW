@@ -10,112 +10,155 @@
         android:id="@+id/FNTextView"
         android:layout_width="100dp"
         android:layout_height="40dp"
-        android:text="First Name:"
-        android:gravity="center"
         android:layout_alignParentTop="true"
-        />
+        android:layout_margin="5dp"
+        android:text="First Name:" />
 
     <EditText
         android:id="@+id/FirstNameEditText"
         android:layout_width="175dp"
         android:layout_height="40dp"
+        android:layout_margin="5dp"
+        android:layout_toEndOf="@+id/FNTextView"
         android:autofillHints="First Name"
-        android:inputType="textPersonName"
-        android:layout_toEndOf="@+id/FNTextView" />
+        android:inputType="textPersonName" />
 
     <TextView
         android:id="@+id/LNTextView"
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:layout_below="@+id/FNTextView"
-        android:gravity="center"
+        android:layout_margin="5dp"
         android:text="Last Name:" />
 
     <EditText
         android:id="@+id/LastNameEditText"
         android:layout_width="175dp"
         android:layout_height="40dp"
-        android:autofillHints="Last Name"
-        android:inputType="textPersonName"
         android:layout_below="@id/FirstNameEditText"
-        android:layout_toEndOf="@+id/LNTextView"/>
+        android:layout_margin="5dp"
+        android:layout_toEndOf="@+id/LNTextView"
+        android:autofillHints="Last Name"
+        android:inputType="textPersonName" />
 
     <TextView
         android:id="@+id/UsernameTextView"
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:layout_below="@+id/LNTextView"
-        android:gravity="center"
+        android:layout_margin="5dp"
         android:text="Username:" />
 
     <EditText
         android:id="@+id/UserNameEditText"
         android:layout_width="175dp"
         android:layout_height="40dp"
-        android:autofillHints="@string/username"
-        android:inputType="textPersonName"
         android:layout_below="@id/LastNameEditText"
-        android:layout_toEndOf="@+id/UsernameTextView"/>
+        android:layout_margin="5dp"
+        android:layout_toEndOf="@+id/UsernameTextView"
+        android:autofillHints="@string/username"
+        android:inputType="textPersonName" />
 
     <TextView
         android:id="@+id/PwdTextView"
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:layout_below="@+id/UsernameTextView"
-        android:gravity="center"
+        android:layout_margin="5dp"
         android:text="Password:" />
 
     <EditText
         android:id="@+id/PwdEditText"
         android:layout_width="175dp"
         android:layout_height="40dp"
-        android:autofillHints="@string/password"
-        android:inputType="textPassword"
         android:layout_below="@id/UserNameEditText"
-        android:layout_toEndOf="@+id/PwdTextView"/>
+        android:layout_margin="5dp"
+        android:layout_toEndOf="@+id/PwdTextView"
+        android:autofillHints="@string/password"
+        android:inputType="textPassword" />
 
     <TextView
         android:id="@+id/ConfirmPwdTextView"
-        android:layout_width="150dp"
+        android:layout_width="100dp"
         android:layout_height="40dp"
         android:layout_below="@+id/PwdTextView"
-        android:gravity="center"
+        android:layout_margin="5dp"
         android:text="Confirm Password:" />
 
     <EditText
         android:id="@+id/ConfirmPwdEditText"
         android:layout_width="175dp"
         android:layout_height="40dp"
-        android:autofillHints="Confirm Password"
-        android:inputType="textPassword"
         android:layout_below="@id/PwdEditText"
-        android:layout_toEndOf="@+id/ConfirmPwdTextView"/>
+        android:layout_margin="5dp"
+        android:layout_toEndOf="@+id/ConfirmPwdTextView"
+        android:autofillHints="Confirm Password"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/GenderSpinnerTV"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/ConfirmPwdTextView"
+        android:layout_margin="5dp"
+        android:text="What gender best describes you?" />
 
     <Spinner
         android:id="@+id/gender_spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/ConfirmPwdEditText"
+        android:layout_margin="5dp"
+        android:layout_toEndOf="@+id/GenderSpinnerTV"
         android:entries="@array/gender_array"
-        android:gravity="center_horizontal"
-        android:layout_below="@+id/ConfirmPwdEditText"/>
+        android:gravity="center_horizontal" />
+
+    <TextView
+        android:id="@+id/SexSpinnerTV"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/GenderSpinnerTV"
+        android:layout_margin="5dp"
+        android:text="What sexuality best describes you?" />
 
     <Spinner
         android:id="@+id/sexuality_spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/gender_spinner"
+        android:layout_margin="5dp"
+        android:layout_toEndOf="@+id/SexSpinnerTV"
         android:entries="@array/sexuality_array"
-        android:gravity="center_horizontal"
-        android:layout_below="@+id/gender_spinner"/>
+        android:gravity="center_horizontal" />
+
+    <TextView
+        android:id="@+id/DOB_TV"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/sexuality_spinner"
+        android:text="Please select your date of birth"
+        android:layout_margin="5dp" />
 
     <DatePicker
         android:id="@+id/date_of_birth_picker"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/DOB_TV"
+        android:layout_margin="5dp"
+        android:scaleX="0.60"
+        android:scaleY="0.60"
         android:calendarViewShown="false"
         android:datePickerMode="spinner"
-        android:spinnersShown="true"
         android:gravity="center_horizontal"
-        android:layout_below="@+id/sexuality_spinner"/>
+        android:spinnersShown="true" />
+
+    <Button
+        android:id="@+id/createNewAccountSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Create New Account" />
 
 
 </RelativeLayout>
