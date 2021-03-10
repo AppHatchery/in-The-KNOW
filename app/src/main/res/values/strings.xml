@@ -44,4 +44,8 @@
     <string name="information">Learn More about how HIV testing works,
         why it is important, and what to do after getting your results. </string>
     <string name="currentevents">CurrentEvents</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign in</string>
+    <string name="create_an_account">Create an Account</string>
+    <string name="username">Username</string>
 </resources>

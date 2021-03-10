@@ -155,4 +155,13 @@
             android:id="@+id/action_myLoggerEdit_to_myLogEntries"
             app:destination="@id/myLogEntries" />
     </fragment>
+    <fragment
+        android:id="@+id/createAccount"
+        android:name="com.example.intheknow.ui.CreateAccount"
+        android:label="Create Account"
+        tools:layout="@layout/fragment_create_account" >
+        <action
+            android:id="@+id/action_createAccount_to_startDestination"
+            app:destination="@id/startDestination" />
+    </fragment>
 </navigation>

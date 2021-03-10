@@ -11,19 +11,10 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/LoginTitle1"
-            android:layout_width="match_parent"
-            android:layout_height="173dp"
-            android:text="\n\nWelcome to in-the-KNOW!"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textColor="#FFFFFF" />
-
-        <TextView
             android:id="@+id/LoginTitle2"
             android:layout_width="match_parent"
             android:layout_height="135dp"
-            android:text="Sign in"
+            android:text="@string/sign_in"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="@color/black" />
@@ -32,7 +23,7 @@
             android:id="@+id/LoginTitle3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Username:"
+            android:text="@string/username"
             android:textAlignment="textStart"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="@color/black"
@@ -49,7 +40,7 @@
             android:id="@+id/LoginTitle4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Password:"
+            android:text="@string/password"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="@color/black"
             android:textSize="24sp" />
@@ -67,7 +58,7 @@
             android:layout_height="wrap_content"
             android:background="@color/itk_blue"
             android:backgroundTint="@color/itk_blue"
-            android:text="Sign in" />
+            android:text="@string/sign_in" />
 
         <TextView
             android:id="@+id/blankblue2"
@@ -83,7 +74,7 @@
             android:layout_height="wrap_content"
             android:background="@color/itk_blue"
             android:backgroundTint="@color/itk_blue"
-            android:text="Create an Account" />
+            android:text="@string/create_an_account" />
 
         <TextView
             android:id="@+id/blankblue"
