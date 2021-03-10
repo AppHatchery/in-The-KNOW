@@ -23,7 +23,6 @@ import kotlin.collections.HashSet
  * create an instance of this fragment.
  */
 class MyLogger : Fragment() {
-    private lateinit var viewModel: MyLoggerViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,7 +35,6 @@ class MyLogger : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        viewModel = ViewModelProvider(this).get(MyLoggerViewModel::class.java)
         val history_btn : Button = view.findViewById(R.id.skip_to_log_btn)
         val submit_btn : Button = view.findViewById(R.id.new_log_submit_btn)
 
@@ -97,15 +95,6 @@ class MyLogger : Fragment() {
             val submit_log : EditText = view.findViewById(R.id.new_log_edit_text)
             val submit_log_text : String = submit_log.text.toString()
 
-            Log.d("ONSUBMIT_LOG", submit_log_text)
-            viewModel.setDate(submit_date)
-            viewModel.setLog(submit_log_text)
-            viewModel.setFeelings(submit_feelings)
-            viewModel.setSymptoms(submit_symptoms)
-            viewModel.setSexCategories(submit_sex)
-            viewModel.setID(Random().nextFloat())
-
-            Log.d("ONSUBMIT_LOG_2", viewModel.model_log.value!!)
             Log.d("SIZE", " " + EventListModifier.eventList.size)
             EventListModifier.addEvent(Event(submit_date, submit_sex, submit_feelings, submit_symptoms, submit_log_text))
             Log.d("SIZE", " " + EventListModifier.eventList.size)

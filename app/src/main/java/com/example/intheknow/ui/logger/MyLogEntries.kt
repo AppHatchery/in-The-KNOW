@@ -20,7 +20,6 @@ import kotlin.collections.HashSet
 
 
 class MyLogEntries : Fragment(), EventAdapter.OnItemDeleteListener, EventAdapter.OnItemEditListener {
-    private lateinit var viewModel: MyLoggerViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,30 +33,6 @@ class MyLogEntries : Fragment(), EventAdapter.OnItemDeleteListener, EventAdapter
         recycle_view_events.adapter = EventListModifier.adapter
         recycle_view_events.setHasFixedSize(true)
 
-        /*
-        viewModel = ViewModelProvider(this).get(MyLoggerViewModel::class.java)
-        viewModel.randomIdentifier.observe(viewLifecycleOwner, androidx.lifecycle.Observer { new_id ->
-            var new_sex : Set<Int> = HashSet<Int>()
-            if (viewModel.model_sex_categories.value != null) new_sex = viewModel.model_sex_categories.value!!
-            var new_feelings : Set<Int> = HashSet<Int>()
-            if (viewModel.model_feelings.value != null) new_feelings = viewModel.model_feelings.value!!
-            var new_symptoms : Set<Int> = HashSet<Int>()
-            if (viewModel.model_symptoms.value != null) new_symptoms = viewModel.model_symptoms.value!!
-            var new_log : String = ""
-            if (viewModel.model_log.value != null) new_log = viewModel.model_log.value!!
-
-            var new_date : GregorianCalendar = GregorianCalendar()
-            if (viewModel.model_date.value != null) new_date = viewModel.model_date.value!!
-
-            var new_event = Event(new_date, new_sex, new_feelings, new_symptoms, new_log)
-            eventList.add(new_event)
-            adapter.notifyItemInserted(eventList.size - 1)
-            Log.d("myTag", "EVENT CREATED")
-            Log.d("len", "str: " + viewModel.model_log.value!!)
-            Log.d("size of event list", "size: " + eventList.size)
-        })
-
-         */
     }
 
     override fun onCreateView(
