@@ -23,15 +23,32 @@ class DBHandler(context: Context, name: String?,
                 + COLUMN_FIRSTNAME + " TEXT,"
                 + COLUMN_LASTNAME + " TEXT" + ")")
         db.execSQL(CREATE_USERS_TABLE)
+
+
+        val CREATE_EVENTS_TABLE = ("CREATE TABLE " +
+                TABLE_EVENTS + "("
+                + COLUMN_EVENT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + COLUMN_EVENT_DATE + " TEXT NOT NULL,"
+                + COLUMN_SEX + " TEXT NOT NULL,"
+                + COLUMN_PROTECTION + " TEXT NOT NULL,"
+                + COLUMN_FEELINGS + " TEXT NOT NULL,"
+                + COLUMN_SYMPTOMS + " TEXT NOT NULL,"
+                + COLUMN_LOG + " TEXT NOT NULL,"
+                + COLUMN_USER_ID + " INTEGER,"
+                + " FOREIGN KEY ("+COLUMN_USER_ID+") REFERENCES "+TABLE_USERS+"("+COLUMN_ID+")"
+                + ")")
+        db.execSQL(CREATE_EVENTS_TABLE)
+
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int,
                            newVersion: Int) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_USERS)
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_EVENTS)
         onCreate(db)
     }
 
-    fun addUser(user: User) {
+    fun addUser(user: User) : Long {
 
         val values = ContentValues()
         values.put(COLUMN_USERNAME, user.username)
@@ -44,9 +61,11 @@ class DBHandler(context: Context, name: String?,
 
         val db = this.writableDatabase
 
-        db.insert(TABLE_USERS, null, values)
+        val id : Long = db.insert(TABLE_USERS, null, values)
+
         db.close()
-        Log.i("DB", "Database created")
+        Log.i("DB", "User added")
+        return id
     }
 
     fun queryUserByUsename(username : String) : User? {
@@ -62,7 +81,7 @@ class DBHandler(context: Context, name: String?,
         if (cursor.moveToFirst()) {
             cursor.moveToFirst()
 
-            val id = Integer.parseInt(cursor.getString(0))
+            //val id = Integer.parseInt(cursor.getString(0))
             val username = cursor.getString(1)
             val password = cursor.getString(2)
             val gender = cursor.getString(3)
@@ -79,11 +98,31 @@ class DBHandler(context: Context, name: String?,
         return user
     }
 
+    fun addEvent(event : Event) : Long {
+        val values = ContentValues()
+        values.put(COLUMN_EVENT_DATE, Converter.gregorianCalendarToDateStr(event.date))
+        values.put(COLUMN_SEX, Converter.list2DBStr(event.sexCategories))
+        values.put(COLUMN_PROTECTION, Converter.list2DBStr(event.protection))
+        values.put(COLUMN_FEELINGS, Converter.list2DBStr(event.feelings))
+        values.put(COLUMN_SYMPTOMS, Converter.list2DBStr(event.symptoms))
+        values.put(COLUMN_LOG, event.log)
+        values.put(COLUMN_USER_ID, UserResolver.id)
+
+        val db = this.writableDatabase
+
+        val id : Long = db.insert(TABLE_EVENTS, null, values)
+
+        db.close()
+        Log.i("DB", "Event added")
+        return id
+    }
+
     companion object {
 
         private val DATABASE_VERSION = 1
         private val DATABASE_NAME = "itkDB.db"
 
+        //user table
         val TABLE_USERS = "users"
         val COLUMN_ID = "_id"
         val COLUMN_USERNAME = "username"
@@ -93,5 +132,17 @@ class DBHandler(context: Context, name: String?,
         val COLUMN_DOB = "dob"
         val COLUMN_FIRSTNAME = "firstname"
         val COLUMN_LASTNAME = "lastname"
+
+        //event table
+        val TABLE_EVENTS = "events"
+        val COLUMN_EVENT_ID = "event_id"
+        val COLUMN_USER_ID = "user_id"
+        val COLUMN_EVENT_DATE = "date"
+        val COLUMN_SEX = "sex categories"
+        val COLUMN_PROTECTION = "protection"
+        val COLUMN_FEELINGS = "feelings"
+        val COLUMN_SYMPTOMS = "symptoms"
+        val COLUMN_LOG = "log"
+
     }
 }

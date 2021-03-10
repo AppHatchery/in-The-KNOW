@@ -14,6 +14,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.intheknow.R
 import com.example.intheknow.data.DBHandler
 import com.example.intheknow.data.User
+import com.example.intheknow.data.UserResolver
 
 
 /**
@@ -54,14 +55,28 @@ class CreateAccount : Fragment() {
             val month : String = (1 + date.month).toString()
             val dateStr : String = month + "/" + day + "/" + year
             val newUser : User = User(username, password, gender, sexuality, dateStr, firstName, lastName)
-            db.addUser(newUser)
+            val id : Long = db.addUser(newUser)
 
+            //populate user resolver for app features
+            UserResolver.id = id
+            UserResolver.username = username
+            UserResolver.firstName = firstName
+            UserResolver.lastName = lastName
+            UserResolver.gender = gender
+            UserResolver.sexuality = sexuality
+            UserResolver.DOB = dateStr
+
+
+            Log.i("DB", id.toString())
+            //Test Query
+            /*
             val testUser : User? = db.queryUserByUsename("ajones")
             if (testUser != null) {
                 Log.i("DB Query", testUser.firstName)
             } else {
                 Log.i("DB Query", "Failed")
             }
+            */
 
             findNavController().navigate(R.id.action_createAccount_to_startDestination)
         }
