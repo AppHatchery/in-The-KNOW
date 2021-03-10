@@ -5,7 +5,7 @@ import java.util.*
 
 data class User (
     val username : String,
-    val pwd : String,
+    val password : String,
     val gender : String,
     val sexuality : String,
     val DOB : String,

@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.fragment.findNavController
 import com.example.intheknow.R
 
 
@@ -29,4 +31,13 @@ class CreateAccount : Fragment() {
         return inflater.inflate(R.layout.fragment_create_account, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        var submitAccountButton : Button = view.findViewById(R.id.createNewAccountSubmit)
+        submitAccountButton.setOnClickListener {
+            //db add user
+
+            findNavController().navigate(R.id.action_createAccount_to_startDestination)
+        }
+    }
 }
