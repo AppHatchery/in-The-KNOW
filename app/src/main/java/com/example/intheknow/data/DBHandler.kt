@@ -4,6 +4,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.content.Context
 import android.content.ContentValues
+import android.util.Log
 
 class DBHandler(context: Context, name: String?,
                   factory: SQLiteDatabase.CursorFactory?, version: Int) :
@@ -45,6 +46,37 @@ class DBHandler(context: Context, name: String?,
 
         db.insert(TABLE_USERS, null, values)
         db.close()
+        Log.i("DB", "Database created")
+    }
+
+    fun queryUserByUsename(username : String) : User? {
+        val query =
+            "SELECT * FROM $TABLE_USERS WHERE $COLUMN_USERNAME =  \"$username\""
+
+        val db = this.writableDatabase
+
+        val cursor = db.rawQuery(query, null)
+
+        var user: User? = null
+
+        if (cursor.moveToFirst()) {
+            cursor.moveToFirst()
+
+            val id = Integer.parseInt(cursor.getString(0))
+            val username = cursor.getString(1)
+            val password = cursor.getString(2)
+            val gender = cursor.getString(3)
+            val sexuality = cursor.getString(4)
+            val DOB = cursor.getString(5)
+            val firstName = cursor.getString(6)
+            val lastName = cursor.getString(7)
+
+            user = User(username, password, gender, sexuality, DOB, firstName, lastName)
+            cursor.close()
+        }
+
+        db.close()
+        return user
     }
 
     companion object {
