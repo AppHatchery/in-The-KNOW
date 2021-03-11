@@ -11,6 +11,7 @@ import android.widget.DatePicker
 import android.widget.EditText
 import android.widget.Spinner
 import androidx.navigation.fragment.findNavController
+import com.example.intheknow.App
 import com.example.intheknow.R
 import com.example.intheknow.data.DBHandler
 import com.example.intheknow.data.User
@@ -23,7 +24,6 @@ import com.example.intheknow.data.UserResolver
  * create an instance of this fragment.
  */
 class CreateAccount : Fragment() {
-    val db by lazy {DBHandler(requireContext(), null, null, 1)}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,7 +55,9 @@ class CreateAccount : Fragment() {
             val month : String = (1 + date.month).toString()
             val dateStr : String = month + "/" + day + "/" + year
             val newUser : User = User(username, password, gender, sexuality, dateStr, firstName, lastName)
-            val id : Long = db.addUser(newUser)
+
+
+            val id : Long = App.getDB().addUser(newUser)
 
             //populate user resolver for app features
             UserResolver.id = id

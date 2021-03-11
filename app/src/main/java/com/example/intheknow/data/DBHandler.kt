@@ -117,6 +117,18 @@ class DBHandler(context: Context, name: String?,
         return id
     }
 
+    fun deleteEvent(event : Event) {
+        //TODO
+    }
+
+    fun updateEvent(event : Event) {
+        //TODO
+    }
+
+    fun queryEventsByUserID(userID : Long) {
+        //TODO
+    }
+
     companion object {
 
         private val DATABASE_VERSION = 1

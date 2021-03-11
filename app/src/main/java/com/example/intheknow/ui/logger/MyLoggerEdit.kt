@@ -118,8 +118,10 @@ class MyLoggerEdit : Fragment() {
             val submit_log : EditText = binding.newLogEditTextEdit
             val submit_log_text : String = submit_log.text.toString()
 
-            EventListModifier.editEvent(Event(submit_date, submit_sex, submit_protection,
-                submit_feelings, submit_symptoms, submit_log_text))
+            val editedEvent = Event(submit_date, submit_sex, submit_protection,
+                submit_feelings, submit_symptoms, submit_log_text)
+            EventListModifier.editEvent(editedEvent)
+
 
             findNavController().navigate(R.id.action_myLoggerEdit_to_myLogEntries)
         }

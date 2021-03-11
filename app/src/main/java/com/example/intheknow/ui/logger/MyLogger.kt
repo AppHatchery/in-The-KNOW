@@ -95,6 +95,10 @@ class MyLogger : Fragment() {
             Log.d("SIZE", " " + EventListModifier.eventList.size)
             Log.d("TEST", "" + EventListModifier.eventList[0].log)
             Log.d("TEST2", "" + EventListModifier.eventList[0].sexCategories.sorted()[0])
+
+
+
+
             findNavController().navigate(R.id.action_myLogger_to_myLogEntries)
         }
 
