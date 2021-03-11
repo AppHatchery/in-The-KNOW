@@ -36,6 +36,9 @@ android {
     buildFeatures {
         dataBinding true
     }
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
 }
 
 dependencies {
@@ -99,6 +102,6 @@ dependencies {
     // optional - Test helpers
     testImplementation "androidx.room:room-testing:$room_version"
 
-
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
 
 }

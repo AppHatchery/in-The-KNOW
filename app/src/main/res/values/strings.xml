@@ -55,4 +55,7 @@
     <string name="patch">patch</string>
     <string name="combo_pills">combo pill</string>
     <string name="mini_pills">mini pill</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
 </resources>

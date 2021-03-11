@@ -6,6 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.activity.OnBackPressedCallback
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,6 +23,14 @@ import kotlin.collections.HashSet
 
 
 class MyLogEntries : Fragment(), EventAdapter.OnItemDeleteListener, EventAdapter.OnItemEditListener {
+
+    /*
+    private val callback = object : OnBackPressedCallback(true) {
+        override fun handleOnBackPressed() {
+            view?.let { Navigation.findNavController(it).navigate(R.id.action_myLogEntries_to_startDestination) }
+        }
+    }
+     */
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,7 +61,24 @@ class MyLogEntries : Fragment(), EventAdapter.OnItemDeleteListener, EventAdapter
         newEventButton.setOnClickListener {
             findNavController().navigate(R.id.action_myLogEntries_to_myLogger)
         }
+        val homeBtn : Button = view.findViewById(R.id.home_btn)
+        homeBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_myLogEntries_to_startDestination)
+        }
+        //requireActivity().onBackPressedDispatcher.addCallback(callback)
     }
+
+    /*
+    override fun onStart() {
+        super.onStart()
+        requireActivity().onBackPressedDispatcher.addCallback(callback)
+    }
+
+    override fun onStop() {
+        callback.remove()
+        super.onStop()
+    }
+    */
 
     private fun generateDummyLog(size : Int): ArrayList<Event> {
 

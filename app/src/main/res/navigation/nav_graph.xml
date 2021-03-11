@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_startDestination_to_myCircle"
             app:destination="@id/myCircle" />
+        <action
+            android:id="@+id/action_startDestination_to_myLogGraph"
+            app:destination="@id/myLogGraph" />
     </fragment>
     <fragment
         android:id="@+id/myTests"
@@ -78,6 +81,9 @@
         <action
             android:id="@+id/action_myLogEntries_to_myLoggerEdit"
             app:destination="@id/myLoggerEdit" />
+        <action
+            android:id="@+id/action_myLogEntries_to_startDestination"
+            app:destination="@id/startDestination" />
     </fragment>
     <fragment
         android:id="@+id/myCircle"
@@ -175,4 +181,9 @@
         android:name="com.example.intheknow.MapsFragment"
         android:label="Map Resources"
         tools:layout="@layout/fragment_maps" />
+    <fragment
+        android:id="@+id/myLogGraph"
+        android:name="com.example.intheknow.ui.MyLogGraph"
+        android:label="My Graphs"
+        tools:layout="@layout/fragment_my_log_graph" />
 </navigation>
