@@ -25,5 +25,15 @@ class UserResolver {
         var gender : String = ""
         var sexuality : String = ""
         var DOB : String = ""
+
+        fun populateValues(idIn: Long, user : User) {
+            username = user.username
+            firstName = user.firstName
+            lastName = user.lastName
+            gender = user.gender
+            sexuality = user.sexuality
+            DOB = user.DOB
+            id = idIn
+        }
     }
 }

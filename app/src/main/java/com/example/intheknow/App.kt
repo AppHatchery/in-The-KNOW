@@ -14,7 +14,6 @@ class App : Application() {
 
     companion object {
         var db: DBHandler? = null
-        val itkApp : App = App()
         fun getDB(): DBHandler {
             return db!!
         }

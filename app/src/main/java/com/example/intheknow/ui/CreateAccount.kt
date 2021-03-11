@@ -60,14 +60,7 @@ class CreateAccount : Fragment() {
             val id : Long = App.getDB().addUser(newUser)
 
             //populate user resolver for app features
-            UserResolver.id = id
-            UserResolver.username = username
-            UserResolver.firstName = firstName
-            UserResolver.lastName = lastName
-            UserResolver.gender = gender
-            UserResolver.sexuality = sexuality
-            UserResolver.DOB = dateStr
-
+            UserResolver.populateValues(id, newUser)
 
             Log.i("DB", id.toString())
             //Test Query

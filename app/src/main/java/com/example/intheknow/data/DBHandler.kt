@@ -68,20 +68,31 @@ class DBHandler(context: Context, name: String?,
         return id
     }
 
-    fun queryUserByUsename(username : String) : User? {
+    fun queryUserIDByUsername(username : String) : Long? {
+        val query = "SELECT $COLUMN_ID FROM $TABLE_USERS WHERE $COLUMN_USERNAME =  \"$username\""
+        val db = this.writableDatabase
+        val cursor = db.rawQuery(query, null)
+        var id : Long = -1
+        if (cursor.moveToFirst()) {
+            cursor.moveToFirst()
+            id = (cursor.getString(0)).toLong()
+            cursor.close()
+        }
+
+        db.close()
+        return id
+    }
+
+    fun queryUserByUsername(username : String) : User? {
         val query =
             "SELECT * FROM $TABLE_USERS WHERE $COLUMN_USERNAME =  \"$username\""
 
         val db = this.writableDatabase
-
         val cursor = db.rawQuery(query, null)
-
         var user: User? = null
 
         if (cursor.moveToFirst()) {
             cursor.moveToFirst()
-
-            //val id = Integer.parseInt(cursor.getString(0))
             val username = cursor.getString(1)
             val password = cursor.getString(2)
             val gender = cursor.getString(3)
