@@ -38,6 +38,7 @@ class MyResources : Fragment() {
         var supportGroupsBtn : Button = view.findViewById(R.id.SupportGroups)
         var recommendationsBtn : Button = view.findViewById(R.id.recommendations_button)
         var policiesBtn : Button = view.findViewById(R.id.policies_button)
+        var mapBtn : Button = view.findViewById(R.id.mapBtn)
 
         videosBtn.setOnClickListener {
             findNavController().navigate(R.id.action_myResources_to_videos2)
@@ -60,6 +61,10 @@ class MyResources : Fragment() {
         }
         policiesBtn.setOnClickListener {
             findNavController().navigate(R.id.action_myResources_to_policies2)
+        }
+
+        mapBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_myResources_to_mapsFragment2)
         }
 
     }

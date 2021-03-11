@@ -63,6 +63,9 @@
         <action
             android:id="@+id/action_myResources_to_policies2"
             app:destination="@id/policies2" />
+        <action
+            android:id="@+id/action_myResources_to_mapsFragment2"
+            app:destination="@id/mapsFragment2" />
     </fragment>
     <fragment
         android:id="@+id/myLogEntries"
@@ -167,4 +170,9 @@
             android:id="@+id/action_createAccount_to_startDestination"
             app:destination="@id/startDestination" />
     </fragment>
+    <fragment
+        android:id="@+id/mapsFragment2"
+        android:name="com.example.intheknow.MapsFragment"
+        android:label="Map Resources"
+        tools:layout="@layout/fragment_maps" />
 </navigation>
