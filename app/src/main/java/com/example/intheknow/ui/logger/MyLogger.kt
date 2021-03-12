@@ -11,6 +11,7 @@ import android.widget.ToggleButton
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.intheknow.App
 import com.example.intheknow.R
 import com.example.intheknow.data.Event
 import com.example.intheknow.data.EventListModifier
@@ -95,8 +96,6 @@ class MyLogger : Fragment() {
             Log.d("SIZE", " " + EventListModifier.eventList.size)
             Log.d("TEST", "" + EventListModifier.eventList[0].log)
             Log.d("TEST2", "" + EventListModifier.eventList[0].sexCategories.sorted()[0])
-
-
 
 
             findNavController().navigate(R.id.action_myLogger_to_myLogEntries)

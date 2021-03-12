@@ -1,6 +1,7 @@
 package com.example.intheknow.ui
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -42,6 +43,7 @@ class LoginScreen : Fragment() {
             val id : Long? = App.getDB().queryUserIDByUsername(username)
             if (loginUser != null && id != null && pwd == loginUser.password) {
                 UserResolver.populateValues(id, loginUser)
+                Log.d("Logging In", id.toString())
                 findNavController().navigate(R.id.action_loginScreen_to_startDestination)
             }
         }

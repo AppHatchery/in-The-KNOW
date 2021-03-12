@@ -12,9 +12,11 @@ import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.intheknow.App
 import com.example.intheknow.R
 import com.example.intheknow.data.Event
 import com.example.intheknow.data.EventListModifier
+import com.example.intheknow.data.UserResolver
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.fragment_my_log_entries.*
 import java.util.*
@@ -43,7 +45,11 @@ class MyLogEntries : Fragment(), EventAdapter.OnItemDeleteListener, EventAdapter
         recycle_view_events.layoutManager = LinearLayoutManager(context)
         recycle_view_events.adapter = EventListModifier.adapter
         recycle_view_events.setHasFixedSize(true)
-
+        if (EventListModifier.eventList.isEmpty()) {
+            val setupList : ArrayList<Event> = App.getDB().queryEventsByUserID(UserResolver.id)
+            Log.d("Setup List Size: ", setupList.size.toString())
+            EventListModifier.setupEventList(setupList)
+        }
     }
 
     override fun onCreateView(

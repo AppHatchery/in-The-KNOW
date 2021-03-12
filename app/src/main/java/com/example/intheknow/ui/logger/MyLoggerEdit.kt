@@ -1,6 +1,7 @@
 package com.example.intheknow.ui.logger
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -69,7 +70,10 @@ class MyLoggerEdit : Fragment() {
             Event.VOMITING, Event.MUSCLE_ACHES, Event.JOINT_PAIN, Event.INFECTION, Event.SORE_THROAT)
 
         //fill in current
+        Log.i("Item Selector", EventListModifier.itemSelector.toString())
+        Log.i("Size of Event List", EventListModifier.eventList.size.toString())
         val currentEvent : Event = EventListModifier.eventList[EventListModifier.itemSelector]
+
         val currentCategories : ArrayList<String> = currentEvent.sexCategories as ArrayList<String>
         val currentProtection : ArrayList<String> = currentEvent.protection as ArrayList<String>
         val currentFeelings : ArrayList<String> = currentEvent.feelings as ArrayList<String>

@@ -109,15 +109,17 @@ class DBHandler(context: Context, name: String?,
         return user
     }
 
-    fun addEvent(event : Event) : Long {
-        val values = ContentValues()
+    fun addEvent(UserID: Long, event : Event) : Long {
+        var values = ContentValues()
         values.put(COLUMN_EVENT_DATE, Converter.gregorianCalendarToDateStr(event.date))
         values.put(COLUMN_SEX, Converter.list2DBStr(event.sexCategories))
         values.put(COLUMN_PROTECTION, Converter.list2DBStr(event.protection))
         values.put(COLUMN_FEELINGS, Converter.list2DBStr(event.feelings))
         values.put(COLUMN_SYMPTOMS, Converter.list2DBStr(event.symptoms))
         values.put(COLUMN_LOG, event.log)
-        values.put(COLUMN_USER_ID, UserResolver.id)
+        values.put(COLUMN_USER_ID, UserID)
+
+        Log.d("Feelings: ", values.get(COLUMN_FEELINGS) as String)
 
         val db = this.writableDatabase
 
@@ -128,16 +130,77 @@ class DBHandler(context: Context, name: String?,
         return id
     }
 
-    fun deleteEvent(event : Event) {
-        //TODO
+    fun deleteEvent(UserID: Long, event : Event) : Boolean {
+        var result = false
+
+        val dateEventID = Converter.gregorianCalendarToDateStr(event.date)
+
+        val query = "SELECT * FROM $TABLE_EVENTS WHERE $COLUMN_USER_ID = \"$UserID\" " +
+                "AND $COLUMN_EVENT_DATE = \"$dateEventID\""
+
+        val db = this.writableDatabase
+
+        val cursor = db.rawQuery(query, null)
+
+        if (cursor.moveToFirst()) {
+            val event_id = Integer.parseInt(cursor.getString(0))
+            db.delete(
+                TABLE_EVENTS, COLUMN_EVENT_ID + " = ?",
+                arrayOf(event_id.toString()))
+            cursor.close()
+            result = true
+        }
+        db.close()
+        return result
     }
 
-    fun updateEvent(event : Event) {
-        //TODO
+    fun updateEvent(UserID: Long, event : Event, newEvent : Event) {
+        val str_date = Converter.gregorianCalendarToDateStr(newEvent.date)
+        val str_sex = Converter.list2DBStr(newEvent.sexCategories)
+        val str_protection = Converter.list2DBStr(newEvent.protection)
+        val str_feelings = Converter.list2DBStr(newEvent.feelings)
+        val str_symptoms = Converter.list2DBStr(newEvent.symptoms)
+        val log = newEvent.log
+
+        val oldEventDate = Converter.gregorianCalendarToDateStr(event.date)
+        val updateQuery =
+            "UPDATE $TABLE_EVENTS SET " +
+                    "$COLUMN_EVENT_DATE =  \"$str_date\", " +
+                    "$COLUMN_SEX = \"$str_sex\", " +
+                    "$COLUMN_PROTECTION = \"$str_protection\", " +
+                    "$COLUMN_FEELINGS = \"$str_feelings\", " +
+                    "$COLUMN_SYMPTOMS = \"$str_symptoms\", " +
+                    "$COLUMN_LOG = \"$log\" " +
+                    "WHERE $COLUMN_USER_ID = \"$UserID\" AND $COLUMN_EVENT_DATE = \"$oldEventDate\""
+        val db = this.writableDatabase
+        db.execSQL(updateQuery)
+        db.close()
     }
 
-    fun queryEventsByUserID(userID : Long) {
-        //TODO
+    fun queryEventsByUserID(userID : Long) : ArrayList<Event> {
+        val query =
+            "SELECT * FROM $TABLE_EVENTS WHERE $COLUMN_USER_ID =  \"$userID\""
+
+        val db = this.writableDatabase
+        val cursor = db.rawQuery(query, null)
+
+        var userEvents : ArrayList<Event> = arrayListOf()
+        try {
+            while (cursor.moveToNext()) {
+                val event_date = Converter.dateStrToGregorianCalendar(cursor.getString(1))
+                val event_list = Converter.DBStr2List(cursor.getString(2))
+                val protection_list = Converter.DBStr2List(cursor.getString(3))
+                val feelings_list = Converter.DBStr2List(cursor.getString(4))
+                val symptoms_list = Converter.DBStr2List(cursor.getString(5))
+                val log = cursor.getString(6)
+                val e : Event = Event(event_date, event_list, protection_list, feelings_list, symptoms_list, log)
+                userEvents.add(e)
+            }
+        } finally {
+            cursor.close();
+        }
+        db.close()
+        return userEvents
     }
 
     companion object {
@@ -161,7 +224,7 @@ class DBHandler(context: Context, name: String?,
         val COLUMN_EVENT_ID = "event_id"
         val COLUMN_USER_ID = "user_id"
         val COLUMN_EVENT_DATE = "date"
-        val COLUMN_SEX = "sex categories"
+        val COLUMN_SEX = "sex_categories"
         val COLUMN_PROTECTION = "protection"
         val COLUMN_FEELINGS = "feelings"
         val COLUMN_SYMPTOMS = "symptoms"
