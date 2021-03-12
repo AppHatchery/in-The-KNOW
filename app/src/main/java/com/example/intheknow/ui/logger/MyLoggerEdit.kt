@@ -86,9 +86,11 @@ class MyLoggerEdit : Fragment() {
         for (label in currentProtection) {
             protection_button_arr[protection_labels.indexOf(label)].isChecked = true
         }
+        //Log.i("label of feelings", currentFeelings.toArray().joinToString(","))
         for (label in currentFeelings) {
             feelings_button_arr[feeling_labels.indexOf(label)].isChecked = true
         }
+        //Log.i("current symptoms", currentSymptoms[0])
         for (label in currentSymptoms) {
             symptoms_button_arr[symptom_labels.indexOf(label)].isChecked = true
         }

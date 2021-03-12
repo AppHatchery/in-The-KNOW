@@ -26,7 +26,19 @@ class Converter {
         }
 
         fun DBStr2List(str : String) : List<String> {
-            return str.split(",")
+            var retList : ArrayList<String> = arrayListOf()
+            var startIdx : Int = 0
+            var endIdx : Int = str.indexOf(",", startIdx)
+            while (endIdx >= 0) {
+                retList.add(str.substring(startIdx, endIdx))
+                startIdx = endIdx + 1
+                endIdx = str.indexOf(",", startIdx)
+            }
+            var finStr : String = str.substring(startIdx, str.length)
+            if (finStr.length > 0) {
+                retList.add(finStr)
+            }
+            return retList
         }
 
 
