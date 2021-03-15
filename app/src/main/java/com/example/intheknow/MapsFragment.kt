@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -26,11 +27,36 @@ class MapsFragment : Fragment() {
          * install it inside the SupportMapFragment. This method will only be triggered once the
          * user has installed Google Play services and returned to the app.
          */
-        var poses = arrayOf<Array<Double>>(arrayOf(-30.0, 150.0), arrayOf(-34.0, 154.0), arrayOf(-38.0, 158.0))
+        var poses = arrayOf<Array<Any>>(arrayOf(-30.0, 150.0, "Atlanta" ), arrayOf(-34.0, 154.0, "Sydney"), arrayOf(-38.0, 158.0, "Ocean"))
 
         poses.forEach {
-            googleMap.addMarker(MarkerOptions().position(LatLng(it.get(0), it.get(1))).title("Marker"))
+
+
+            googleMap.addMarker(MarkerOptions().position(LatLng(it.get(0) as Double,
+                it.get(1) as Double
+            )).title(it.get(2) as String))
         }
+
+        googleMap.setOnMarkerClickListener {
+            val clickCount = it.tag as? Int
+
+           // val aTag = it
+            //val aTitle = it.title
+
+
+            // Check if a click count was set, then display the click count.
+            //clickCount?.let {
+               // val newClickCount = it + 1
+                //aTag = newClickCoun
+            it.showInfoWindow()
+           // }
+
+            // Return false to indicate that we have not consumed the event and that we wish
+            // for the default behavior to occur (which is for the camera to move such that the
+            // marker is centered and for the marker's info window to open, if it has one).
+            return@setOnMarkerClickListener false
+        }
+
 
 
 
