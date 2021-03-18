@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "815444649121",
+    "project_id": "in-the-know-3e608",
+    "storage_bucket": "in-the-know-3e608.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:815444649121:android:2130514f7de4d8846f7ce0",
+        "android_client_info": {
+          "package_name": "com.example.intheknow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "815444649121-efk3meofpjmnu5u5jrpcuh9u25dfb78b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAk1_bew3bLrkRR0BboA9-ok5LU22iJQRo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "815444649121-efk3meofpjmnu5u5jrpcuh9u25dfb78b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

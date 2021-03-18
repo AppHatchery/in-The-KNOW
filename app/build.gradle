@@ -6,6 +6,8 @@ plugins {
     id 'com.google.secrets_gradle_plugin' version '0.5'
 }
 apply plugin: "androidx.navigation.safeargs.kotlin"
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
@@ -55,6 +57,8 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation platform('com.google.firebase:firebase-bom:26.7.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
 
     def nav_version = "2.3.3"
 
