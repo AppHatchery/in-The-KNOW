@@ -36,9 +36,9 @@ class MyCircle : Fragment(), ChatEntryAdapter.OnChatEntryClickListener {
 
         if (load) {
             //myCircleIO.putDefaultValues()
-            myCircleIO.updateLocalData()
+            //myCircleIO.updateLocalData()
 
-            myCircleIO.adapter.notifyItemRangeInserted(0, 4)
+            //myCircleIO.adapter.notifyItemRangeInserted(0, 4)
         }
 
 

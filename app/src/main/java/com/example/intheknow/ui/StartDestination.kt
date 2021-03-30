@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
 import com.example.intheknow.R
+import sdk.chat.core.session.ChatSDK
 
 /**
  * A simple [Fragment] subclass.
@@ -40,7 +41,8 @@ class StartDestination : Fragment() {
             findNavController().navigate(R.id.action_startDestination_to_myResources)
         }
         circle_btn.setOnClickListener {
-            findNavController().navigate(R.id.action_startDestination_to_myCircle)
+            //findNavController().navigate(R.id.action_startDestination_to_myCircle)
+            ChatSDK.ui().startSplashScreenActivity(this.activity)
         }
         graphs_btn.setOnClickListener {
             findNavController().navigate(R.id.action_startDestination_to_myLogGraph)
