@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:context=".ui.logger.MyLogger">
+
+            <Button
+                android:id="@+id/skip_to_log_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_padding"
+                android:backgroundTint="@color/itk_blue"
+                android:text="@string/see_history" />
+
+            <TextView
+                android:id="@+id/new_logger_q1_occurence"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:padding="@dimen/small_text_padding"
+                android:text="Question 1: What symptoms are you feeling? (Select all that apply)"
+                android:textColor="@color/black"
+                android:textSize="@dimen/question_text_size" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="84dp"
+                android:gravity="center_vertical">
+
+                <ToggleButton
+                    android:id="@+id/missed_period_btn"
+                    android:layout_width="@dimen/my_logger_circle_diameter"
+                    android:layout_height="@dimen/my_logger_circle_diameter"
+                    android:layout_marginStart="@dimen/q1_maragin"
+                    android:layout_marginEnd="@dimen/q1_maragin"
+                    android:background="@drawable/toggle_day_bg_selector"
+                    android:text="Missed Period"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textOff="Missed Period"
+                    android:textOn="Missed Period"
+                    android:textSize="@dimen/btn_text_size" />
+
+                <ToggleButton
+                    android:id="@+id/vaginal_itching_btn"
+                    android:layout_width="@dimen/my_logger_circle_diameter"
+                    android:layout_height="@dimen/my_logger_circle_diameter"
+                    android:layout_marginStart="@dimen/q1_maragin"
+                    android:layout_marginEnd="@dimen/q1_maragin"
+                    android:background="@drawable/toggle_day_bg_selector"
+                    android:buttonTint="@color/itk_blue"
+                    android:text="Vaginal Itching"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textOff="Vaginal Itching"
+                    android:textOn="Vaginal Itching"
+                    android:textSize="@dimen/btn_text_size" />
+
+                <ToggleButton
+                    android:id="@+id/vaginal_burning_btn"
+                    android:layout_width="@dimen/my_logger_circle_diameter"
+                    android:layout_height="@dimen/my_logger_circle_diameter"
+                    android:layout_marginStart="@dimen/q1_maragin"
+                    android:layout_marginEnd="@dimen/q1_maragin"
+                    android:background="@drawable/toggle_day_bg_selector"
+                    android:text="Vaginal Burning"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textOff="Vaginal Burning"
+                    android:textOn="Vaginal Burning"
+                    android:textSize="@dimen/btn_text_size" />
+
+                <ToggleButton
+                    android:id="@+id/vaginal_odor_btn"
+                    android:layout_width="@dimen/my_logger_circle_diameter"
+                    android:layout_height="@dimen/my_logger_circle_diameter"
+                    android:layout_marginStart="@dimen/q1_maragin"
+                    android:layout_marginEnd="@dimen/q1_maragin"
+                    android:background="@drawable/toggle_day_bg_selector"
+                    android:text="Vaginal Odor"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textOff="Vaginal Odor"
+                    android:textOn="Vaginal Odor"
+                    android:textSize="@dimen/btn_text_size" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="84dp"
+                android:gravity="center_vertical">
+
+                <ToggleButton
+                    android:id="@+id/pain_sex_btn"
+                    android:layout_width="@dimen/my_logger_circle_diameter"
+                    android:layout_height="@dimen/my_logger_circle_diameter"
+                    android:layout_marginStart="@dimen/q1_maragin"
+                    android:layout_marginEnd="@dimen/q1_maragin"
+                    android:background="@drawable/toggle_day_bg_selector"
+                    android:text="Pain during Sex"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textOff="Pain during Sex"
+                    android:textOn="Pain during Sex"
+                    android:textSize="@dimen/btn_text_size" />
+
+                <ToggleButton
+                    android:id="@+id/abdomenal_pain_btn"
+                    android:layout_width="@dimen/my_logger_circle_diameter"
+                    android:layout_height="@dimen/my_logger_circle_diameter"
+                    android:layout_marginStart="@dimen/q1_maragin"
+                    android:layout_marginEnd="@dimen/q1_maragin"
+                    android:background="@drawable/toggle_day_bg_selector"
+                    android:buttonTint="@color/itk_blue"
+                    android:text="Lower Abdominal Pain"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textOff="Lower Abdominal Pain"
+                    android:textOn="Lower Abdominal Pain"
+                    android:textSize="@dimen/btn_text_size" />
+
+                <ToggleButton
+                    android:id="@+id/Vaginal_bleeding_btn"
+                    android:layout_width="@dimen/my_logger_circle_diameter"
+                    android:layout_height="@dimen/my_logger_circle_diameter"
+                    android:layout_marginStart="@dimen/q1_maragin"
+                    android:layout_marginEnd="@dimen/q1_maragin"
+                    android:background="@drawable/toggle_day_bg_selector"
+                    android:text="Abnormal Vaginal Bleeding"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textOff="Abnormal Vaginal Bleeding"
+                    android:textOn="Abnormal Vaginal Bleeding"
+                    android:textSize="@dimen/btn_text_size" />
+
+                <ToggleButton
+                    android:id="@+id/fever_btn"
+                    android:layout_width="@dimen/my_logger_circle_diameter"
+                    android:layout_height="@dimen/my_logger_circle_diameter"
+                    android:layout_marginStart="@dimen/q1_maragin"
+                    android:layout_marginEnd="@dimen/q1_maragin"
+                    android:background="@drawable/toggle_day_bg_selector"
+                    android:text="Fever"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textOff="Fever"
+                    android:textOn="Fever"
+                    android:textSize="@dimen/btn_text_size" />
+            </TableRow>
+
+            <TextView
+                android:id="@+id/logger_q_vaginal_discharge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:padding="@dimen/small_text_padding"
+                android:text="Type of Vaginal Discharge (if applicable)?"
+                android:textColor="@color/black"
+                android:textSize="@dimen/question_text_size" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:gravity="center_vertical">
+
+                <ToggleButton
+                    android:id="@+id/yellow_btn"
+                    android:layout_width="@dimen/my_logger_circle_diameter"
+                    android:layout_height="@dimen/my_logger_circle_diameter"
+                    android:layout_marginStart="@dimen/q2_margin_1"
+                    android:layout_marginEnd="@dimen/q2_margin_1"
+                    android:background="@drawable/toggle_day_bg_selector"
+                    android:text="Yellow"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textOff="Yellow"
+                    android:textOn="Yellow"
+                    android:textSize="@dimen/btn_text_size" />
+
+                <ToggleButton
+                    android:id="@+id/green_btn"
+                    android:layout_width="@dimen/my_logger_circle_diameter"
+                    android:layout_height="@dimen/my_logger_circle_diameter"
+                    android:layout_marginStart="@dimen/q2_margin_1"
+                    android:layout_marginEnd="@dimen/q2_margin_1"
+                    android:background="@drawable/toggle_day_bg_selector"
+                    android:text="Green"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textOff="Green"
+                    android:textOn="Green"
+                    android:textSize="@dimen/btn_text_size" />
+
+                <ToggleButton
+                    android:id="@+id/white_btn"
+                    android:layout_width="@dimen/my_logger_circle_diameter"
+                    android:layout_height="@dimen/my_logger_circle_diameter"
+                    android:layout_marginStart="@dimen/q2_margin_1"
+                    android:layout_marginEnd="@dimen/q2_margin_1"
+                    android:background="@drawable/toggle_day_bg_selector"
+                    android:text="White"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textOff="White"
+                    android:textOn="White"
+                    android:textSize="@dimen/btn_text_size" />
+
+                <ToggleButton
+                    android:id="@+id/clear_btn"
+                    android:layout_width="@dimen/my_logger_circle_diameter"
+                    android:layout_height="@dimen/my_logger_circle_diameter"
+                    android:layout_marginStart="@dimen/q2_margin_1"
+                    android:layout_marginEnd="@dimen/q2_margin_1"
+                    android:background="@drawable/toggle_day_bg_selector"
+                    android:text="Clear"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textOff="Clear"
+                    android:textOn="Clear"
+                    android:textSize="@dimen/btn_text_size" />
+
+            </TableRow>
+
+            <TextView
+                android:id="@+id/logger_q2_feeling"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:padding="@dimen/small_text_padding"
+                android:text="Question 2: Have you recently engaged in sexual activities?"
+                android:textColor="@color/black"
+                android:textSize="@dimen/question_text_size" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:gravity="center_vertical">
+
+                <ToggleButton
+                    android:id="@+id/yes_btn"
+                    android:layout_width="@dimen/my_logger_circle_diameter"
+                    android:layout_height="@dimen/my_logger_circle_diameter"
+                    android:layout_marginStart="@dimen/q2_margin_1"
+                    android:layout_marginEnd="@dimen/q2_margin_1"
+                    android:background="@drawable/toggle_day_bg_selector"
+                    android:text="Yes"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textOff="Yes"
+                    android:textOn="Yes"
+                    android:textSize="@dimen/btn_text_size" />
+
+                <ToggleButton
+                    android:id="@+id/no_btn"
+                    android:layout_width="@dimen/my_logger_circle_diameter"
+                    android:layout_height="@dimen/my_logger_circle_diameter"
+                    android:layout_marginStart="@dimen/q2_margin_1"
+                    android:layout_marginEnd="@dimen/q2_margin_1"
+                    android:background="@drawable/toggle_day_bg_selector"
+                    android:text="No"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textOff="No"
+                    android:textOn="No"
+                    android:textSize="@dimen/btn_text_size" />
+
+            </TableRow>
+
+            <TextView
+                android:id="@+id/logger_q3_symptoms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:padding="@dimen/small_text_padding"
+                android:text="Question 3: When was the last time?"
+                android:textColor="@color/black"
+                android:textSize="@dimen/question_text_size" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="94dp"
+                android:gravity="fill_vertical">
+
+                <ToggleButton
+                    android:id="@+id/last_day_btn"
+                    android:layout_width="@dimen/my_logger_circle_diameter"
+                    android:layout_height="@dimen/my_logger_circle_diameter"
+                    android:layout_marginStart="@dimen/q2_margin_1"
+                    android:layout_marginEnd="@dimen/q2_margin_1"
+                    android:background="@drawable/toggle_day_bg_selector"
+                    android:text="Last Day"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textOff="Last Day"
+                    android:textOn="Last Day"
+                    android:textSize="@dimen/btn_text_size" />
+
+                <ToggleButton
+                    android:id="@+id/last_seven_btn"
+                    android:layout_width="@dimen/my_logger_circle_diameter"
+                    android:layout_height="@dimen/my_logger_circle_diameter"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/q2_margin_1"
+                    android:layout_marginEnd="@dimen/q2_margin_1"
+                    android:background="@drawable/toggle_day_bg_selector"
+                    android:text="Last 7 Days"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textOff="Last 7 Days"
+                    android:textOn="Last 7 Days"
+                    android:textSize="@dimen/btn_text_size" />
+
+                <ToggleButton
+                    android:id="@+id/last_fourteen_btn"
+                    android:layout_width="@dimen/my_logger_circle_diameter"
+                    android:layout_height="@dimen/my_logger_circle_diameter"
+                    android:layout_marginStart="@dimen/q2_margin_1"
+                    android:layout_marginEnd="@dimen/q2_margin_1"
+                    android:background="@drawable/toggle_day_bg_selector"
+                    android:text="Last 14 Days"
+                    android:textAllCaps="false"
+                    android:textOff="Last 14 Days"
+                    android:textOn="Last 14 Days"
+                    android:textSize="@dimen/btn_text_size" />
+
+                <ToggleButton
+                    android:id="@+id/last_thirty_btn"
+                    android:layout_width="@dimen/my_logger_circle_diameter"
+                    android:layout_height="@dimen/my_logger_circle_diameter"
+                    android:layout_marginStart="@dimen/q2_margin_1"
+                    android:layout_marginEnd="@dimen/q2_margin_1"
+                    android:background="@drawable/toggle_day_bg_selector"
+                    android:text="Last 30 Days"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textOff="Last 30 Days"
+                    android:textOn="Last 30 Days"
+                    android:textSize="@dimen/btn_text_size" />
+
+            </TableRow>
+
+            <TextView
+                android:id="@+id/logger_q4_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:padding="@dimen/small_text_padding"
+                android:text="Question 4: Type of Sex?"
+                android:textColor="@color/black"
+                android:textSize="@dimen/question_text_size" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="94dp"
+                android:gravity="fill_vertical">
+
+                <ToggleButton
+                    android:id="@+id/vaginal_btn"
+                    android:layout_width="@dimen/my_logger_circle_diameter"
+                    android:layout_height="@dimen/my_logger_circle_diameter"
+                    android:layout_marginStart="@dimen/q2_margin_1"
+                    android:layout_marginEnd="@dimen/q2_margin_1"
+                    android:background="@drawable/toggle_day_bg_selector"
+                    android:text="Vaginal"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textOff="Vaginal"
+                    android:textOn="Vaginal"
+                    android:textSize="@dimen/btn_text_size" />
+
+                <ToggleButton
+                    android:id="@+id/oral_btn"
+                    android:layout_width="@dimen/my_logger_circle_diameter"
+                    android:layout_height="@dimen/my_logger_circle_diameter"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/q2_margin_1"
+                    android:layout_marginEnd="@dimen/q2_margin_1"
+                    android:background="@drawable/toggle_day_bg_selector"
+                    android:text="Oral"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textOff="Oral"
+                    android:textOn="Oral"
+                    android:textSize="@dimen/btn_text_size" />
+
+                <ToggleButton
+                    android:id="@+id/anal_btn"
+                    android:layout_width="@dimen/my_logger_circle_diameter"
+                    android:layout_height="@dimen/my_logger_circle_diameter"
+                    android:layout_marginStart="@dimen/q2_margin_1"
+                    android:layout_marginEnd="@dimen/q2_margin_1"
+                    android:background="@drawable/toggle_day_bg_selector"
+                    android:text="Anal"
+                    android:textAllCaps="false"
+                    android:textOff="Anal"
+                    android:textOn="Anal"
+                    android:textSize="@dimen/btn_text_size" />
+
+                <ToggleButton
+                    android:id="@+id/other_btn"
+                    android:layout_width="@dimen/my_logger_circle_diameter"
+                    android:layout_height="@dimen/my_logger_circle_diameter"
+                    android:layout_marginStart="@dimen/q2_margin_1"
+                    android:layout_marginEnd="@dimen/q2_margin_1"
+                    android:background="@drawable/toggle_day_bg_selector"
+                    android:text="Other"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textOff="Other"
+                    android:textOn="Other"
+                    android:textSize="@dimen/btn_text_size" />
+
+            </TableRow>
+
+            <TextView
+                android:id="@+id/logger_other_info_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:padding="@dimen/small_text_padding"
+                android:text="Give any other specific information:"
+                android:textColor="@color/black"
+                android:textSize="@dimen/question_text_size" />
+
+            <EditText
+                android:id="@+id/new_log_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="@string/i_felt"
+                android:importantForAutofill="no"
+                android:inputType="textMultiLine" />
+
+            <TextView
+                android:id="@+id/logger_q4_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:padding="@dimen/small_text_padding"
+                android:text="Question 4: Type of Sex?"
+                android:textColor="@color/black"
+                android:textSize="@dimen/question_text_size" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="94dp"
+                android:gravity="fill_vertical">
+
+                <ToggleButton
+                    android:id="@+id/yes_condom_btn"
+                    android:layout_width="@dimen/my_logger_circle_diameter"
+                    android:layout_height="@dimen/my_logger_circle_diameter"
+                    android:layout_marginStart="@dimen/q2_margin_1"
+                    android:layout_marginEnd="@dimen/q2_margin_1"
+                    android:background="@drawable/toggle_day_bg_selector"
+                    android:text="Yes"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textOff="Yes"
+                    android:textOn="Yes"
+                    android:textSize="@dimen/btn_text_size" />
+
+                <ToggleButton
+                    android:id="@+id/no_condom_btn"
+                    android:layout_width="@dimen/my_logger_circle_diameter"
+                    android:layout_height="@dimen/my_logger_circle_diameter"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/q2_margin_1"
+                    android:layout_marginEnd="@dimen/q2_margin_1"
+                    android:background="@drawable/toggle_day_bg_selector"
+                    android:text="No"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textOff="No"
+                    android:textOn="No"
+                    android:textSize="@dimen/btn_text_size" />
+
+                <ToggleButton
+                    android:id="@+id/not_say_condom_btn"
+                    android:layout_width="@dimen/my_logger_circle_diameter"
+                    android:layout_height="@dimen/my_logger_circle_diameter"
+                    android:layout_marginStart="@dimen/q2_margin_1"
+                    android:layout_marginEnd="@dimen/q2_margin_1"
+                    android:background="@drawable/toggle_day_bg_selector"
+                    android:text="I'd rather not say"
+                    android:textAllCaps="false"
+                    android:textOff="I'd rather not say"
+                    android:textOn="I'd rather not say"
+                    android:textSize="@dimen/btn_text_size" />
+
+            </TableRow>
+
+            <Button
+                android:id="@+id/new_log_submit_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/itk_blue"
+                android:text="@string/submit"
+                android:textAlignment="center" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>
