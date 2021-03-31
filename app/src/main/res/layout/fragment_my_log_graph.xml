@@ -7,8 +7,11 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".MainActivity">
 
-<com.github.mikephil.charting.charts.BarChart
-    android:id="@+id/barChart"
+<com.github.mikephil.charting.charts.PieChart
+    android:id="@+id/pieChart"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+    android:layout_height="match_parent"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+

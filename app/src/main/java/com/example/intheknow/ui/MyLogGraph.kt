@@ -9,10 +9,9 @@ import com.example.intheknow.R
 import android.graphics.Color
 import com.github.mikephil.charting.components.LegendEntry
 import com.github.mikephil.charting.components.XAxis
-import com.github.mikephil.charting.data.BarData
-import com.github.mikephil.charting.data.BarDataSet
-import com.github.mikephil.charting.data.BarEntry
+import com.github.mikephil.charting.data.*
 import com.github.mikephil.charting.formatter.IAxisValueFormatter
+import com.github.mikephil.charting.formatter.PercentFormatter
 import kotlinx.android.synthetic.main.fragment_my_log_graph.*
 
 /**
@@ -20,6 +19,7 @@ import kotlinx.android.synthetic.main.fragment_my_log_graph.*
  * Use the [MyLogGraph.newInstance] factory method to
  * create an instance of this fragment.
  */
+
 class MyLogGraph : Fragment() {
 
 
@@ -39,7 +39,27 @@ class MyLogGraph : Fragment() {
         setBarChart()
     }
     private fun setBarChart() {
+        pieChart.setUsePercentValues(true)
+        val xvalues = ArrayList<PieEntry>()
+        xvalues.add(PieEntry(34.0f, "Vaginal"))
+        xvalues.add(PieEntry(28.2f, "Anal"))
+        xvalues.add(PieEntry(37.9f, "Oral"))
+        val colors = mutableListOf<Int>(Color.RED, Color.CYAN, Color.GREEN)
+        val dataSet = PieDataSet(xvalues, "")
+        val data = PieData(dataSet)
+        dataSet.setColors(colors)
+        // In Percentage
+        data.setValueFormatter(PercentFormatter())
 
+        pieChart.data = data
+        pieChart.description.text = "Sexual Activity Chart"
+        pieChart.isDrawHoleEnabled = true
+        data.setValueTextSize(17f)
+
+
+        //pieChart.setOnChartValueSelectedListener(this)
+        //chartDetails(pieChart, Typeface.SANS_SERIF)
+        /*
         val entries = ArrayList<BarEntry>()
         entries.add(BarEntry(5f, 27f))
         entries.add(BarEntry(10f, 30f))
@@ -69,6 +89,7 @@ class MyLogGraph : Fragment() {
         //barChart.getXAxis().valueFormatter = IAxisValueFormatter { value, axis -> labels[value.toInt()] }
 
         barChart.animateY(3000)
+         */
     }
 
 
