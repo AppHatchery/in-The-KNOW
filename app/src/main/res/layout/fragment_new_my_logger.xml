@@ -352,7 +352,7 @@
             </TableRow>
 
             <TextView
-                android:id="@+id/logger_q4_text"
+                android:id="@+id/new_logger_q4_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-medium"
