@@ -149,7 +149,7 @@
     <fragment
         android:id="@+id/loginScreen"
         android:name="com.example.intheknow.ui.LoginScreen"
-        android:label="Welcome to In-the-KNOW!"
+        android:label=""
         tools:layout="@layout/fragment_login_screen" >
         <action
             android:id="@+id/action_loginScreen_to_startDestination"

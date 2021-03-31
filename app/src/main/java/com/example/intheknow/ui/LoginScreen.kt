@@ -1,18 +1,23 @@
 package com.example.intheknow.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.intheknow.App
 import com.example.intheknow.R
 import com.example.intheknow.data.User
 import com.example.intheknow.data.UserResolver
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.SignInButton
 
 
 /**
@@ -22,10 +27,16 @@ import com.example.intheknow.data.UserResolver
  */
 class LoginScreen : Fragment() {
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+    }
 
+    override fun onStart() {
+        super.onStart()
+        //val account = GoogleSignIn.getLastSignedInAccount(requireContext())
+        //if (account != null) {
+        //    findNavController().navigate(R.id.action_loginScreen_to_createAccount)
+        //}
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -51,7 +62,22 @@ class LoginScreen : Fragment() {
         createAccountButton.setOnClickListener {
             findNavController().navigate(R.id.action_loginScreen_to_createAccount)
         }
+        /*
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestEmail()
+            .build()
+
+        val googleSignInClient: GoogleSignInClient = GoogleSignIn.getClient(requireActivity(), gso)
+
+        view.findViewById<SignInButton>(R.id.sign_in_button_google).setOnClickListener {
+            val signInIntent: Intent = googleSignInClient.signInIntent
+            startActivityForResult(signInIntent, RC_SIGN_IN);
+        }
+         */
     }
+
+
 
 
 }
