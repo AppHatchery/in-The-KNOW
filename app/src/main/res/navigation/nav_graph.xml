@@ -115,22 +115,38 @@
         android:id="@+id/videos2"
         android:name="com.example.intheknow.ui.resources.videos"
         android:label="Videos"
-        tools:layout="@layout/fragment_videos" />
+        tools:layout="@layout/fragment_videos" >
+        <action
+            android:id="@+id/action_videos2_to_videosInfo"
+            app:destination="@id/videosInfo" />
+    </fragment>
     <fragment
         android:id="@+id/currentEvents"
         android:name="com.example.intheknow.ui.resources.CurrentEvents"
         android:label="Current Events"
-        tools:layout="@layout/fragment_current_events" />
+        tools:layout="@layout/fragment_current_events" >
+        <action
+            android:id="@+id/action_currentEvents_to_currEventsInfo"
+            app:destination="@id/currEventsInfo" />
+    </fragment>
     <fragment
         android:id="@+id/newsfeed"
         android:name="com.example.intheknow.ui.resources.Newsfeed"
         android:label="Newsfeed"
-        tools:layout="@layout/fragment_newsfeed" />
+        tools:layout="@layout/fragment_newsfeed" >
+        <action
+            android:id="@+id/action_newsfeed_to_newsInfo"
+            app:destination="@id/newsInfo" />
+    </fragment>
     <fragment
         android:id="@+id/podcasts"
         android:name="com.example.intheknow.ui.resources.podcasts"
         android:label="Podcasts"
-        tools:layout="@layout/fragment_podcasts" />
+        tools:layout="@layout/fragment_podcasts" >
+        <action
+            android:id="@+id/action_podcasts_to_podcastInfo"
+            app:destination="@id/podcastInfo" />
+    </fragment>
     <fragment
         android:id="@+id/recommendations"
         android:name="com.example.intheknow.ui.resources.Recommendations"
@@ -186,4 +202,20 @@
         android:name="com.example.intheknow.ui.MyLogGraph"
         android:label="My Graphs"
         tools:layout="@layout/fragment_my_log_graph" />
+    <fragment
+        android:id="@+id/newsInfo"
+        android:name="com.example.intheknow.ui.resources.newsInfo"
+        android:label="newsInfo" />
+    <fragment
+        android:id="@+id/videosInfo"
+        android:name="com.example.intheknow.ui.resources.videosInfo"
+        android:label="videosInfo" />
+    <fragment
+        android:id="@+id/currEventsInfo"
+        android:name="com.example.intheknow.ui.resources.currEventsInfo"
+        android:label="currEventsInfo" />
+    <fragment
+        android:id="@+id/podcastInfo"
+        android:name="com.example.intheknow.ui.resources.podcastInfo"
+        android:label="podcastInfo" />
 </navigation>

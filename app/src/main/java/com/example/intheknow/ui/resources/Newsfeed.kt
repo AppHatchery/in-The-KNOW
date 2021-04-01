@@ -5,7 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.fragment.findNavController
 import com.example.intheknow.R
+import com.example.intheknow.data.ResourceEntry
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 
 
 /**
@@ -13,7 +18,7 @@ import com.example.intheknow.R
  * Use the [Newsfeed.newInstance] factory method to
  * create an instance of this fragment.
  */
-class Newsfeed : Fragment() {
+class Newsfeed() : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +31,32 @@ class Newsfeed : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_newsfeed, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        var items = arrayOf<ResourceEntry>(ResourceEntry("headline1", "content1"), ResourceEntry("headline2", "content2"))
+
+        var but1 : Button = view.findViewById(R.id.news_but1)
+        var but2 : Button = view.findViewById(R.id.news_but2)
+
+        but1.setText(items.get(0).title)
+        but2.setText(items.get(1).title)
+
+        but1.setOnClickListener {
+            Global.newsContent = items.get(0).contents
+            Global.title = items.get(0).title
+            findNavController().navigate(R.id.action_newsfeed_to_newsInfo)
+        }
+
+        but2.setOnClickListener {
+            Global.newsContent = items.get(1).contents
+            Global.title = items.get(1).title
+            findNavController().navigate(R.id.action_newsfeed_to_newsInfo)
+        }
+
+
+
+
     }
 
 }

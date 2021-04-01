@@ -4,24 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.resources.videos">
+    tools:context=".ui.resources.Newsfeed">
 
-    <!-- TODO: Update blank fragment layout -->
-
-    <TextView
-        android:id="@+id/logger_q1_occurence3"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-medium"
-        android:padding="@dimen/small_text_padding"
-        android:text="Videos"
-        android:textColor="@color/black"
-        android:textSize="@dimen/question_text_size" />
+        android:layout_height="586dp"
+        android:orientation="vertical"
+        tools:context=".ui.resources.MyResources">
 
-    <ImageView
-        android:id="@+id/videos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/screen_shot_2021_02_07_at_12_45_52_am" />
+        <TextView
+            android:id="@+id/vidTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:padding="@dimen/small_text_padding"
+            android:text="Videos"
+            android:textColor="@color/black"
+            android:textSize="@dimen/question_text_size" />
+
+        <Button
+            android:id="@+id/vid_but1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/itk_blue"
+            android:text="Videos" />
+
+        <Button
+            android:id="@+id/vid_but2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/itk_blue"
+            android:text="Current Events" />
+
+    </LinearLayout>
 
 </FrameLayout>

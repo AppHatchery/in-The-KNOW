@@ -5,10 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import androidx.navigation.fragment.findNavController
+import android.widget.TextView
+import androidx.annotation.NonNull
 import com.example.intheknow.R
-import com.example.intheknow.data.ResourceEntry
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -17,10 +18,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [CurrentEvents.newInstance] factory method to
+ * Use the [podcastInfo.newInstance] factory method to
  * create an instance of this fragment.
  */
-class CurrentEvents : Fragment() {
+class podcastInfo : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -38,7 +39,7 @@ class CurrentEvents : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_current_events, container, false)
+        return inflater.inflate(R.layout.fragment_podcast_info, container, false)
     }
 
     companion object {
@@ -48,12 +49,12 @@ class CurrentEvents : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment CurrentEvents.
+         * @return A new instance of fragment podcastInfo.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            CurrentEvents().apply {
+            podcastInfo().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
@@ -61,26 +62,28 @@ class CurrentEvents : Fragment() {
             }
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        var items = arrayOf<ResourceEntry>(ResourceEntry("ev1", "content1"), ResourceEntry("ev2", "content2"))
+        var titleText : TextView = view.findViewById(R.id.titleOfPod)
+        //var contentText : TextView = view.findViewById(R.id.textOfNews)
 
-        var but1 : Button = view.findViewById(R.id.curr_but1)
-        var but2 : Button = view.findViewById(R.id.curr_but2)
 
-        but1.setText(items.get(0).title)
-        but2.setText(items.get(1).title)
 
-        but1.setOnClickListener {
-            Global.newsContent = items.get(0).contents
-            Global.title = items.get(0).title
-            findNavController().navigate(R.id.action_currentEvents_to_currEventsInfo)
-        }
 
-        but2.setOnClickListener {
-            Global.newsContent = items.get(1).contents
-            Global.title = items.get(1).title
-            findNavController().navigate(R.id.action_currentEvents_to_currEventsInfo)
-        }
 
+
+        titleText.setText(Global.vidTitle)
+        //textOfNews.setText(Global.newsContent)
+
+
+
+        var v = view.findViewById<com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>(R.id.third_party_player_viewer)
+
+        v.getPlayerUiController().showFullscreenButton(true)
+        v.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
+            override fun onReady(@NonNull youTubePlayer: YouTubePlayer) {
+                val videoId = Global.vidId
+                youTubePlayer.cueVideo(videoId, 0f)
+            }
+        })
 
 
     }

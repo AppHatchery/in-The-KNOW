@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.fragment.findNavController
 import com.example.intheknow.R
+import com.example.intheknow.data.ResourceEntry
 
 
 /**
@@ -25,6 +28,34 @@ class podcasts : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_podcasts, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        var items = arrayOf<ResourceEntry>(ResourceEntry("pod1", "SwQhKFMxmDY"), ResourceEntry("pod2", "qksd7aHGAUQ"))
+
+        var but1 : Button = view.findViewById(R.id.pod_but1)
+        var but2 : Button = view.findViewById(R.id.pod_but2)
+
+        but1.setText(items.get(0).title)
+        but2.setText(items.get(1).title)
+
+        but1.setOnClickListener {
+            Global.vidId = items.get(0).contents
+            Global.vidTitle = items.get(0).title
+            findNavController().navigate(R.id.action_podcasts_to_podcastInfo)
+        }
+
+        but2.setOnClickListener {
+            Global.vidId = items.get(1).contents
+            Global.vidTitle = items.get(1).title
+            findNavController().navigate(R.id.action_podcasts_to_podcastInfo)
+        }
+
+
+
+
+
+
     }
 
 
