@@ -13,6 +13,31 @@ class Converter {
             return formatter.format(date)
         }
 
+        fun gregorianCalendarToPrettyStr(calendar: GregorianCalendar) : String {
+            val now : GregorianCalendar = GregorianCalendar()
+            val yearSpecifier = GregorianCalendar.YEAR
+            val monthSpecifier = GregorianCalendar.MONTH
+            val weekSpecifier = GregorianCalendar.WEEK_OF_MONTH
+            val daySpecifier = GregorianCalendar.DAY_OF_WEEK
+            if (calendar.get(GregorianCalendar.YEAR) < now.get(GregorianCalendar.YEAR)) {
+                return "Last Year"
+            }
+            if (now.get(monthSpecifier) == calendar.get(monthSpecifier) &&
+                    now.get(weekSpecifier) == calendar.get(weekSpecifier)) {
+                 if (now.get(daySpecifier) == 1 + calendar.get(daySpecifier)) {
+                     return "Yesterday"
+                 }
+                if (now.get(daySpecifier) == calendar.get(daySpecifier)) {
+                    return "Today"
+                }
+                return calendar.getDisplayName(daySpecifier, GregorianCalendar.LONG, Locale.US)!!
+
+            }
+            var monthShort = calendar.getDisplayName(monthSpecifier, GregorianCalendar.SHORT, Locale.US)!!
+            var display = monthShort + " " + calendar.get(GregorianCalendar.DAY_OF_MONTH).toString()
+            return display
+        }
+
         fun dateStrToGregorianCalendar(dateStr : String) : GregorianCalendar {
             val fmt = java.text.SimpleDateFormat("yyyy-MM-dd HH-mm")
             val date = fmt.parse(dateStr)

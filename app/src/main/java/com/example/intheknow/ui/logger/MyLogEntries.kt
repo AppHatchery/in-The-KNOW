@@ -7,8 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import androidx.activity.OnBackPressedCallback
-import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -21,7 +19,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.fragment_my_log_entries.*
 import java.util.*
 import kotlin.collections.ArrayList
-import kotlin.collections.HashSet
 
 
 class MyLogEntries : Fragment(), EventAdapter.OnItemDeleteListener, EventAdapter.OnItemEditListener {

@@ -1,14 +1,17 @@
 package com.example.intheknow.ui
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.intheknow.R
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import sdk.chat.core.session.ChatSDK
+
 
 /**
  * A simple [Fragment] subclass.
@@ -26,13 +29,17 @@ class StartDestination : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+        //val drawer = view.findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        //drawer.isEnabled = true;
+
         val logger_btn : Button = view.findViewById(R.id.my_logger_btn)
         val tests_btn : Button = view.findViewById(R.id.my_tests_btn)
         val resources_btn : Button = view.findViewById(R.id.my_resources_btn)
         val circle_btn : Button = view.findViewById(R.id.my_circle_btn)
         val graphs_btn : Button = view.findViewById(R.id.my_graphs_btn)
         logger_btn.setOnClickListener {
-            findNavController().navigate(R.id.action_startDestination_to_myLogger)
+            findNavController().navigate(R.id.action_startDestination_to_myLoggerRoot)
         }
         tests_btn.setOnClickListener {
             findNavController().navigate(R.id.action_startDestination_to_myTests)

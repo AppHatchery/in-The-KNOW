@@ -1,4 +1,4 @@
-package com.example.intheknow.ui
+package com.example.intheknow.ui.logger
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

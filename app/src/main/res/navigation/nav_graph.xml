@@ -12,7 +12,12 @@
         tools:layout="@layout/fragment_my_logger" >
         <action
             android:id="@+id/action_myLogger_to_myLogEntries"
-            app:destination="@id/myLogEntries" />
+            app:destination="@id/myLogEntries"
+            app:popUpTo="@id/myLogger"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_myLogger_to_startDestination"
+            app:destination="@id/startDestination" />
     </fragment>
     <fragment
         android:id="@+id/startDestination"
@@ -34,6 +39,15 @@
         <action
             android:id="@+id/action_startDestination_to_myLogGraph"
             app:destination="@id/myLogGraph" />
+        <action
+            android:id="@+id/action_startDestination_to_loginScreen"
+            app:destination="@id/loginScreen"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/startDestination" />
+        <action
+            android:id="@+id/action_startDestination_to_myLoggerRoot"
+            app:destination="@id/myLoggerRoot" />
+
     </fragment>
     <fragment
         android:id="@+id/myTests"
@@ -169,7 +183,9 @@
         tools:layout="@layout/fragment_login_screen" >
         <action
             android:id="@+id/action_loginScreen_to_startDestination"
-            app:destination="@id/startDestination" />
+            app:destination="@id/startDestination"
+            app:popUpTo="@id/loginScreen"
+            app:popUpToInclusive="true"/>
         <action
             android:id="@+id/action_loginScreen_to_createAccount"
             app:destination="@id/createAccount" />
@@ -182,6 +198,9 @@
         <action
             android:id="@+id/action_myLoggerEdit_to_myLogEntries"
             app:destination="@id/myLogEntries" />
+        <action
+            android:id="@+id/action_myLoggerEdit_to_startDestination"
+            app:destination="@id/startDestination" />
     </fragment>
     <fragment
         android:id="@+id/createAccount"
@@ -199,7 +218,7 @@
         tools:layout="@layout/fragment_maps" />
     <fragment
         android:id="@+id/myLogGraph"
-        android:name="com.example.intheknow.ui.MyLogGraph"
+        android:name="com.example.intheknow.ui.logger.MyLogGraph"
         android:label="My Graphs"
         tools:layout="@layout/fragment_my_log_graph" />
     <fragment
@@ -218,4 +237,9 @@
         android:id="@+id/podcastInfo"
         android:name="com.example.intheknow.ui.resources.podcastInfo"
         android:label="podcastInfo" />
+    <fragment
+        android:id="@+id/myLoggerRoot"
+        android:name="com.example.intheknow.ui.logger.MyLoggerRoot"
+        android:label="My Logger"
+        tools:layout="@layout/fragment_my_logger_root" />
 </navigation>

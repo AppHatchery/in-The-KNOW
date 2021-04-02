@@ -11,13 +11,12 @@ import android.widget.ToggleButton
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.intheknow.App
 import com.example.intheknow.R
 import com.example.intheknow.data.Event
 import com.example.intheknow.data.EventListModifier
 import com.example.intheknow.databinding.FragmentMyLoggerBinding
 import java.util.*
-import kotlin.collections.HashSet
+
 
 /**
  * A simple [Fragment] subclass.
@@ -36,6 +35,7 @@ class MyLogger : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
         val history_btn : Button = binding.skipToLogBtn
         val submit_btn : Button = binding.newLogSubmitBtn
 

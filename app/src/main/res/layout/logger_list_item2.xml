@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="3dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="5dp"
+    android:padding="3dp"
+    card_view:cardElevation="2dp"
+    card_view:cardMaxElevation="2dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/sex_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Sex"
+            android:textSize="18dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/date_logged"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:text="Date Logged"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/protection_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="with condom"
+            android:textSize="12dp"
+            android:layout_below="@id/sex_category"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/log_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="..."
+            android:textSize="12dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:layout_below="@id/btnDelete"
+            android:layout_alignParentStart="true"
+            android:textStyle="italic"
+            tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rutrum accumsan rhoncus. Etiam eget ornare metus, nec mollis turpis. Donec ultrices eros dui, et semper lectus volutpat a. Duis eget vulputate urna. Maecenas malesuada, sem non tristique pharetra, nisi justo aliquet nisi, eu congue justo tortor vel lorem. Vivamus dapibus molestie tortor non volutpat. Nulla facilisis in magna vitae faucibus. Suspendisse pellentesque laoreet lobortis. Duis volutpat, nibh eget lobortis sagittis, tellus nibh tincidunt neque, a lacinia nisi massa et justo. Maecenas tempor, nisl id imperdiet pharetra, tellus erat feugiat dolor, non egestas lacus risus vitae nulla. Nulla blandit elit non lorem egestas, sed placerat arcu ornare."/>
+
+        <TextView
+            android:id="@+id/btnDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_below="@id/date_logged"
+            android:layout_alignParentRight="true"
+            android:drawableLeft="@android:drawable/ic_delete"
+            android:padding="5dp" />
+
+        <TextView
+            android:id="@+id/btnEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_below="@id/date_logged"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/btnDelete"
+            android:drawableLeft="@android:drawable/ic_menu_edit"
+            android:padding="5dp" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
