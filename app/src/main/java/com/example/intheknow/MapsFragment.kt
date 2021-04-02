@@ -27,7 +27,23 @@ class MapsFragment : Fragment() {
          * install it inside the SupportMapFragment. This method will only be triggered once the
          * user has installed Google Play services and returned to the app.
          */
-        var poses = arrayOf<Array<Any>>(arrayOf(-30.0, 150.0, "Atlanta" ), arrayOf(-34.0, 154.0, "Sydney"), arrayOf(-38.0, 158.0, "Ocean"))
+        var poses = arrayOf<Array<Any>>(arrayOf(33.797620, -84.389770, "AHF Wellness Center - AID Atlanta" ), arrayOf(33.742035, -84.348907, "Planned Parenthood Atlanta"),
+            arrayOf(33.774890, -84.292920, "The Center at 246 Emory Sexual Health Center"),
+            arrayOf(33.776420, -84.294380, "Positive Impact Health Centers"),
+            arrayOf(33.739240,  -84.428320, "Sisterlove Inc."),
+            arrayOf(33.739240, -84.428320, "NAESM INC."),
+            arrayOf(33.812937651466626, -84.39368444192554, "AAbsoluteCARE Medical Center and Pharmacy"),
+            arrayOf(33.75116762305163, -84.45871845270862, "NAESM Mens Health and Wellness Center"),
+            arrayOf(33.68201910437185, -84.41870606807720, "Southside Medical Center"),
+            arrayOf(33.71352714859813, -84.30998555272242, "Southside Medical Center"),
+            arrayOf(33.72802597913828, -84.39198806806048, "Southside Medical Center"),
+            arrayOf(33.74032813067974, -84.31126209874249, "Southside Medical Center"),
+            arrayOf(33.81638829685689, -84.392201368028, "Empowerment Resource Center Incorporated"),
+            arrayOf(33.75265693818952, -84.38149486858852, "Grady Health System"),
+            arrayOf(33.751959327817836, -84.3743670066785, "Mercy Care"),
+            arrayOf(33.76301004179868, -84.37171071407751, "Faebris Medical and Community Education"),
+            arrayOf(33.77581339709575, -84.29288160666974, "The Center at 246 Emory Sexual Health Center"),
+            arrayOf(33.77740015234672, -84.29417137598256, "Positive Impact Health Centers"))
 
         poses.forEach {
 
@@ -61,7 +77,7 @@ class MapsFragment : Fragment() {
 
 
 
-        val sydney = LatLng(-34.0, 151.0)
+        val sydney = LatLng(33.5, -84.3)
         //googleMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
     }
