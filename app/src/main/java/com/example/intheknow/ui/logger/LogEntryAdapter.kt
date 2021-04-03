@@ -1,8 +1,11 @@
 package com.example.intheknow.ui.logger
 
+import android.annotation.SuppressLint
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.intheknow.R
@@ -25,11 +28,29 @@ class LogEntryAdapter(
         return LogEntryViewHolder(itemView)
     }
 
+    @SuppressLint("NewApi")
     override fun onBindViewHolder(holder: LogEntryViewHolder, position: Int) {
         val currentItem = logList[position]
         val calendar : GregorianCalendar = currentItem.dateOfEntry
         holder.dateLogged.text = Converter.gregorianCalendarToPrettyStr(calendar)
         holder.sexCategoryText.text = currentItem.sexCategory
+
+        /*
+        var lightSalmon = Color.valueOf(1.0f, 0.625f, 0.4765625f)
+        var deepBlue = Color.valueOf(0f, 0.7461f, 1.0f)
+        var plum = Color.valueOf(0.86328f, 0.625f, 0.86328f)
+
+        if (currentItem.sexCategory == LogEntry.ANAL) {
+            holder.loggerLayout.setBackgroundColor(deepBlue.toArgb())
+        } else if (currentItem.sexCategory == LogEntry.ORAL) {
+            holder.loggerLayout.setBackgroundColor(plum.toArgb())
+        } else if (currentItem.sexCategory == LogEntry.VAGINAL) {
+            holder.loggerLayout.setBackgroundColor(lightSalmon.toArgb())
+        } else {
+            holder.loggerLayout.setBackgroundColor(Color.WHITE)
+        }
+         */
+
         if (currentItem.condom == LogEntry.CONDOM) {
             holder.protectionText.text = "with condom"
         } else {
@@ -46,6 +67,7 @@ class LogEntryAdapter(
         val sexCategoryText : TextView = itemView.findViewById(R.id.sex_category)
         val protectionText : TextView = itemView.findViewById(R.id.protection_text)
         val logText : TextView = itemView.findViewById(R.id.log_text)
+        val loggerLayout : RelativeLayout = itemView.findViewById(R.id.logger2_card_holder)
 
         init {
             itemView.btnDelete.setOnClickListener(this)

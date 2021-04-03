@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController)
 
         //navController.navigate(R.id.action_startDestination_to_loginScreen)
-
+        /*
         val firstFragment=StartDestination()
         val secondFragment=StartDestination()
         val thirdFragment=StartDestination()
@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+         */
 
 
     }
@@ -51,21 +52,6 @@ class MainActivity : AppCompatActivity() {
             replace(R.id.nav_host_fragment,fragment)
             commit()
         }
-    /*
-    override fun onBackPressed() {
-        val f: Fragment? = supportFragmentManager.findFragmentById(R.id.nav_host_fragment)
-        if (f is StartDestination) {
 
-        } else if (f is MyLogger) {
-            f.findNavController().navigate(R.id.action_myLogger_to_startDestination)
-        } else if (f is MyLogEntries) {
-            f.findNavController().navigate(R.id.action_myLogEntries_to_startDestination)
-        } else if (f is MyLoggerEdit) {
-            f.findNavController().navigate(R.id.action_myLoggerEdit_to_startDestination)
-        } else {
-            super.onBackPressed()
-        }
-    }
-    */
 
 }

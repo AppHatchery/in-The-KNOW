@@ -9,13 +9,13 @@ import com.example.intheknow.ui.logger.MyLoggerRoot
 import java.util.*
 
 data class LogEntry (
-    val dateOfEntry : GregorianCalendar,
-    val symptoms: List<String>,
-    val sex: Boolean,
-    val timeFrameStart : GregorianCalendar,
-    val sexCategory: String,
-    val condom: Int,
-    val log: String
+    var dateOfEntry : GregorianCalendar,
+    var symptoms: List<String>,
+    var sex: Boolean,
+    var timeFrameStart : Int,
+    var sexCategory: String,
+    var condom: Int,
+    var log: String
 ) {
     companion object {
         //define symptoms
@@ -24,8 +24,9 @@ data class LogEntry (
         val VAGINAL_DISCHARGE = "vaginal discharge"; val PAIN = "pain during intercourse"
         val BLEEDING = "abnormal vaginal bleeding"; val FEVER = "fever"
         val RASHES = "skin changes/rashes"
+        val AB_PAIN = "lower abdominal pain"
         //define sex categories
-        val VAGINAL = "vaginal" ; val ANAL = "anal" ; val ORAL = "oral" ; val NON_PENETRATIVE = "no penetration"
+        val VAGINAL = "Vaginal" ; val ANAL = "Anal" ; val ORAL = "Oral" ; val NON_PENETRATIVE = "No Penetration"
         //define protection
         val NO_CONDOM = 0 ; val CONDOM = 1 ;val CONDOM_UNSPECIFIED = 2
     }
@@ -37,6 +38,20 @@ class LogListModifier {
         var logList : ArrayList<LogEntry> = ArrayList<LogEntry>()
         val adapter = LogEntryAdapter(logList, MyLoggerRoot(), MyLoggerRoot())
         var itemSelector : Int = 0
+        var newEntryBuild : LogEntry = LogEntry(GregorianCalendar(), arrayListOf(), false, 0, "No Sex", 0, "")
+
+        fun clearNewEntryBuild(){
+            newEntryBuild = LogEntry(GregorianCalendar(), arrayListOf(), false, 0, "No Sex", 0, "")
+        }
+
+        fun addEvent() {
+            Log.d("Starting add", "ADD")
+            //App.getDB().addEvent(UserResolver.id, e)
+            var pos : Int = logList.size
+            logList.add(newEntryBuild)
+            adapter.notifyItemInserted(pos)
+            Log.d("After Add Size", "" + logList.size)
+        }
 
         fun addEvent(e : LogEntry) {
             Log.d("Starting add", "ADD")

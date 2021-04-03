@@ -12,6 +12,7 @@ import androidx.annotation.RequiresApi
 import androidx.compose.ui.graphics.colorspace.Illuminant.A
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.intheknow.R
 import com.example.intheknow.data.LogEntry
@@ -52,40 +53,49 @@ class MyLoggerRoot : Fragment(), LogEntryAdapter.OnLogItemDeleteListener, LogEnt
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        var addNewLogBtn = binding.fabAddEvent
+        addNewLogBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_myLoggerRoot_to_newLogSymptomsScreen)
+        }
         var toggleMyCharts = binding.toggleMyCharts
         var toggleListView = binding.toggleMyLog
-        buildChart()
-
         var loggerLayout = binding.LoggerLayout
         var pc = binding.pieChart
         var historyView = binding.recycleViewEventsRoot
 
+        //default
+        toggleMyCharts.isChecked = true
+        toggleListView.isChecked = false
+        buildChart()
+
+
+        //clear build log
+        LogListModifier.clearNewEntryBuild()
+
         toggleMyCharts.setOnClickListener {
-            if (!toggleMyCharts.isChecked) {
-                toggleMyCharts.isChecked = true
-                buildChart()
-                loggerLayout.removeAllViews()
-                loggerLayout.addView(pc)
-            }
+            buildChart()
+            loggerLayout.removeAllViews()
+            loggerLayout.addView(binding.loggerControlBar)
+            loggerLayout.addView(pc)
+            toggleMyCharts.isChecked = true
             toggleListView.isChecked = false
         }
         toggleListView.setOnClickListener {
-            if (!toggleListView.isChecked) {
-                toggleListView.isChecked = true
-                loggerLayout.removeAllViews()
-                loggerLayout.addView(historyView)
-                historyView.visibility = View.VISIBLE
-
-
-                val randomEntries :ArrayList<LogEntry> = generateDummyLog(10)
-                for (j in 0..9) {
-                    LogListModifier.addEvent(randomEntries[j])
-                }
-            }
+            loggerLayout.removeAllViews()
+            loggerLayout.addView(binding.loggerControlBar)
+            loggerLayout.addView(historyView)
+            historyView.visibility = View.VISIBLE
             toggleMyCharts.isChecked = false
+            toggleListView.isChecked = true
         }
 
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        binding.toggleMyCharts.isChecked = true
+        binding.toggleMyLog.isChecked = false
     }
 
     @SuppressLint("NewApi")
@@ -172,7 +182,7 @@ class MyLoggerRoot : Fragment(), LogEntryAdapter.OnLogItemDeleteListener, LogEnt
             //populate random text
             val randomText = commentsList.get((0..5).random())
 
-            val logEntry = LogEntry(date, symptoms, sex, date, sexCategory, protection, randomText)
+            val logEntry = LogEntry(date, symptoms, sex, 0, sexCategory, protection, randomText)
             list += logEntry
         }
         return list

@@ -241,5 +241,58 @@
         android:id="@+id/myLoggerRoot"
         android:name="com.example.intheknow.ui.logger.MyLoggerRoot"
         android:label="My Logger"
-        tools:layout="@layout/fragment_my_logger_root" />
+        tools:layout="@layout/fragment_my_logger_root" >
+        <action
+            android:id="@+id/action_myLoggerRoot_to_newLogSymptomsScreen"
+            app:destination="@id/newLogSymptomsScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/newLogSymptomsScreen"
+        android:name="com.example.intheknow.ui.logger.NewLogSymptomsScreen"
+        android:label="New Log"
+        tools:layout="@layout/fragment_new_log_symptoms_screen" >
+        <action
+            android:id="@+id/action_newLogSymptomsScreen_to_newLogTimeScreen"
+            app:destination="@id/newLogTimeScreen"
+            app:popUpTo="@id/newLogSymptomsScreen"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/newLogTimeScreen"
+        android:name="com.example.intheknow.ui.logger.NewLogTimeScreen"
+        android:label="New Log"
+        tools:layout="@layout/fragment_new_log_time_screen" >
+        <action
+            android:id="@+id/action_newLogTimeScreen_to_newLogDetailsScreen"
+            app:destination="@id/newLogDetailsScreen"
+            app:popUpTo="@id/newLogTimeScreen"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_newLogTimeScreen_to_newLogCompletionScreen"
+            app:destination="@id/newLogCompletionScreen"
+            app:popUpTo="@id/newLogTimeScreen"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/newLogDetailsScreen"
+        android:name="com.example.intheknow.ui.logger.NewLogDetailsScreen"
+        android:label="New Log"
+        tools:layout="@layout/fragment_new_log_details_screen" >
+        <action
+            android:id="@+id/action_newLogDetailsScreen_to_newLogCompletionScreen"
+            app:destination="@id/newLogCompletionScreen"
+            app:popUpTo="@id/newLogDetailsScreen"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/newLogCompletionScreen"
+        android:name="com.example.intheknow.ui.logger.NewLogCompletionScreen"
+        android:label=""
+        tools:layout="@layout/fragment_new_log_completion_screen" >
+        <action
+            android:id="@+id/action_newLogCompletionScreen_to_myLoggerRoot"
+            app:destination="@id/myLoggerRoot"
+            app:popUpTo="@id/newLogCompletionScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>

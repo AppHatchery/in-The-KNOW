@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.logger.NewLogSymptomsScreen">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/new_logger_q1_occurence"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="25dp"
+            android:fontFamily="sans-serif-medium"
+            android:padding="@dimen/small_text_padding"
+            android:text="What symptoms are you feeling?"
+            android:textColor="@color/black"
+            android:textSize="@dimen/question_text_size" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/missed_period"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:text="Missed Period" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/vaginal_itching"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:text="Vaginal Itching" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/vaginal_burning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:text="Vaginal Burning" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/vaginal_odor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:text="Vaginal Odor" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/pain_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:text="Pain during Sex" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/abdomenal_pain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:text="Lower Abdominal Pain" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/vaginal_bleeding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:text="Abnormal Vaginal Bleeding" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/fever"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:text="Fever" />
+
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/next_q1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:background="@android:color/white"
+
+            android:contentDescription="Next Question"
+            android:src="@drawable/next_btn_foreground" />
+
+
+    </LinearLayout>
+</layout>
+

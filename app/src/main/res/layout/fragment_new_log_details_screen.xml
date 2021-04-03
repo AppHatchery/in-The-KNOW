@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.logger.NewLogSymptomsScreen">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/new_logger_q3_sex_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="sans-serif-medium"
+            android:padding="@dimen/small_text_padding"
+            android:text="What type of sex?"
+            android:textColor="@color/black"
+            android:textSize="@dimen/question_text_size" />
+
+        <RadioGroup
+            android:id="@+id/recency_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp">
+
+            <RadioButton
+                android:id="@+id/vaginal_radio_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vaginal"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/anal_radio_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Anal"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/oral_radio_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Oral"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/other_radio_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Other"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/editTextSexCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Sex Type"
+                android:visibility="invisible" />
+
+        </RadioGroup>
+
+
+        <TextView
+            android:id="@+id/new_logger_q3_condom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="sans-serif-medium"
+            android:padding="@dimen/small_text_padding"
+            android:text="Did you use a condom?"
+            android:textColor="@color/black"
+            android:textSize="@dimen/question_text_size" />
+
+        <RadioGroup
+            android:id="@+id/condom_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp">
+
+            <RadioButton
+                android:id="@+id/yes_condom_radio_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/no_condom_radio_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/condom_undefined"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Would rather not say"
+                android:textSize="16sp" />
+        </RadioGroup>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp">
+
+            <ImageButton
+                android:id="@+id/prev_q3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="150dp"
+                android:backgroundTint="@color/white"
+                android:src="@drawable/prev_btn_foreground" />
+
+            <ImageButton
+                android:id="@+id/next_q3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:backgroundTint="@color/white"
+                android:src="@drawable/next_btn_foreground" />
+        </TableRow>
+
+
+    </LinearLayout>
+
+</layout>
