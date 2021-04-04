@@ -1,5 +1,7 @@
 package com.example.intheknow.ui
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -7,14 +9,20 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import androidx.drawerlayout.widget.DrawerLayout
+import androidx.core.app.ActivityCompat.startActivityForResult
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.intheknow.App
+import com.example.intheknow.MainActivity
 import com.example.intheknow.R
 import com.example.intheknow.data.User
 import com.example.intheknow.data.UserResolver
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.SignInButton
+import com.google.android.gms.common.api.ApiException
+import com.google.android.gms.tasks.Task
 
 
 /**
@@ -24,13 +32,20 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
  */
 class LoginScreen : Fragment() {
 
+    companion object {
+        var currMA : MainActivity = MainActivity()
+        var currLS : LoginScreen = LoginScreen()
+        var account : GoogleSignInAccount? = null
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        currLS = this
     }
 
     override fun onStart() {
         super.onStart()
+        currLS = this
         //val account = GoogleSignIn.getLastSignedInAccount(requireContext())
         //if (account != null) {
         //    findNavController().navigate(R.id.action_loginScreen_to_createAccount)
@@ -40,6 +55,7 @@ class LoginScreen : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
+        currLS = this
         return inflater.inflate(R.layout.fragment_login_screen, container, false)
     }
 
@@ -47,7 +63,7 @@ class LoginScreen : Fragment() {
 
         //val drawer = view.findViewById<BottomNavigationView>(R.id.bottom_navigation)
         //drawer.isEnabled = false;
-
+        currLS = this
         var loginButton : Button = view.findViewById(R.id.signinbutton)
         loginButton.setOnClickListener {
             val username : String = view.findViewById<EditText>(R.id.UsernameField).text.toString()
@@ -60,9 +76,15 @@ class LoginScreen : Fragment() {
                 findNavController().navigate(R.id.action_loginScreen_to_startDestination)
             }
         }
+
         var createAccountButton : Button = view.findViewById(R.id.createAccountButton)
         createAccountButton.setOnClickListener {
             findNavController().navigate(R.id.action_loginScreen_to_createAccount)
+        }
+
+        view.findViewById<SignInButton>(R.id.sign_in_button_google).setOnClickListener {
+            currLS = this
+            currMA.signIn()
         }
         /*
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -79,7 +101,34 @@ class LoginScreen : Fragment() {
          */
     }
 
+    fun goHome() {
+        findNavController().navigate(R.id.action_loginScreen_to_startDestination)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
+        if (requestCode == 9001) {
+            // The Task returned from this call is always completed, no need to attach
+            // a listener.
+            val task: Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(data)
+            try {
+                account = task.getResult(ApiException::class.java)
+
+                if (account != null) {
+                    //Set account to global variable and go from there
+                    goHome()
+
+                }
+                // Signed in successfully, show authenticated UI.
+
+            } catch (e: ApiException) {
+                // The ApiException status code indicates the detailed failure reason.
+                // Please refer to the GoogleSignInStatusCodes class reference for more information.
 
 
+            }
+        }
+    }
 
 }
