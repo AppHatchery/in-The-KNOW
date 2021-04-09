@@ -82,11 +82,38 @@ class videosInfo : Fragment() {
 
 
         var v = view.findViewById<com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>(R.id.third_party_player_view)
+        var v2 = view.findViewById<com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>(R.id.third_party_player_view2)
+        var v3 = view.findViewById<com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>(R.id.third_party_player_view3)
+        var v4 = view.findViewById<com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>(R.id.third_party_player_view4)
 
         v.getPlayerUiController().showFullscreenButton(true)
         v.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
             override fun onReady(@NonNull youTubePlayer: YouTubePlayer) {
-                val videoId = Global.vidId
+                val videoId = "36IBDpTRVNE"
+                youTubePlayer.cueVideo(videoId, 0f)
+            }
+        })
+
+        v2.getPlayerUiController().showFullscreenButton(true)
+        v2.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
+            override fun onReady(@NonNull youTubePlayer: YouTubePlayer) {
+                val videoId = "o31JyuaQ2LY"
+                youTubePlayer.cueVideo(videoId, 0f)
+            }
+        })
+
+        v3.getPlayerUiController().showFullscreenButton(true)
+        v3.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
+            override fun onReady(@NonNull youTubePlayer: YouTubePlayer) {
+                val videoId = "75NQK-Sm1YY"
+                youTubePlayer.cueVideo(videoId, 0f)
+            }
+        })
+
+        v4.getPlayerUiController().showFullscreenButton(true)
+        v4.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
+            override fun onReady(@NonNull youTubePlayer: YouTubePlayer) {
+                val videoId = "UCnoaA42eNE"
                 youTubePlayer.cueVideo(videoId, 0f)
             }
         })
