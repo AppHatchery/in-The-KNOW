@@ -1,5 +1,7 @@
 package com.example.intheknow.ui.resources
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -63,27 +65,79 @@ class podcastInfo : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         var titleText : TextView = view.findViewById(R.id.titleOfPod)
+        var pod : androidx.cardview.widget.CardView = view.findViewById(R.id.pod_card_view)
+        var pod2 : androidx.cardview.widget.CardView = view.findViewById(R.id.pod_card_view2)
+        var pod3 : androidx.cardview.widget.CardView = view.findViewById(R.id.pod_card_view3)
+        var pod4 : androidx.cardview.widget.CardView = view.findViewById(R.id.pod_card_view4)
+        var pod5 : androidx.cardview.widget.CardView = view.findViewById(R.id.pod_card_view5)
+        var pod6 : androidx.cardview.widget.CardView = view.findViewById(R.id.pod_card_view6)
+        var pod7 : androidx.cardview.widget.CardView = view.findViewById(R.id.pod_card_view7)
+        var pod8 : androidx.cardview.widget.CardView = view.findViewById(R.id.pod_card_view8)
+        var pod9 : androidx.cardview.widget.CardView = view.findViewById(R.id.pod_card_view9)
         //var contentText : TextView = view.findViewById(R.id.textOfNews)
 
+        pod.setOnClickListener {
+            val openURL = Intent(Intent.ACTION_VIEW)
+            openURL.data = Uri.parse("https://therapyforblackgirls.com/podcast/")
+            startActivity(openURL);
+        }
+
+        pod2.setOnClickListener {
+            val openURL = Intent(Intent.ACTION_VIEW)
+            openURL.data = Uri.parse("https://www.justdavia.com/podcast")
+            startActivity(openURL);
+        }
+
+
+        pod3.setOnClickListener {
+            val openURL = Intent(Intent.ACTION_VIEW)
+            openURL.data = Uri.parse("https://podcasts.apple.com/us/podcast/between-sessions-podcast/id1345202684")
+            startActivity(openURL);
+        }
+
+        pod4.setOnClickListener {
+            val openURL = Intent(Intent.ACTION_VIEW)
+            openURL.data = Uri.parse("https://www.celestethetherapist.com/")
+            startActivity(openURL);
+        }
+
+        pod5.setOnClickListener {
+            val openURL = Intent(Intent.ACTION_VIEW)
+            openURL.data = Uri.parse("https://www.firefliesunite.com/podcast")
+            startActivity(openURL);
+        }
+
+        pod6.setOnClickListener {
+            val openURL = Intent(Intent.ACTION_VIEW)
+            openURL.data = Uri.parse("https://talkingoffthecouch.com/")
+            startActivity(openURL);
+        }
+
+        pod7.setOnClickListener {
+            val openURL = Intent(Intent.ACTION_VIEW)
+            openURL.data = Uri.parse("https://jennifersterling.com/podcast")
+            startActivity(openURL);
+        }
+
+        pod8.setOnClickListener {
+            val openURL = Intent(Intent.ACTION_VIEW)
+            openURL.data = Uri.parse("https://jennifersterling.com/podcast")
+            startActivity(openURL);
+        }
+
+        pod9.setOnClickListener {
+            val openURL = Intent(Intent.ACTION_VIEW)
+            openURL.data = Uri.parse("https://podcasts.apple.com/us/podcast/the-mindful-muslim-podcast/id1120442381")
+            startActivity(openURL);
+        }
 
 
 
 
 
-        titleText.setText(Global.vidTitle)
-        //textOfNews.setText(Global.newsContent)
 
 
 
-        var v = view.findViewById<com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>(R.id.third_party_player_viewer)
-
-        v.getPlayerUiController().showFullscreenButton(true)
-        v.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
-            override fun onReady(@NonNull youTubePlayer: YouTubePlayer) {
-                val videoId = Global.vidId
-                youTubePlayer.cueVideo(videoId, 0f)
-            }
-        })
 
 
     }
