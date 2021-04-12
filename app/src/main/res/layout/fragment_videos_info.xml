@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
         android:padding="@dimen/small_text_padding"
-        android:text="title"
+        android:text="Video 1: Oral Sex"
         android:textColor="@color/black"
         android:textSize="@dimen/question_text_size" />
 
@@ -34,6 +34,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/titleOfVid2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:padding="@dimen/small_text_padding"
+            android:text="Video 2: Bad Sex Practices"
+            android:textColor="@color/black"
+            android:textSize="@dimen/question_text_size" />
+
     <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
         android:id="@+id/third_party_player_view2"
         android:layout_width="match_parent"
@@ -43,6 +53,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/titleOfVid3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:padding="@dimen/small_text_padding"
+            android:text="Video 3: Good Sex Practices"
+            android:textColor="@color/black"
+            android:textSize="@dimen/question_text_size" />
+
     <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
         android:id="@+id/third_party_player_view3"
         android:layout_width="match_parent"
@@ -51,6 +71,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/titleOfVid4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:padding="@dimen/small_text_padding"
+            android:text="Video 4: Safe Practices"
+            android:textColor="@color/black"
+            android:textSize="@dimen/question_text_size" />
 
         <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
             android:id="@+id/third_party_player_view4"
