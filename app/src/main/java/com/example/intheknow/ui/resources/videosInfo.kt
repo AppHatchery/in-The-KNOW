@@ -76,7 +76,7 @@ class videosInfo : Fragment() {
 
 
 
-        titleText.setText(Global.vidTitle)
+        //titleText.setText(Global.vidTitle)
         //textOfNews.setText(Global.newsContent)
 
 
