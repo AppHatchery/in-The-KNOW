@@ -43,9 +43,26 @@ class NewLogTimeScreen : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         var sex = true
         var sexSelected = false
+        var timeFrameSelected = false
 
         val yesBtn : Button = binding.YesSex
         val noBtn : Button = binding.NoSex
+
+        val existingSexQuery = LogListModifier.newEntryBuild.sex
+        val existingTimeFrameStart = LogListModifier.newEntryBuild.timeFrameStart
+        if (existingSexQuery) {
+            sexSelected = true
+            timeFrameSelected = true
+            binding.newLoggerQ2Recency.visibility = View.VISIBLE
+            binding.recencyRadioGroup.visibility = View.VISIBLE
+            if (existingTimeFrameStart == 0) {
+                binding.todayRadioBtn.isChecked = true
+            } else if (existingTimeFrameStart == 1) {
+                binding.pastWeekRadioBtn.isChecked = true
+            } else {
+                binding.pastMonthRadioBtn.isChecked = true
+            }
+        }
 
         yesBtn.setOnClickListener {
             sexSelected = true
@@ -60,7 +77,7 @@ class NewLogTimeScreen : Fragment() {
             binding.recencyRadioGroup.visibility = View.INVISIBLE
         }
 
-        var timeFrameSelected = false
+
         var timeFrame = 0
         binding.todayRadioBtn.setOnClickListener {
             timeFrameSelected = true
@@ -72,6 +89,11 @@ class NewLogTimeScreen : Fragment() {
         binding.pastMonthRadioBtn.setOnClickListener {
             timeFrameSelected = true
             timeFrame = 2
+        }
+
+        val prevBtn : AppCompatImageButton = binding.prevQ2 as AppCompatImageButton
+        prevBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_newLogTimeScreen_to_newLogSymptomsScreen)
         }
 
         val nextBtn : AppCompatImageButton = binding.nextQ2 as AppCompatImageButton

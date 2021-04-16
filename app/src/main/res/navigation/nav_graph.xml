@@ -256,6 +256,11 @@
             app:destination="@id/newLogTimeScreen"
             app:popUpTo="@id/newLogSymptomsScreen"
             app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_newLogSymptomsScreen_to_loggerRoot"
+            app:destination="@id/myLoggerRoot"
+            app:popUpTo="@id/newLogSymptomsScreen"
+            app:popUpToInclusive="true"/>
     </fragment>
     <fragment
         android:id="@+id/newLogTimeScreen"
@@ -265,6 +270,11 @@
         <action
             android:id="@+id/action_newLogTimeScreen_to_newLogDetailsScreen"
             app:destination="@id/newLogDetailsScreen"
+            app:popUpTo="@id/newLogTimeScreen"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_newLogTimeScreen_to_newLogSymptomsScreen"
+            app:destination="@id/newLogSymptomsScreen"
             app:popUpTo="@id/newLogTimeScreen"
             app:popUpToInclusive="true"/>
         <action
@@ -281,6 +291,11 @@
         <action
             android:id="@+id/action_newLogDetailsScreen_to_newLogCompletionScreen"
             app:destination="@id/newLogCompletionScreen"
+            app:popUpTo="@id/newLogDetailsScreen"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_newLogDetailsScreen_to_newLogTimeScreen"
+            app:destination="@id/newLogTimeScreen"
             app:popUpTo="@id/newLogDetailsScreen"
             app:popUpToInclusive="true"/>
     </fragment>

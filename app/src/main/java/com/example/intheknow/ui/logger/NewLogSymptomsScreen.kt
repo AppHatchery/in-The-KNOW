@@ -51,7 +51,17 @@ class NewLogSymptomsScreen : Fragment() {
         var cbAbVagB : MaterialCheckBox = binding.vaginalBleeding
         var cbFev : MaterialCheckBox = binding.fever
 
-        var symptomsList : ArrayList<String> = arrayListOf()
+        var symptomsList : ArrayList<String> = LogListModifier.newEntryBuild.symptoms as ArrayList<String>
+        for (s in symptomsList) {
+            if (s.equals(LogEntry.MISSED_PERIOD)) cbMP.isChecked = true
+            if (s.equals(LogEntry.VAGINAL_ITCHING)) cbVI.isChecked = true
+            if (s.equals(LogEntry.VAGINAL_BURNING)) cbVB.isChecked = true
+            if (s.equals(LogEntry.VAGINAL_ODOR)) cbVO.isChecked = true
+            if (s.equals(LogEntry.PAIN)) cbPain.isChecked = true
+            if (s.equals(LogEntry.AB_PAIN)) cbAbPain.isChecked = true
+            if (s.equals(LogEntry.BLEEDING)) cbAbVagB.isChecked = true
+            if (s.equals(LogEntry.FEVER)) cbFev.isChecked = true
+        }
 
         val nextBtn : AppCompatImageButton = binding.nextQ1 as AppCompatImageButton
 

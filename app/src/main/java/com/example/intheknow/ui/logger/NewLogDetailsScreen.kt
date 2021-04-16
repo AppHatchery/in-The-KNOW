@@ -81,6 +81,12 @@ class NewLogDetailsScreen : Fragment() {
             condom_selected = true
         }
 
+        val prevBtn : AppCompatImageButton = binding.prevQ3 as AppCompatImageButton
+        prevBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_newLogDetailsScreen_to_newLogTimeScreen)
+        }
+
+
         val nextBtn : AppCompatImageButton = binding.nextQ3 as AppCompatImageButton
         nextBtn.setOnClickListener {
             if(condom_selected) {

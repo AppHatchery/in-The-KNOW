@@ -22,7 +22,7 @@ class App : Application() {
         db = DBHandler(applicationContext, null, null, 1)
         //Chat SDK initialization
         try {
-            ChatSDKFirebase.quickStart(this, "pre_1", "failkey", true)
+            ChatSDKFirebase.quickStart(this, "pre_2", "failkey", true)
             /*
             ChatSDK.builder()
                 .setGoogleMaps("failkey")
