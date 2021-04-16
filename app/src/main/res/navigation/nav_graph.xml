@@ -61,7 +61,7 @@
         tools:layout="@layout/fragment_my_resources" >
         <action
             android:id="@+id/action_myResources_to_videos2"
-            app:destination="@id/videos2" />
+            app:destination="@id/videosInfo" />
         <action
             android:id="@+id/action_myResources_to_currentEvents"
             app:destination="@id/currentEvents" />
@@ -70,7 +70,7 @@
             app:destination="@id/newsfeed" />
         <action
             android:id="@+id/action_myResources_to_podcasts"
-            app:destination="@id/podcasts" />
+            app:destination="@id/podcastInfo" />
         <action
             android:id="@+id/action_myResources_to_supportGroups"
             app:destination="@id/supportGroups" />

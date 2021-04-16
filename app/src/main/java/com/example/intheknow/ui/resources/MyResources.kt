@@ -31,14 +31,14 @@ class MyResources : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        var videosBtn : Button = view.findViewById(R.id.Videos)
-        var currEventsBtn : Button = view.findViewById(R.id.CurrentEvents)
-        var newsFeedsBtn : Button = view.findViewById(R.id.Newsfeeds)
-        var podcastsBtn : Button = view.findViewById(R.id.Podcasts)
-        var supportGroupsBtn : Button = view.findViewById(R.id.SupportGroups)
-        var recommendationsBtn : Button = view.findViewById(R.id.recommendations_button)
-        var policiesBtn : Button = view.findViewById(R.id.policies_button)
-        var mapBtn : Button = view.findViewById(R.id.mapBtn)
+        var videosBtn : androidx.cardview.widget.CardView = view.findViewById(R.id.card_view)
+        var currEventsBtn : androidx.cardview.widget.CardView = view.findViewById(R.id.card_view2)
+        var newsFeedsBtn : androidx.cardview.widget.CardView = view.findViewById(R.id.card_view3)
+        var podcastsBtn : androidx.cardview.widget.CardView = view.findViewById(R.id.card_view4)
+        var supportGroupsBtn : androidx.cardview.widget.CardView = view.findViewById(R.id.card_view5)
+        var recommendationsBtn : androidx.cardview.widget.CardView = view.findViewById(R.id.card_view6)
+        var policiesBtn : androidx.cardview.widget.CardView = view.findViewById(R.id.card_view7)
+        var mapBtn : androidx.cardview.widget.CardView = view.findViewById(R.id.card_view8)
 
         videosBtn.setOnClickListener {
             findNavController().navigate(R.id.action_myResources_to_videos2)
