@@ -19,7 +19,7 @@ class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        db = DBHandler(applicationContext, null, null, 1)
+        db = DBHandler(applicationContext, null, null, 2)
         //Chat SDK initialization
         try {
             ChatSDKFirebase.quickStart(this, "pre_2", "failkey", true)

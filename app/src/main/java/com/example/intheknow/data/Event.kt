@@ -39,7 +39,7 @@ class EventListModifier {
 
         fun addEvent(e : Event) {
             Log.d("Starting add", "ADD")
-            App.getDB().addEvent(UserResolver.id, e)
+            //App.getDB().addEvent(UserResolver.id, e)
             var pos : Int = eventList.size
             eventList.add(e)
             adapter.notifyItemInserted(pos)
@@ -47,7 +47,7 @@ class EventListModifier {
         }
 
         fun deleteEvent(position: Int) {
-            App.getDB().deleteEvent(UserResolver.id, eventList[position])
+            //App.getDB().deleteEvent(UserResolver.id, eventList[position])
             Log.d("Starting delete", "DELETE")
             eventList.removeAt(position)
             adapter.notifyItemRemoved(position)
@@ -58,7 +58,7 @@ class EventListModifier {
             Log.d("Starting edit", "EDIT")
             Log.d("Edit index: ", " " + itemSelector)
             if (itemSelector >= 0 && itemSelector < eventList.size){
-                App.getDB().updateEvent(UserResolver.id, eventList[itemSelector], e)
+                //App.getDB().updateEvent(UserResolver.id, eventList[itemSelector], e)
                 eventList[itemSelector] = e
                 adapter.notifyItemChanged(itemSelector)
             }

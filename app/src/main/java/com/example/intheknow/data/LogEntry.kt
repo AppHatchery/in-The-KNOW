@@ -10,7 +10,6 @@ import java.util.*
 
 data class LogEntry (
     var dateOfEntry : GregorianCalendar,
-    var symptoms: List<String>,
     var sex: Boolean,
     var timeFrameStart : Int,
     var sexCategory: String,
@@ -18,13 +17,6 @@ data class LogEntry (
     var log: String
 ) {
     companion object {
-        //define symptoms
-        val MISSED_PERIOD = "missed period"; val VAGINAL_ITCHING = "vaginal itching"
-        val VAGINAL_BURNING = "vaginal burning"; val VAGINAL_ODOR = "vaginal odor"
-        val VAGINAL_DISCHARGE = "vaginal discharge"; val PAIN = "pain during intercourse"
-        val BLEEDING = "abnormal vaginal bleeding"; val FEVER = "fever"
-        val RASHES = "skin changes/rashes"
-        val AB_PAIN = "lower abdominal pain"
         //define sex categories
         val VAGINAL = "Vaginal" ; val ANAL = "Anal" ; val ORAL = "Oral" ; val NON_PENETRATIVE = "No Penetration"
         //define protection
@@ -38,10 +30,10 @@ class LogListModifier {
         var logList : ArrayList<LogEntry> = ArrayList<LogEntry>()
         val adapter = LogEntryAdapter(logList, MyLoggerRoot(), MyLoggerRoot())
         var itemSelector : Int = 0
-        var newEntryBuild : LogEntry = LogEntry(GregorianCalendar(), arrayListOf(), false, 0, "No Sex", 0, "")
+        var newEntryBuild : LogEntry = LogEntry(GregorianCalendar(), false, 0, "No Sex", 0, "")
 
         fun clearNewEntryBuild(){
-            newEntryBuild = LogEntry(GregorianCalendar(), arrayListOf(), false, 0, "No Sex", 0, "")
+            newEntryBuild = LogEntry(GregorianCalendar(), false, 0, "No Sex", 0, "")
         }
 
         fun addEvent() {

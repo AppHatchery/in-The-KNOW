@@ -91,11 +91,6 @@ class NewLogTimeScreen : Fragment() {
             timeFrame = 2
         }
 
-        val prevBtn : AppCompatImageButton = binding.prevQ2 as AppCompatImageButton
-        prevBtn.setOnClickListener {
-            findNavController().navigate(R.id.action_newLogTimeScreen_to_newLogSymptomsScreen)
-        }
-
         val nextBtn : AppCompatImageButton = binding.nextQ2 as AppCompatImageButton
         nextBtn.setOnClickListener {
             if (sexSelected && !sex) {

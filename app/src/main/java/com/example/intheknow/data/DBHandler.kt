@@ -24,7 +24,7 @@ class DBHandler(context: Context, name: String?,
                 + COLUMN_LASTNAME + " TEXT" + ")")
         db.execSQL(CREATE_USERS_TABLE)
 
-
+        /*
         val CREATE_EVENTS_TABLE = ("CREATE TABLE " +
                 TABLE_EVENTS + "("
                 + COLUMN_EVENT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
@@ -38,13 +38,34 @@ class DBHandler(context: Context, name: String?,
                 + " FOREIGN KEY ("+COLUMN_USER_ID+") REFERENCES "+TABLE_USERS+"("+COLUMN_ID+")"
                 + ")")
         db.execSQL(CREATE_EVENTS_TABLE)
+         */
 
+        val CREATE_SYMPTOM_TABLE = ("CREATE TABLE " +
+                TABLE_SYMPTOMS + "("
+                + COLUMN_SYMPTOM_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + COLUMN_USER_ID_SYMPTOM_TABLE + " INTEGER,"
+                + COLUMN_SYMPTOM + " TEXT,"
+                + COLUMN_DATE_OF_SYMPTOM + " TEXT" + ")")
+        db.execSQL(CREATE_SYMPTOM_TABLE)
+
+
+        val CREATE_LOG_ENTRY_TABLE = ("CREATE TABLE " +
+                TABLE_LOG_ENTRY + "("
+                + COLUMN_LOG_ENTRY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + COLUMN_USER_ID_LOG_TABLE + " INTEGER,"
+                + COLUMN_SEX + " BINARY,"
+                + COLUMN_TF_START + " TINYINT,"
+                + COLUMN_DATE_OF_LOG + " TEXT,"
+                + COLUMN_SEX_CATEGORY + " TEXT,"
+                + COLUMN_CONDOM + " TINYINT" + ")")
+        db.execSQL(CREATE_LOG_ENTRY_TABLE)
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int,
                            newVersion: Int) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_USERS)
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_EVENTS)
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_SYMPTOMS)
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_LOG_ENTRY)
         onCreate(db)
     }
 
@@ -109,6 +130,7 @@ class DBHandler(context: Context, name: String?,
         return user
     }
 
+    /*
     fun addEvent(UserID: Long, event : Event) : Long {
         var values = ContentValues()
         values.put(COLUMN_EVENT_DATE, Converter.gregorianCalendarToDateStr(event.date))
@@ -202,10 +224,76 @@ class DBHandler(context: Context, name: String?,
         db.close()
         return userEvents
     }
+     */
+
+    fun addSymptomEntry(UserID: Long, symptomEntry : SymptomEntry) : ArrayList<Long> {
+        val db = this.writableDatabase
+        var table_inserts = arrayListOf<Long>()
+        for (s in symptomEntry.symptoms) {
+            var values = ContentValues()
+            values.put(COLUMN_USER_ID_SYMPTOM_TABLE, UserID)
+            values.put(COLUMN_SYMPTOM, s)
+            values.put(COLUMN_DATE_OF_SYMPTOM, Converter.gregorianCalendarToDateStr(symptomEntry.dateOfEntry))
+            val id : Long = db.insert(TABLE_SYMPTOMS, null, values)
+            table_inserts.add(id)
+        }
+
+        db.close()
+        Log.i("DB", "Symptoms added")
+        return table_inserts
+    }
+
+    fun queryLogEntriesByUserID(userID : Long) : ArrayList<LogEntry> {
+        val query =
+            "SELECT * FROM $TABLE_LOG_ENTRY WHERE $COLUMN_USER_ID_LOG_TABLE =  \"$userID\""
+
+        val db = this.writableDatabase
+        val cursor = db.rawQuery(query, null)
+
+        var logEntries : ArrayList<LogEntry> = arrayListOf()
+        try {
+            while (cursor.moveToNext()) {
+                Log.d("test db query 1", cursor.getInt(1).toString())
+                Log.d("test db query 2", cursor.getInt(2).toString())
+                Log.d("test db query 3", cursor.getString(3))
+                Log.d("test db query 4", cursor.getString(4))
+                Log.d("test db query 5", cursor.getInt(5).toString())
+                val sex = cursor.getInt(2) > 0
+                val tf_start = cursor.getInt(3)
+                val log_date = Converter.dateStrToGregorianCalendar(cursor.getString(4))
+                val category = cursor.getString(5)
+                val condom = cursor.getInt(6)
+
+                val e : LogEntry = LogEntry(log_date, sex, tf_start, category, condom, "")
+                logEntries.add(e)
+            }
+        } finally {
+            cursor.close();
+        }
+        db.close()
+        return logEntries
+    }
+
+    fun addLogEntry(UserID: Long, logEntry : LogEntry) : Long {
+        val db = this.writableDatabase
+        var values = ContentValues()
+        Log.d("le 1", logEntry.sex.toString())
+        Log.d("le 2", logEntry.sexCategory.toString())
+        Log.d("le 2", logEntry.condom.toString())
+        values.put(COLUMN_USER_ID_LOG_TABLE, UserID)
+        values.put(COLUMN_SEX, logEntry.sex)
+        values.put(COLUMN_TF_START, logEntry.timeFrameStart)
+        values.put(COLUMN_DATE_OF_LOG, Converter.gregorianCalendarToDateStr(logEntry.dateOfEntry))
+        values.put(COLUMN_SEX_CATEGORY, logEntry.sexCategory)
+        values.put(COLUMN_CONDOM, logEntry.condom)
+        val id: Long = db.insert(TABLE_LOG_ENTRY, null, values)
+        db.close()
+        return id
+    }
 
     companion object {
 
-        private val DATABASE_VERSION = 1
+        private val DATABASE_VERSION = 2
         private val DATABASE_NAME = "itkDB.db"
 
         //user table
@@ -219,7 +307,26 @@ class DBHandler(context: Context, name: String?,
         val COLUMN_FIRSTNAME = "firstname"
         val COLUMN_LASTNAME = "lastname"
 
-        //event table
+        //syptom table
+        val TABLE_SYMPTOMS = "symptoms"
+        val COLUMN_SYMPTOM_ID = "symptom_id"
+        val COLUMN_USER_ID_SYMPTOM_TABLE = "user_id"
+        val COLUMN_SYMPTOM = "symptom"
+        val COLUMN_DATE_OF_SYMPTOM = "date"
+
+        //log entry table
+        val TABLE_LOG_ENTRY = "events"
+        val COLUMN_LOG_ENTRY_ID = "log_entry_id"
+        val COLUMN_USER_ID_LOG_TABLE = "user_id"
+        val COLUMN_SEX = "sex"
+        val COLUMN_TF_START = "time_frame_start"
+        val COLUMN_DATE_OF_LOG = "date_of_log"
+        val COLUMN_SEX_CATEGORY = "category"
+        val COLUMN_CONDOM = "condom"
+
+
+        //event table ~ depracated
+        /*
         val TABLE_EVENTS = "events"
         val COLUMN_EVENT_ID = "event_id"
         val COLUMN_USER_ID = "user_id"
@@ -229,6 +336,7 @@ class DBHandler(context: Context, name: String?,
         val COLUMN_FEELINGS = "feelings"
         val COLUMN_SYMPTOMS = "symptoms"
         val COLUMN_LOG = "log"
+         */
 
     }
 }

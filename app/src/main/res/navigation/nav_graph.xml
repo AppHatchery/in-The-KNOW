@@ -47,6 +47,9 @@
         <action
             android:id="@+id/action_startDestination_to_myLoggerRoot"
             app:destination="@id/myLoggerRoot" />
+        <action
+            android:id="@+id/action_startDestination_to_newLogSymptomsScreen"
+            app:destination="@id/newLogSymptomsScreen" />
 
     </fragment>
     <fragment
@@ -245,17 +248,15 @@
         <action
             android:id="@+id/action_myLoggerRoot_to_newLogSymptomsScreen"
             app:destination="@id/newLogSymptomsScreen" />
+        <action
+            android:id="@+id/action_myLoggerRoot_to_newLogTimeScreen"
+            app:destination="@id/newLogTimeScreen" />
     </fragment>
     <fragment
         android:id="@+id/newLogSymptomsScreen"
         android:name="com.example.intheknow.ui.logger.NewLogSymptomsScreen"
         android:label="New Log"
         tools:layout="@layout/fragment_new_log_symptoms_screen" >
-        <action
-            android:id="@+id/action_newLogSymptomsScreen_to_newLogTimeScreen"
-            app:destination="@id/newLogTimeScreen"
-            app:popUpTo="@id/newLogSymptomsScreen"
-            app:popUpToInclusive="true"/>
         <action
             android:id="@+id/action_newLogSymptomsScreen_to_loggerRoot"
             app:destination="@id/myLoggerRoot"
@@ -270,11 +271,6 @@
         <action
             android:id="@+id/action_newLogTimeScreen_to_newLogDetailsScreen"
             app:destination="@id/newLogDetailsScreen"
-            app:popUpTo="@id/newLogTimeScreen"
-            app:popUpToInclusive="true"/>
-        <action
-            android:id="@+id/action_newLogTimeScreen_to_newLogSymptomsScreen"
-            app:destination="@id/newLogSymptomsScreen"
             app:popUpTo="@id/newLogTimeScreen"
             app:popUpToInclusive="true"/>
         <action
@@ -309,5 +305,11 @@
             app:destination="@id/myLoggerRoot"
             app:popUpTo="@id/newLogCompletionScreen"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_newLogCompletionScreen_to_myResources"
+            app:destination="@id/myResources"
+            app:popUpTo="@id/newLogCompletionScreen"
+            app:popUpToInclusive="true" />
+
     </fragment>
 </navigation>

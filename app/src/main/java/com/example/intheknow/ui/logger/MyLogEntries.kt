@@ -43,9 +43,9 @@ class MyLogEntries : Fragment(), EventAdapter.OnItemDeleteListener, EventAdapter
         recycle_view_events.adapter = EventListModifier.adapter
         recycle_view_events.setHasFixedSize(true)
         if (EventListModifier.eventList.isEmpty()) {
-            val setupList : ArrayList<Event> = App.getDB().queryEventsByUserID(UserResolver.id)
-            Log.d("Setup List Size: ", setupList.size.toString())
-            EventListModifier.setupEventList(setupList)
+            //val setupList : ArrayList<Event> = App.getDB().queryEventsByUserID(UserResolver.id)
+            //Log.d("Setup List Size: ", setupList.size.toString())
+            //EventListModifier.setupEventList(setupList)
         }
     }
 

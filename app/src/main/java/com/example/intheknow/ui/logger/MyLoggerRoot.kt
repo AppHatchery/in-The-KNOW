@@ -14,9 +14,11 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.intheknow.App
 import com.example.intheknow.R
 import com.example.intheknow.data.LogEntry
 import com.example.intheknow.data.LogListModifier
+import com.example.intheknow.data.UserResolver
 import com.example.intheknow.databinding.FragmentMyLoggerRootBinding
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
@@ -55,7 +57,7 @@ class MyLoggerRoot : Fragment(), LogEntryAdapter.OnLogItemDeleteListener, LogEnt
 
         var addNewLogBtn = binding.fabAddEvent
         addNewLogBtn.setOnClickListener {
-            findNavController().navigate(R.id.action_myLoggerRoot_to_newLogSymptomsScreen)
+            findNavController().navigate(R.id.action_myLoggerRoot_to_newLogTimeScreen)
         }
         var toggleMyCharts = binding.toggleMyCharts
         var toggleListView = binding.toggleMyLog
@@ -67,7 +69,9 @@ class MyLoggerRoot : Fragment(), LogEntryAdapter.OnLogItemDeleteListener, LogEnt
         toggleMyCharts.isChecked = true
         toggleListView.isChecked = false
         buildChart()
-
+        if (LogListModifier.logList.size == 0) {
+            populateFromDB()
+        }
 
         //clear build log
         LogListModifier.clearNewEntryBuild()
@@ -92,6 +96,13 @@ class MyLoggerRoot : Fragment(), LogEntryAdapter.OnLogItemDeleteListener, LogEnt
 
     }
 
+    fun populateFromDB() {
+        val dbEntries : ArrayList<LogEntry> = App.getDB().queryLogEntriesByUserID(UserResolver.id)
+        for (entry in dbEntries) {
+            LogListModifier.addEvent(entry)
+        }
+    }
+
     override fun onResume() {
         super.onResume()
         binding.toggleMyCharts.isChecked = true
@@ -102,9 +113,32 @@ class MyLoggerRoot : Fragment(), LogEntryAdapter.OnLogItemDeleteListener, LogEnt
     fun buildChart() {
         pieChart.setUsePercentValues(true)
         val xvalues = ArrayList<PieEntry>()
-        xvalues.add(PieEntry(34.0f, "Vaginal"))
-        xvalues.add(PieEntry(28.2f, "Anal"))
-        xvalues.add(PieEntry(37.9f, "Oral"))
+
+        val dbEntries : ArrayList<LogEntry> = App.getDB().queryLogEntriesByUserID(UserResolver.id)
+        var vCount = 0
+        var aCount = 0
+        var oCount = 0
+        for (entry in dbEntries) {
+            if (entry.sexCategory.equals(LogEntry.VAGINAL)) {
+                vCount++;
+            } else if (entry.sexCategory.equals(LogEntry.ANAL)) {
+                aCount++;
+            } else if (entry.sexCategory.equals(LogEntry.ORAL)) {
+                oCount++;
+            }
+        }
+        if (dbEntries.size > 0) {
+            var vFlt = (100.0f * vCount) / (dbEntries.size)
+            var aFlt = (100.0f * aCount) / (dbEntries.size)
+            var oFlt = (100.0f * oCount) / (dbEntries.size)
+            xvalues.add(PieEntry(vFlt, "V"))
+            xvalues.add(PieEntry(aFlt, "A"))
+            xvalues.add(PieEntry(oFlt, "O"))
+        } else {
+            xvalues.add(PieEntry(33.3f, "V"))
+            xvalues.add(PieEntry(33.3f, "A"))
+            xvalues.add(PieEntry(33.3f, "O"))
+        }
 
         var lightSalmon = Color.valueOf(1.0f, 0.625f, 0.4765625f)
         var deepBlue = Color.valueOf(0f, 0.7461f, 1.0f)
@@ -134,7 +168,7 @@ class MyLoggerRoot : Fragment(), LogEntryAdapter.OnLogItemDeleteListener, LogEnt
 
 
 
-
+    /*
     private fun generateDummyLog(size : Int): ArrayList<LogEntry> {
 
         val list = ArrayList<LogEntry>()
@@ -188,6 +222,7 @@ class MyLoggerRoot : Fragment(), LogEntryAdapter.OnLogItemDeleteListener, LogEnt
         return list
     }
 
+     */
 
 
 }

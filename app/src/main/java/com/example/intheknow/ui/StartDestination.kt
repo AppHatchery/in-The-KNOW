@@ -39,7 +39,8 @@ class StartDestination : Fragment() {
         val circle_btn : Button = view.findViewById(R.id.my_circle_btn)
         val graphs_btn : Button = view.findViewById(R.id.my_graphs_btn)
         logger_btn.setOnClickListener {
-            findNavController().navigate(R.id.action_startDestination_to_myLoggerRoot)
+            //findNavController().navigate(R.id.action_startDestination_to_myLoggerRoot)
+            findNavController().navigate(R.id.action_startDestination_to_newLogSymptomsScreen)
         }
         tests_btn.setOnClickListener {
             findNavController().navigate(R.id.action_startDestination_to_myTests)

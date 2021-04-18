@@ -15,14 +15,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="15dp"
             android:layout_marginEnd="40dp"
-            android:layout_marginBottom="25dp"
+            android:layout_marginBottom="15dp"
             android:fontFamily="sans-serif-medium"
             android:padding="@dimen/small_text_padding"
-            android:text="What symptoms are you feeling?"
+            android:text="What symptoms are you experiencing?"
             android:textColor="@color/black"
-            android:textSize="@dimen/question_text_size" />
+            android:textSize="17sp" />
 
         <com.google.android.material.checkbox.MaterialCheckBox
             android:id="@+id/missed_period"
@@ -53,6 +53,13 @@
             android:text="Vaginal Odor" />
 
         <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/vaginal_discharge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:text="Vaginal Discharge" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
             android:id="@+id/pain_sex"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -72,6 +79,13 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
             android:text="Abnormal Vaginal Bleeding" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/rashes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:text="Rashes" />
 
         <com.google.android.material.checkbox.MaterialCheckBox
             android:id="@+id/fever"

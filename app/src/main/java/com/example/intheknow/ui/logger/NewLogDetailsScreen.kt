@@ -8,9 +8,11 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatImageButton
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
+import com.example.intheknow.App
 import com.example.intheknow.R
 import com.example.intheknow.data.LogEntry
 import com.example.intheknow.data.LogListModifier
+import com.example.intheknow.data.UserResolver
 import com.example.intheknow.databinding.FragmentNewLogDetailsScreenBinding
 
 
@@ -50,12 +52,15 @@ class NewLogDetailsScreen : Fragment() {
 
         vaginal_btn.setOnClickListener {
             sexCategory = LogEntry.VAGINAL
+            binding.editTextSexCategory.visibility = View.INVISIBLE
         }
         anal_btn.setOnClickListener {
             sexCategory = LogEntry.ANAL
+            binding.editTextSexCategory.visibility = View.INVISIBLE
         }
         oral_btn.setOnClickListener {
             sexCategory = LogEntry.ORAL
+            binding.editTextSexCategory.visibility = View.INVISIBLE
         }
         other_btn.setOnClickListener {
             binding.editTextSexCategory.visibility = View.VISIBLE
@@ -101,6 +106,7 @@ class NewLogDetailsScreen : Fragment() {
                 } else {
                     LogListModifier.newEntryBuild.sexCategory = sexCategory
                     LogListModifier.addEvent()
+                    App.getDB().addLogEntry(UserResolver.id, LogListModifier.newEntryBuild)
                     findNavController().navigate(R.id.action_newLogDetailsScreen_to_newLogCompletionScreen)
                 }
             }
