@@ -1,10 +1,13 @@
 package com.example.intheknow.ui.resources
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import com.example.intheknow.R
 
 
@@ -26,6 +29,23 @@ class SupportGroups : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_support_groups, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        //var titleText : TextView = view.findViewById(R.id.titleOfPod)
+        var pod : androidx.cardview.widget.CardView = view.findViewById(R.id.sup_card_view)
+
+        //var contentText : TextView = view.findViewById(R.id.textOfNews)
+
+        pod.setOnClickListener {
+            val openURL = Intent(Intent.ACTION_VIEW)
+            openURL.data = Uri.parse("https://providers.therapyforblackgirls.com/")
+            startActivity(openURL);
+        }
+
+
+
+
     }
 
 

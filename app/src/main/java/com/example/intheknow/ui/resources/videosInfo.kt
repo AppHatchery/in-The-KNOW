@@ -85,11 +85,15 @@ class videosInfo : Fragment() {
         var v2 = view.findViewById<com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>(R.id.third_party_player_view2)
         var v3 = view.findViewById<com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>(R.id.third_party_player_view3)
         var v4 = view.findViewById<com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>(R.id.third_party_player_view4)
+        var v5 = view.findViewById<com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>(R.id.third_party_player_view5)
+        var v6 = view.findViewById<com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>(R.id.third_party_player_view6)
+        var v7 = view.findViewById<com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>(R.id.third_party_player_view7)
+        var v8 = view.findViewById<com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>(R.id.third_party_player_view8)
 
         v.getPlayerUiController().showFullscreenButton(true)
         v.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
             override fun onReady(@NonNull youTubePlayer: YouTubePlayer) {
-                val videoId = "36IBDpTRVNE"
+                val videoId = "F-_qJdcKxaI"
                 youTubePlayer.cueVideo(videoId, 0f)
             }
         })
@@ -97,7 +101,7 @@ class videosInfo : Fragment() {
         v2.getPlayerUiController().showFullscreenButton(true)
         v2.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
             override fun onReady(@NonNull youTubePlayer: YouTubePlayer) {
-                val videoId = "o31JyuaQ2LY"
+                val videoId = "aRz30Q_S5vY"
                 youTubePlayer.cueVideo(videoId, 0f)
             }
         })
@@ -105,7 +109,7 @@ class videosInfo : Fragment() {
         v3.getPlayerUiController().showFullscreenButton(true)
         v3.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
             override fun onReady(@NonNull youTubePlayer: YouTubePlayer) {
-                val videoId = "75NQK-Sm1YY"
+                val videoId = "jw3TJuJae1c"
                 youTubePlayer.cueVideo(videoId, 0f)
             }
         })
@@ -113,7 +117,40 @@ class videosInfo : Fragment() {
         v4.getPlayerUiController().showFullscreenButton(true)
         v4.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
             override fun onReady(@NonNull youTubePlayer: YouTubePlayer) {
-                val videoId = "UCnoaA42eNE"
+                val videoId = "LvTJnX8nIWY"
+                youTubePlayer.cueVideo(videoId, 0f)
+            }
+        })
+
+
+        v5.getPlayerUiController().showFullscreenButton(true)
+        v5.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
+            override fun onReady(@NonNull youTubePlayer: YouTubePlayer) {
+                val videoId = "-Xx92whZS0o"
+                youTubePlayer.cueVideo(videoId, 0f)
+            }
+        })
+
+        v6.getPlayerUiController().showFullscreenButton(true)
+        v6.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
+            override fun onReady(@NonNull youTubePlayer: YouTubePlayer) {
+                val videoId = "jyDHRJ_zwQ4"
+                youTubePlayer.cueVideo(videoId, 0f)
+            }
+        })
+
+        v7.getPlayerUiController().showFullscreenButton(true)
+        v7.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
+            override fun onReady(@NonNull youTubePlayer: YouTubePlayer) {
+                val videoId = "zk71hFVgniE"
+                youTubePlayer.cueVideo(videoId, 0f)
+            }
+        })
+
+        v8.getPlayerUiController().showFullscreenButton(true)
+        v8.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
+            override fun onReady(@NonNull youTubePlayer: YouTubePlayer) {
+                val videoId = "fGhKPyV86yM"
                 youTubePlayer.cueVideo(videoId, 0f)
             }
         })

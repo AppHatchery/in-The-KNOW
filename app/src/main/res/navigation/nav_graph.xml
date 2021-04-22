@@ -227,19 +227,19 @@
     <fragment
         android:id="@+id/newsInfo"
         android:name="com.example.intheknow.ui.resources.newsInfo"
-        android:label="newsInfo" />
+        android:label="Newsfeed" />
     <fragment
         android:id="@+id/videosInfo"
         android:name="com.example.intheknow.ui.resources.videosInfo"
-        android:label="videosInfo" />
+        android:label="Videos" />
     <fragment
         android:id="@+id/currEventsInfo"
         android:name="com.example.intheknow.ui.resources.currEventsInfo"
-        android:label="currEventsInfo" />
+        android:label="Current Events" />
     <fragment
         android:id="@+id/podcastInfo"
         android:name="com.example.intheknow.ui.resources.podcastInfo"
-        android:label="podcastInfo" />
+        android:label="Podcasts" />
     <fragment
         android:id="@+id/myLoggerRoot"
         android:name="com.example.intheknow.ui.logger.MyLoggerRoot"

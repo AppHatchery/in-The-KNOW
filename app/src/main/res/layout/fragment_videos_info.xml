@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:title="Videos"
 
     tools:context=".AndroidYoutubePlayerActivity"
     android:orientation="vertical">
@@ -19,7 +20,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
         android:padding="@dimen/small_text_padding"
-        android:text="Video 1: Oral Sex"
+        android:text="The State of Our Mental Health: Profile"
         android:textColor="@color/black"
         android:textSize="@dimen/question_text_size" />
 
@@ -40,7 +41,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
             android:padding="@dimen/small_text_padding"
-            android:text="Video 2: Bad Sex Practices"
+            android:text="Mental Health Tips for Black Women"
             android:textColor="@color/black"
             android:textSize="@dimen/question_text_size" />
 
@@ -59,7 +60,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
             android:padding="@dimen/small_text_padding"
-            android:text="Video 3: Good Sex Practices"
+            android:text="Emotional Wellness In Black Women"
             android:textColor="@color/black"
             android:textSize="@dimen/question_text_size" />
 
@@ -78,12 +79,91 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
             android:padding="@dimen/small_text_padding"
-            android:text="Video 4: Safe Practices"
+            android:text="PrEP HIV Prevention Live Q+A"
             android:textColor="@color/black"
             android:textSize="@dimen/question_text_size" />
 
         <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
             android:id="@+id/third_party_player_view4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/titleOfVid5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:padding="@dimen/small_text_padding"
+            android:text="Demystifying HIV Pre-Exposure Prophylaxis"
+            android:textColor="@color/black"
+            android:textSize="@dimen/question_text_size" />
+
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:id="@+id/third_party_player_view5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/titleOfVid6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:padding="@dimen/small_text_padding"
+            android:text="How does PrEP prevent HIV?"
+            android:textColor="@color/black"
+            android:textSize="@dimen/question_text_size" />
+
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:id="@+id/third_party_player_view6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/titleOfVid7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:padding="@dimen/small_text_padding"
+            android:text="Teens Ask: Who can get an STD?"
+            android:textColor="@color/black"
+            android:textSize="@dimen/question_text_size" />
+
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:id="@+id/third_party_player_view7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/titleOfVid8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:padding="@dimen/small_text_padding"
+            android:text="Dr. Lisa Talks Birth Control Options"
+            android:textColor="@color/black"
+            android:textSize="@dimen/question_text_size" />
+
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:id="@+id/third_party_player_view8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
