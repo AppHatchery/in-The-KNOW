@@ -54,11 +54,6 @@
                 android:textSize="40dp"
                 />
 
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="150dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/youtube_emblem" />
         </LinearLayout>
 
             <TextView
@@ -102,13 +97,6 @@
                     android:textSize="38dp"
                     android:layout_marginLeft="20dp"/>
 
-                <ImageView
-                    android:id="@+id/imageView4"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/_847f9fccef1014c0b5e48cb"
-                    android:layout_marginRight="10dp"
-                     />
             </LinearLayout>
 
             <TextView
@@ -154,13 +142,6 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="10dp"/>
 
-                <ImageView
-                    android:id="@+id/imageView5"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginRight="10dp"
-                    android:src="@drawable/_280px_cnn_svg"
-                    />
             </LinearLayout>
 
             <TextView
@@ -205,13 +186,6 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="10dp"/>
 
-                <ImageView
-                    android:id="@+id/imageView6"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginRight="10dp"
-                    android:src="@drawable/pngtree_vector_microphone_icon_png_image_695750"
-                     />
             </LinearLayout>
 
             <TextView
@@ -257,13 +231,6 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="10dp"/>
 
-                <ImageView
-                    android:id="@+id/imageView7"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginRight="10dp"
-                    android:src="@drawable/__88658_support_groups_dbsa_hands_together_logo_clipart"
-                    />
             </LinearLayout>
 
             <TextView
@@ -308,13 +275,6 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="1dp"/>
 
-                <ImageView
-                    android:id="@+id/imageView8"
-                    android:layout_width="70dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginRight="55dp"
-                    android:src="@drawable/recommended_stamp_4"
-                     />
             </LinearLayout>
 
             <TextView
@@ -360,13 +320,6 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="10dp"/>
 
-                <ImageView
-                    android:id="@+id/imageView9"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginRight="10dp"
-                    android:src="@drawable/_43_1433604_policy_icon_png_transparent_png"
-                    />
             </LinearLayout>
 
             <TextView
@@ -412,13 +365,6 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="10dp"/>
 
-                <ImageView
-                    android:id="@+id/imageView10"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginRight="10dp"
-                    android:src="@drawable/google_maps_logo_icon"
-                    />
             </LinearLayout>
 
             <TextView
