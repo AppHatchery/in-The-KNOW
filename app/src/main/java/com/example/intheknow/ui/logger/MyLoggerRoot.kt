@@ -24,8 +24,6 @@ import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.formatter.PercentFormatter
-import kotlinx.android.synthetic.main.fragment_my_log_graph.*
-import kotlinx.android.synthetic.main.fragment_my_log_graph.pieChart
 import kotlinx.android.synthetic.main.fragment_my_logger_root.*
 import java.util.*
 import kotlin.collections.ArrayList

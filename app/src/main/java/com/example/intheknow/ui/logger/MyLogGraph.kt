@@ -1,18 +1,25 @@
 package com.example.intheknow.ui.logger
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.CalendarView
+import android.widget.TextView
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+//import androidx.test.core.app.ApplicationProvider.getApplicationContext
 import com.example.intheknow.R
-import android.graphics.Color
-import com.github.mikephil.charting.components.LegendEntry
-import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.*
-import com.github.mikephil.charting.formatter.IAxisValueFormatter
-import com.github.mikephil.charting.formatter.PercentFormatter
 import kotlinx.android.synthetic.main.fragment_my_log_graph.*
+import java.util.*
+import kotlin.collections.HashMap
+import kotlin.random.Random
+
+
 
 /**
  * A simple [Fragment] subclass.
@@ -21,6 +28,11 @@ import kotlinx.android.synthetic.main.fragment_my_log_graph.*
  */
 
 class MyLogGraph : Fragment() {
+    //val <GregorianCalendar, String> hashMapOf(): HashMap<GregorianCalendar, String>
+    var hashMap : HashMap<Long, String>
+            = HashMap<Long, String> ()
+    val arr = intArrayOf(0x1F60A, 0x1F602, 0x1F607, 0x1F610, 0x1F612, 0x1F62C, 0x1F614, 0x1F634,
+        0x1F615, 0x1F630, 0x1F62D, 0x1F62B, 0x1F60D, 0x1F633)
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,63 +46,28 @@ class MyLogGraph : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_my_log_graph, container, false)
     }
+    fun getEmoji(unicode: Int): String {
+        return String(Character.toChars(unicode))
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val FeelingEventButton : Button = view.findViewById(R.id.FeelingEventButton)
+
+        FeelingEventButton.setOnClickListener {
+            findNavController().navigate(R.id.action_myLogGraph_to_createEmoji)
+        }
         super.onViewCreated(view, savedInstanceState)
-        setBarChart()
+        val calendarView = view.findViewById(R.id.calendarView) as CalendarView
+        val test = view.findViewById(R.id.testbox) as TextView
+        calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
+            run {
+                if (test != null) {
+                    if (dayOfMonth == 26) {
+                        test.text = getEmoji(0x1F60A)
+                    } else {
+                        test.text = getEmoji(arr[Random.nextInt(14)])
+                    }
+                }
+            }
+        }
     }
-    private fun setBarChart() {
-        pieChart.setUsePercentValues(true)
-        val xvalues = ArrayList<PieEntry>()
-        xvalues.add(PieEntry(34.0f, "Vaginal"))
-        xvalues.add(PieEntry(28.2f, "Anal"))
-        xvalues.add(PieEntry(37.9f, "Oral"))
-        val colors = mutableListOf<Int>(Color.RED, Color.CYAN, Color.GREEN)
-        val dataSet = PieDataSet(xvalues, "")
-        val data = PieData(dataSet)
-        dataSet.setColors(colors)
-        // In Percentage
-        data.setValueFormatter(PercentFormatter())
-
-        pieChart.data = data
-        pieChart.description.text = "Sexual Activity Chart"
-        pieChart.isDrawHoleEnabled = true
-        data.setValueTextSize(17f)
-
-
-        //pieChart.setOnChartValueSelectedListener(this)
-        //chartDetails(pieChart, Typeface.SANS_SERIF)
-        /*
-        val entries = ArrayList<BarEntry>()
-        entries.add(BarEntry(5f, 27f))
-        entries.add(BarEntry(10f, 30f))
-
-
-        val labels = mutableListOf<String>("Condom", "No Condom")
-        val barDataSet = BarDataSet(entries, "Legend")
-        val data = BarData(barDataSet)
-
-        val colors = mutableListOf<Int>(Color.RED, Color.CYAN)
-        barDataSet.setColors(colors)
-        barChart.data = data // set the data and list of lables into chart
-        data.setBarWidth(0.9f)
-
-
-        barChart.description.setText("Condom")
-        barChart.getAxisLeft().setAxisMinimum(0.0f)
-        barChart.getAxisLeft().setAxisMaximum(50.0f)
-        barChart.getAxisRight().setEnabled(false)
-        barChart.getXAxis().setDrawGridLines(false)
-        barChart.getAxisLeft().setDrawGridLines(false);
-        barChart.getAxisRight().setDrawGridLines(false);
-        barChart.getXAxis().setDrawLabels(false);
-        barChart.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM)
-        barChart.getXAxis().setCenterAxisLabels(true);
-
-        //barChart.getXAxis().valueFormatter = IAxisValueFormatter { value, axis -> labels[value.toInt()] }
-
-        barChart.animateY(3000)
-         */
-    }
-
-
 }

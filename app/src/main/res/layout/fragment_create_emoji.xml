@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/Text"
+        android:textSize="35sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:includeFontPadding="false"
+        android:text="@string/hey_how_you_doing" />
+
+    <Button
+        android:id="@+id/happy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Text"
+        android:text="@string/button" />
+
+    <Button
+        android:id="@+id/sunglass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Text"
+        android:layout_marginLeft="74dp"
+
+        android:layout_toRightOf="@id/happy"
+        android:text="@string/button" />
+
+    <Button
+        android:id="@+id/heart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Text"
+        android:layout_marginLeft="68dp"
+
+        android:layout_toRightOf="@id/sunglass"
+        android:text="@string/button" />
+
+    <Button
+        android:id="@+id/snooze"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/happy"
+        android:layout_marginTop="22dp"
+        android:text="@string/button" />
+
+    <Button
+        android:id="@+id/cry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sunglass"
+        android:layout_marginLeft="74dp"
+        android:layout_marginTop="18dp"
+        android:layout_toRightOf="@id/snooze"
+        android:text="@string/button" />
+
+    <Button
+        android:id="@+id/smash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/heart"
+        android:layout_marginLeft="68dp"
+        android:layout_marginTop="16dp"
+        android:layout_toRightOf="@id/cry"
+        android:text="@string/button" />
+
+    <TextView
+        android:id="@+id/submitemoji"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cry"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="113dp"
+        android:textSize="30dp"
+        android:text="Select an Emoji" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/submitemoji"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="105dp"
+        android:text="Submit" />
+
+
+</RelativeLayout>

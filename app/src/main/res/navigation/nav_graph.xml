@@ -222,8 +222,12 @@
     <fragment
         android:id="@+id/myLogGraph"
         android:name="com.example.intheknow.ui.logger.MyLogGraph"
-        android:label="My Graphs"
-        tools:layout="@layout/fragment_my_log_graph" />
+        android:label="My Feelings"
+        tools:layout="@layout/fragment_my_log_graph" >
+        <action
+            android:id="@+id/action_myLogGraph_to_createEmoji"
+            app:destination="@id/createEmoji" />
+    </fragment>
     <fragment
         android:id="@+id/newsInfo"
         android:name="com.example.intheknow.ui.resources.newsInfo"
@@ -311,5 +315,14 @@
             app:popUpTo="@id/newLogCompletionScreen"
             app:popUpToInclusive="true" />
 
+    </fragment>
+    <fragment
+        android:id="@+id/createEmoji"
+        android:name="com.example.intheknow.CreateEmoji"
+        android:label="Add Feeling"
+        tools:layout="@layout/fragment_create_emoji" >
+        <action
+            android:id="@+id/action_createEmoji_to_startDestination2"
+            app:destination="@id/startDestination" />
     </fragment>
 </navigation>
