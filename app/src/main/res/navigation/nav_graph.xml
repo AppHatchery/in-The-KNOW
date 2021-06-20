@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/myLogger"
-        android:name="com.example.intheknow.ui.logger.MyLogger"
+        android:name="com.apphatchery.intheknow.ui.logger.MyLogger"
         android:label="My Logger"
         tools:layout="@layout/fragment_my_logger" >
         <action
@@ -21,7 +21,7 @@
     </fragment>
     <fragment
         android:id="@+id/startDestination"
-        android:name="com.example.intheknow.ui.StartDestination"
+        android:name="com.apphatchery.intheknow.ui.StartDestination"
         android:label="Home"
         tools:layout="@layout/fragment_start_destination" >
         <action
@@ -54,12 +54,12 @@
     </fragment>
     <fragment
         android:id="@+id/myTests"
-        android:name="com.example.intheknow.ui.tests.MyTests"
+        android:name="com.apphatchery.intheknow.ui.tests.MyTests"
         android:label="My Tests"
         tools:layout="@layout/fragment_my_tests" />
     <fragment
         android:id="@+id/myResources"
-        android:name="com.example.intheknow.ui.resources.MyResources"
+        android:name="com.apphatchery.intheknow.ui.resources.MyResources"
         android:label="My Resources"
         tools:layout="@layout/fragment_my_resources" >
         <action
@@ -89,7 +89,7 @@
     </fragment>
     <fragment
         android:id="@+id/myLogEntries"
-        android:name="com.example.intheknow.ui.logger.MyLogEntries"
+        android:name="com.apphatchery.intheknow.ui.logger.MyLogEntries"
         android:label="My Logger Entries"
         tools:layout="@layout/fragment_my_log_entries" >
         <action
@@ -104,7 +104,7 @@
     </fragment>
     <fragment
         android:id="@+id/myCircle"
-        android:name="com.example.intheknow.ui.chat.MyCircle"
+        android:name="com.apphatchery.intheknow.ui.chat.MyCircle"
         android:label="My Circle"
         tools:layout="@layout/fragment_my_circle" >
         <action
@@ -116,7 +116,7 @@
     </fragment>
     <fragment
         android:id="@+id/createNewChat"
-        android:name="com.example.intheknow.ui.chat.CreateNewChat"
+        android:name="com.apphatchery.intheknow.ui.chat.CreateNewChat"
         android:label="Create New Chat"
         tools:layout="@layout/fragment_create_new_chat" >
         <action
@@ -125,12 +125,12 @@
     </fragment>
     <fragment
         android:id="@+id/communicationScreen"
-        android:name="com.example.intheknow.ui.chat.CommunicationScreen"
+        android:name="com.apphatchery.intheknow.ui.chat.CommunicationScreen"
         android:label="Communications"
         tools:layout="@layout/fragment_communication_screen" />
     <fragment
         android:id="@+id/videos2"
-        android:name="com.example.intheknow.ui.resources.videos"
+        android:name="com.apphatchery.intheknow.ui.resources.videos"
         android:label="Videos"
         tools:layout="@layout/fragment_videos" >
         <action
@@ -139,7 +139,7 @@
     </fragment>
     <fragment
         android:id="@+id/currentEvents"
-        android:name="com.example.intheknow.ui.resources.CurrentEvents"
+        android:name="com.apphatchery.intheknow.ui.resources.CurrentEvents"
         android:label="Current Events"
         tools:layout="@layout/fragment_current_events" >
         <action
@@ -148,7 +148,7 @@
     </fragment>
     <fragment
         android:id="@+id/newsfeed"
-        android:name="com.example.intheknow.ui.resources.Newsfeed"
+        android:name="com.apphatchery.intheknow.ui.resources.Newsfeed"
         android:label="Newsfeed"
         tools:layout="@layout/fragment_newsfeed" >
         <action
@@ -157,7 +157,7 @@
     </fragment>
     <fragment
         android:id="@+id/podcasts"
-        android:name="com.example.intheknow.ui.resources.podcasts"
+        android:name="com.apphatchery.intheknow.ui.resources.podcasts"
         android:label="Podcasts"
         tools:layout="@layout/fragment_podcasts" >
         <action
@@ -166,22 +166,22 @@
     </fragment>
     <fragment
         android:id="@+id/recommendations"
-        android:name="com.example.intheknow.ui.resources.Recommendations"
+        android:name="com.apphatchery.intheknow.ui.resources.Recommendations"
         android:label="Recommendations"
         tools:layout="@layout/fragment_recommendations" />
     <fragment
         android:id="@+id/supportGroups"
-        android:name="com.example.intheknow.ui.resources.SupportGroups"
+        android:name="com.apphatchery.intheknow.ui.resources.SupportGroups"
         android:label="Support Groups"
         tools:layout="@layout/fragment_support_groups" />
     <fragment
         android:id="@+id/policies2"
-        android:name="com.example.intheknow.ui.resources.Policies"
+        android:name="com.apphatchery.intheknow.ui.resources.Policies"
         android:label="Policies"
         tools:layout="@layout/fragment_policies" />
     <fragment
         android:id="@+id/loginScreen"
-        android:name="com.example.intheknow.ui.LoginScreen"
+        android:name="com.apphatchery.intheknow.ui.LoginScreen"
         android:label=""
         tools:layout="@layout/fragment_login_screen" >
         <action
@@ -195,7 +195,7 @@
     </fragment>
     <fragment
         android:id="@+id/myLoggerEdit"
-        android:name="com.example.intheknow.ui.logger.MyLoggerEdit"
+        android:name="com.apphatchery.intheknow.ui.logger.MyLoggerEdit"
         android:label="Edit Log"
         tools:layout="@layout/fragment_my_logger_edit" >
         <action
@@ -207,7 +207,7 @@
     </fragment>
     <fragment
         android:id="@+id/createAccount"
-        android:name="com.example.intheknow.ui.CreateAccount"
+        android:name="com.apphatchery.intheknow.ui.CreateAccount"
         android:label="Create Account"
         tools:layout="@layout/fragment_create_account" >
         <action
@@ -216,12 +216,12 @@
     </fragment>
     <fragment
         android:id="@+id/mapsFragment2"
-        android:name="com.example.intheknow.MapsFragment"
+        android:name="com.apphatchery.intheknow.MapsFragment"
         android:label="Map Resources"
         tools:layout="@layout/fragment_maps" />
     <fragment
         android:id="@+id/myLogGraph"
-        android:name="com.example.intheknow.ui.logger.MyLogGraph"
+        android:name="com.apphatchery.intheknow.ui.logger.MyLogGraph"
         android:label="My Feelings"
         tools:layout="@layout/fragment_my_log_graph" >
         <action
@@ -230,23 +230,23 @@
     </fragment>
     <fragment
         android:id="@+id/newsInfo"
-        android:name="com.example.intheknow.ui.resources.newsInfo"
+        android:name="com.apphatchery.intheknow.ui.resources.newsInfo"
         android:label="Newsfeed" />
     <fragment
         android:id="@+id/videosInfo"
-        android:name="com.example.intheknow.ui.resources.videosInfo"
+        android:name="com.apphatchery.intheknow.ui.resources.videosInfo"
         android:label="Videos" />
     <fragment
         android:id="@+id/currEventsInfo"
-        android:name="com.example.intheknow.ui.resources.currEventsInfo"
+        android:name="com.apphatchery.intheknow.ui.resources.currEventsInfo"
         android:label="Current Events" />
     <fragment
         android:id="@+id/podcastInfo"
-        android:name="com.example.intheknow.ui.resources.podcastInfo"
+        android:name="com.apphatchery.intheknow.ui.resources.podcastInfo"
         android:label="Podcasts" />
     <fragment
         android:id="@+id/myLoggerRoot"
-        android:name="com.example.intheknow.ui.logger.MyLoggerRoot"
+        android:name="com.apphatchery.intheknow.ui.logger.MyLoggerRoot"
         android:label="My Logger"
         tools:layout="@layout/fragment_my_logger_root" >
         <action
@@ -258,7 +258,7 @@
     </fragment>
     <fragment
         android:id="@+id/newLogSymptomsScreen"
-        android:name="com.example.intheknow.ui.logger.NewLogSymptomsScreen"
+        android:name="com.apphatchery.intheknow.ui.logger.NewLogSymptomsScreen"
         android:label="New Log"
         tools:layout="@layout/fragment_new_log_symptoms_screen" >
         <action
@@ -269,7 +269,7 @@
     </fragment>
     <fragment
         android:id="@+id/newLogTimeScreen"
-        android:name="com.example.intheknow.ui.logger.NewLogTimeScreen"
+        android:name="com.apphatchery.intheknow.ui.logger.NewLogTimeScreen"
         android:label="New Log"
         tools:layout="@layout/fragment_new_log_time_screen" >
         <action
@@ -285,7 +285,7 @@
     </fragment>
     <fragment
         android:id="@+id/newLogDetailsScreen"
-        android:name="com.example.intheknow.ui.logger.NewLogDetailsScreen"
+        android:name="com.apphatchery.intheknow.ui.logger.NewLogDetailsScreen"
         android:label="New Log"
         tools:layout="@layout/fragment_new_log_details_screen" >
         <action
@@ -301,7 +301,7 @@
     </fragment>
     <fragment
         android:id="@+id/newLogCompletionScreen"
-        android:name="com.example.intheknow.ui.logger.NewLogCompletionScreen"
+        android:name="com.apphatchery.intheknow.ui.logger.NewLogCompletionScreen"
         android:label=""
         tools:layout="@layout/fragment_new_log_completion_screen" >
         <action
@@ -318,7 +318,7 @@
     </fragment>
     <fragment
         android:id="@+id/createEmoji"
-        android:name="com.example.intheknow.CreateEmoji"
+        android:name="com.apphatchery.intheknow.CreateEmoji"
         android:label="Add Feeling"
         tools:layout="@layout/fragment_create_emoji" >
         <action

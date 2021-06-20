@@ -14,7 +14,7 @@ android {
 
     defaultConfig {
         multiDexEnabled = true
-        applicationId "com.example.intheknow"
+        applicationId "com.apphatchery.intheknow"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
